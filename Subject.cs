@@ -11,6 +11,6 @@ namespace ABCEnrollmentSystem
         public string Description { get; set; }
         public int Units { get; set; }
 
-        public string TeacherID { get; set; }
+        public string TeacherId { get; set; }
     }
 }

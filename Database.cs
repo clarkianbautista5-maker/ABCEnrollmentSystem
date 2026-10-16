@@ -46,18 +46,7 @@ namespace ABCEnrollmentSystem
             }
             catch (SqlException ex)
             {
-                if (ex.Number == 2627 || ex.Number == 2601) //if the record is not unique
-                {
-                    throw new DuplicateRecordException("That record already exists.");
-                }
-                else if (ex.Number == 547)
-                {
-                    throw new InvalidOperationException("This record is linked to other records");
-                }
-                else
-                {
-                    throw;
-                }
+                throw new InvalidOperationException("Database error: " + ex.Message);
             }
 
         }

@@ -35,8 +35,7 @@ namespace ABCEnrollmentSystem
                 "OR (FirstName + ' ' + MiddleName + ' ' + LastName) LIKE @k " +
                 "ORDER BY LastName, FirstName";
 
-            DataTable table = Database.GetTable(sql, "%" + keyword + "%");
-            return ToList(table);
+            return ToList(Database.GetTable(sql, "%" + keyword + "%"));
 
         }
         
@@ -50,14 +49,11 @@ namespace ABCEnrollmentSystem
                 "@Municipality, @Province, @ZipCode, @DateOfBirth, @Gender, @Mobile, @Landline, @Email, " +
                 "@GuardianName, @GuardianAddress, @GuardianMobile, @GuardianLandline)";
 
-            try
-            {
-                Database.Execute(sql, ToValues(s));
-            }
-            catch (DuplicateRecordException)
+            if(GetByID(s.StudentID) != null)
             {
                 throw new DuplicateRecordException($"Student ID {s.StudentID} already exists.");
             }
+            Database.Execute(sql, ToValues(s));
         }
 
         public void Update(Student s)
