@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ABCEnrollmentSystem
 {
-    internal interface IEnrollmentRepositrory
+    internal interface IEnrollmentRepository
     {
         void add (EnrollmentRecord enrollmentRecord);
         List<EnrollmentRecord> GetAll();
