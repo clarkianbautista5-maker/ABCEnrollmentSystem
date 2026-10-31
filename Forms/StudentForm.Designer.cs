@@ -28,445 +28,427 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblSubtitle = new System.Windows.Forms.Label();
-            this.btnDashboard = new System.Windows.Forms.Button();
-            this.btnStudents = new System.Windows.Forms.Button();
-            this.btnSubjects = new System.Windows.Forms.Button();
-            this.btnTeachers = new System.Windows.Forms.Button();
-            this.btnSections = new System.Windows.Forms.Button();
-            this.btnEnroll = new System.Windows.Forms.Button();
-            this.btnReports = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.lblPageTitle = new System.Windows.Forms.Label();
-            this.lblSchoolYear = new System.Windows.Forms.Label();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnShowAll = new System.Windows.Forms.Button();
-            this.dgvStudents = new System.Windows.Forms.DataGridView();
-            this.colStudentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnArchive = new System.Windows.Forms.Button();
-            this.btnEnrollStudent = new System.Windows.Forms.Button();
-            this.pnlSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            this.pnlHeader.SuspendLayout();
-            this.pnlContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            pnlSidebar = new Panel();
+            btnExit = new Button();
+            btnReports = new Button();
+            btnEnroll = new Button();
+            btnSections = new Button();
+            btnTeachers = new Button();
+            btnSubjects = new Button();
+            btnStudents = new Button();
+            btnDashboard = new Button();
+            lblSubtitle = new Label();
+            lblTitle = new Label();
+            picLogo = new PictureBox();
+            pnlHeader = new Panel();
+            lblSchoolYear = new Label();
+            lblPageTitle = new Label();
+            pnlContent = new Panel();
+            btnEnrollStudent = new Button();
+            btnDelete = new Button();
+            btnUpdate = new Button();
+            btnAdd = new Button();
+            dgvStudents = new DataGridView();
+            colStudentId = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            colMobile = new DataGridViewTextBoxColumn();
+            btnShowAll = new Button();
+            btnSearch = new Button();
+            txtSearch = new TextBox();
+            lblSearch = new Label();
+            pnlSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
+            pnlHeader.SuspendLayout();
+            pnlContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvStudents).BeginInit();
+            SuspendLayout();
             // 
             // pnlSidebar
             // 
-            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.pnlSidebar.Controls.Add(this.btnExit);
-            this.pnlSidebar.Controls.Add(this.btnReports);
-            this.pnlSidebar.Controls.Add(this.btnEnroll);
-            this.pnlSidebar.Controls.Add(this.btnSections);
-            this.pnlSidebar.Controls.Add(this.btnTeachers);
-            this.pnlSidebar.Controls.Add(this.btnSubjects);
-            this.pnlSidebar.Controls.Add(this.btnStudents);
-            this.pnlSidebar.Controls.Add(this.btnDashboard);
-            this.pnlSidebar.Controls.Add(this.lblSubtitle);
-            this.pnlSidebar.Controls.Add(this.lblTitle);
-            this.pnlSidebar.Controls.Add(this.picLogo);
-            this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
-            this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(200, 620);
-            this.pnlSidebar.TabIndex = 0;
-            // 
-            // picLogo
-            // 
-            this.picLogo.Location = new System.Drawing.Point(60, 20);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(80, 80);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 8;
-            this.picLogo.TabStop = false;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = false;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.lblTitle.Location = new System.Drawing.Point(0, 108);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(200, 22);
-            this.lblTitle.TabIndex = 9;
-            this.lblTitle.Text = "ABC Senior High";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblSubtitle
-            // 
-            this.lblSubtitle.AutoSize = false;
-            this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.lblSubtitle.Location = new System.Drawing.Point(0, 132);
-            this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(200, 18);
-            this.lblSubtitle.TabIndex = 10;
-            this.lblSubtitle.Text = "Enrollment System";
-            this.lblSubtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.btnDashboard.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(127, 178, 255);
-            this.btnDashboard.FlatAppearance.BorderSize = 1;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnDashboard.Location = new System.Drawing.Point(20, 175);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(160, 34);
-            this.btnDashboard.TabIndex = 0;
-            this.btnDashboard.Text = "Dashboard";
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            // 
-            // btnStudents
-            // 
-            this.btnStudents.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.btnStudents.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(127, 178, 255);
-            this.btnStudents.FlatAppearance.BorderSize = 1;
-            this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudents.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnStudents.Location = new System.Drawing.Point(20, 217);
-            this.btnStudents.Name = "btnStudents";
-            this.btnStudents.Size = new System.Drawing.Size(160, 34);
-            this.btnStudents.TabIndex = 1;
-            this.btnStudents.Text = "Students";
-            this.btnStudents.UseVisualStyleBackColor = false;
-            // 
-            // btnSubjects
-            // 
-            this.btnSubjects.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.btnSubjects.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(127, 178, 255);
-            this.btnSubjects.FlatAppearance.BorderSize = 1;
-            this.btnSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubjects.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnSubjects.Location = new System.Drawing.Point(20, 259);
-            this.btnSubjects.Name = "btnSubjects";
-            this.btnSubjects.Size = new System.Drawing.Size(160, 34);
-            this.btnSubjects.TabIndex = 2;
-            this.btnSubjects.Text = "Subjects";
-            this.btnSubjects.UseVisualStyleBackColor = false;
-            // 
-            // btnTeachers
-            // 
-            this.btnTeachers.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.btnTeachers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(127, 178, 255);
-            this.btnTeachers.FlatAppearance.BorderSize = 1;
-            this.btnTeachers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTeachers.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnTeachers.Location = new System.Drawing.Point(20, 301);
-            this.btnTeachers.Name = "btnTeachers";
-            this.btnTeachers.Size = new System.Drawing.Size(160, 34);
-            this.btnTeachers.TabIndex = 3;
-            this.btnTeachers.Text = "Teachers";
-            this.btnTeachers.UseVisualStyleBackColor = false;
-            // 
-            // btnSections
-            // 
-            this.btnSections.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.btnSections.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(127, 178, 255);
-            this.btnSections.FlatAppearance.BorderSize = 1;
-            this.btnSections.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSections.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnSections.Location = new System.Drawing.Point(20, 343);
-            this.btnSections.Name = "btnSections";
-            this.btnSections.Size = new System.Drawing.Size(160, 34);
-            this.btnSections.TabIndex = 4;
-            this.btnSections.Text = "Sections";
-            this.btnSections.UseVisualStyleBackColor = false;
-            // 
-            // btnEnroll
-            // 
-            this.btnEnroll.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.btnEnroll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(127, 178, 255);
-            this.btnEnroll.FlatAppearance.BorderSize = 1;
-            this.btnEnroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnroll.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnEnroll.Location = new System.Drawing.Point(20, 385);
-            this.btnEnroll.Name = "btnEnroll";
-            this.btnEnroll.Size = new System.Drawing.Size(160, 34);
-            this.btnEnroll.TabIndex = 5;
-            this.btnEnroll.Text = "Enroll a Student";
-            this.btnEnroll.UseVisualStyleBackColor = false;
-            // 
-            // btnReports
-            // 
-            this.btnReports.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.btnReports.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(127, 178, 255);
-            this.btnReports.FlatAppearance.BorderSize = 1;
-            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReports.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnReports.Location = new System.Drawing.Point(20, 427);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(160, 34);
-            this.btnReports.TabIndex = 6;
-            this.btnReports.Text = "Summary Reports";
-            this.btnReports.UseVisualStyleBackColor = false;
+            pnlSidebar.BackColor = Color.FromArgb(26, 38, 64);
+            pnlSidebar.Controls.Add(btnExit);
+            pnlSidebar.Controls.Add(btnReports);
+            pnlSidebar.Controls.Add(btnEnroll);
+            pnlSidebar.Controls.Add(btnSections);
+            pnlSidebar.Controls.Add(btnTeachers);
+            pnlSidebar.Controls.Add(btnSubjects);
+            pnlSidebar.Controls.Add(btnStudents);
+            pnlSidebar.Controls.Add(btnDashboard);
+            pnlSidebar.Controls.Add(lblSubtitle);
+            pnlSidebar.Controls.Add(lblTitle);
+            pnlSidebar.Controls.Add(picLogo);
+            pnlSidebar.Dock = DockStyle.Left;
+            pnlSidebar.Location = new Point(0, 0);
+            pnlSidebar.Name = "pnlSidebar";
+            pnlSidebar.Size = new Size(200, 620);
+            pnlSidebar.TabIndex = 0;
             // 
             // btnExit
             // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(46, 63, 102);
-            this.btnExit.FlatAppearance.BorderSize = 1;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnExit.Location = new System.Drawing.Point(20, 565);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(160, 34);
-            this.btnExit.TabIndex = 7;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = false;
+            btnExit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnExit.BackColor = Color.FromArgb(34, 50, 83);
+            btnExit.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.ForeColor = Color.FromArgb(232, 238, 252);
+            btnExit.Location = new Point(20, 565);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(160, 34);
+            btnExit.TabIndex = 7;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = false;
+            // 
+            // btnReports
+            // 
+            btnReports.BackColor = Color.FromArgb(34, 50, 83);
+            btnReports.FlatAppearance.BorderColor = Color.FromArgb(127, 178, 255);
+            btnReports.FlatStyle = FlatStyle.Flat;
+            btnReports.ForeColor = Color.FromArgb(232, 238, 252);
+            btnReports.Location = new Point(20, 427);
+            btnReports.Name = "btnReports";
+            btnReports.Size = new Size(160, 34);
+            btnReports.TabIndex = 6;
+            btnReports.Text = "Summary Reports";
+            btnReports.UseVisualStyleBackColor = false;
+            // 
+            // btnEnroll
+            // 
+            btnEnroll.BackColor = Color.FromArgb(34, 50, 83);
+            btnEnroll.FlatAppearance.BorderColor = Color.FromArgb(127, 178, 255);
+            btnEnroll.FlatStyle = FlatStyle.Flat;
+            btnEnroll.ForeColor = Color.FromArgb(232, 238, 252);
+            btnEnroll.Location = new Point(20, 385);
+            btnEnroll.Name = "btnEnroll";
+            btnEnroll.Size = new Size(160, 34);
+            btnEnroll.TabIndex = 5;
+            btnEnroll.Text = "Enroll a Student";
+            btnEnroll.UseVisualStyleBackColor = false;
+            // 
+            // btnSections
+            // 
+            btnSections.BackColor = Color.FromArgb(34, 50, 83);
+            btnSections.FlatAppearance.BorderColor = Color.FromArgb(127, 178, 255);
+            btnSections.FlatStyle = FlatStyle.Flat;
+            btnSections.ForeColor = Color.FromArgb(232, 238, 252);
+            btnSections.Location = new Point(20, 343);
+            btnSections.Name = "btnSections";
+            btnSections.Size = new Size(160, 34);
+            btnSections.TabIndex = 4;
+            btnSections.Text = "Sections";
+            btnSections.UseVisualStyleBackColor = false;
+            // 
+            // btnTeachers
+            // 
+            btnTeachers.BackColor = Color.FromArgb(34, 50, 83);
+            btnTeachers.FlatAppearance.BorderColor = Color.FromArgb(127, 178, 255);
+            btnTeachers.FlatStyle = FlatStyle.Flat;
+            btnTeachers.ForeColor = Color.FromArgb(232, 238, 252);
+            btnTeachers.Location = new Point(20, 301);
+            btnTeachers.Name = "btnTeachers";
+            btnTeachers.Size = new Size(160, 34);
+            btnTeachers.TabIndex = 3;
+            btnTeachers.Text = "Teachers";
+            btnTeachers.UseVisualStyleBackColor = false;
+            // 
+            // btnSubjects
+            // 
+            btnSubjects.BackColor = Color.FromArgb(34, 50, 83);
+            btnSubjects.FlatAppearance.BorderColor = Color.FromArgb(127, 178, 255);
+            btnSubjects.FlatStyle = FlatStyle.Flat;
+            btnSubjects.ForeColor = Color.FromArgb(232, 238, 252);
+            btnSubjects.Location = new Point(20, 259);
+            btnSubjects.Name = "btnSubjects";
+            btnSubjects.Size = new Size(160, 34);
+            btnSubjects.TabIndex = 2;
+            btnSubjects.Text = "Subjects";
+            btnSubjects.UseVisualStyleBackColor = false;
+            // 
+            // btnStudents
+            // 
+            btnStudents.BackColor = Color.FromArgb(34, 50, 83);
+            btnStudents.FlatAppearance.BorderColor = Color.FromArgb(127, 178, 255);
+            btnStudents.FlatStyle = FlatStyle.Flat;
+            btnStudents.ForeColor = Color.FromArgb(232, 238, 252);
+            btnStudents.Location = new Point(20, 217);
+            btnStudents.Name = "btnStudents";
+            btnStudents.Size = new Size(160, 34);
+            btnStudents.TabIndex = 1;
+            btnStudents.Text = "Students";
+            btnStudents.UseVisualStyleBackColor = false;
+            // 
+            // btnDashboard
+            // 
+            btnDashboard.BackColor = Color.FromArgb(34, 50, 83);
+            btnDashboard.FlatAppearance.BorderColor = Color.FromArgb(127, 178, 255);
+            btnDashboard.FlatStyle = FlatStyle.Flat;
+            btnDashboard.ForeColor = Color.FromArgb(232, 238, 252);
+            btnDashboard.Location = new Point(20, 175);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Size = new Size(160, 34);
+            btnDashboard.TabIndex = 0;
+            btnDashboard.Text = "Dashboard";
+            btnDashboard.UseVisualStyleBackColor = false;
+            // 
+            // lblSubtitle
+            // 
+            lblSubtitle.ForeColor = Color.FromArgb(232, 238, 252);
+            lblSubtitle.Location = new Point(0, 132);
+            lblSubtitle.Name = "lblSubtitle";
+            lblSubtitle.Size = new Size(200, 18);
+            lblSubtitle.TabIndex = 10;
+            lblSubtitle.Text = "Enrollment System";
+            lblSubtitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblTitle
+            // 
+            lblTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(232, 238, 252);
+            lblTitle.Location = new Point(0, 108);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(200, 22);
+            lblTitle.TabIndex = 9;
+            lblTitle.Text = "ABC Senior High";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // picLogo
+            // 
+            picLogo.Location = new Point(60, 20);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(80, 80);
+            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picLogo.TabIndex = 8;
+            picLogo.TabStop = false;
             // 
             // pnlHeader
             // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.pnlHeader.Controls.Add(this.lblSchoolYear);
-            this.pnlHeader.Controls.Add(this.lblPageTitle);
-            this.pnlHeader.Location = new System.Drawing.Point(200, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(800, 60);
-            this.pnlHeader.TabIndex = 1;
-            // 
-            // lblPageTitle
-            // 
-            this.lblPageTitle.AutoSize = true;
-            this.lblPageTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPageTitle.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.lblPageTitle.Location = new System.Drawing.Point(20, 15);
-            this.lblPageTitle.Name = "lblPageTitle";
-            this.lblPageTitle.Size = new System.Drawing.Size(81, 25);
-            this.lblPageTitle.TabIndex = 0;
-            this.lblPageTitle.Text = "Students";
+            pnlHeader.BackColor = Color.FromArgb(26, 38, 64);
+            pnlHeader.Controls.Add(lblSchoolYear);
+            pnlHeader.Controls.Add(lblPageTitle);
+            pnlHeader.Location = new Point(200, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(800, 60);
+            pnlHeader.TabIndex = 1;
             // 
             // lblSchoolYear
             // 
-            this.lblSchoolYear.AutoSize = false;
-            this.lblSchoolYear.ForeColor = System.Drawing.Color.FromArgb(242, 184, 75);
-            this.lblSchoolYear.Location = new System.Drawing.Point(600, 18);
-            this.lblSchoolYear.Name = "lblSchoolYear";
-            this.lblSchoolYear.Size = new System.Drawing.Size(180, 24);
-            this.lblSchoolYear.TabIndex = 1;
-            this.lblSchoolYear.Text = "S.Y. 2026-2027";
-            this.lblSchoolYear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            lblSchoolYear.ForeColor = Color.FromArgb(242, 184, 75);
+            lblSchoolYear.Location = new Point(600, 18);
+            lblSchoolYear.Name = "lblSchoolYear";
+            lblSchoolYear.Size = new Size(180, 24);
+            lblSchoolYear.TabIndex = 1;
+            lblSchoolYear.Text = "S.Y. 2026-2027";
+            lblSchoolYear.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lblPageTitle
+            // 
+            lblPageTitle.AutoSize = true;
+            lblPageTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblPageTitle.ForeColor = Color.FromArgb(232, 238, 252);
+            lblPageTitle.Location = new Point(20, 15);
+            lblPageTitle.Name = "lblPageTitle";
+            lblPageTitle.Size = new Size(91, 25);
+            lblPageTitle.TabIndex = 0;
+            lblPageTitle.Text = "Students";
             // 
             // pnlContent
             // 
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.pnlContent.Controls.Add(this.btnEnrollStudent);
-            this.pnlContent.Controls.Add(this.btnArchive);
-            this.pnlContent.Controls.Add(this.btnUpdate);
-            this.pnlContent.Controls.Add(this.btnAdd);
-            this.pnlContent.Controls.Add(this.dgvStudents);
-            this.pnlContent.Controls.Add(this.btnShowAll);
-            this.pnlContent.Controls.Add(this.btnSearch);
-            this.pnlContent.Controls.Add(this.txtSearch);
-            this.pnlContent.Controls.Add(this.lblSearch);
-            this.pnlContent.Location = new System.Drawing.Point(200, 60);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(800, 560);
-            this.pnlContent.TabIndex = 2;
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.lblSearch.Location = new System.Drawing.Point(20, 19);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(172, 15);
-            this.lblSearch.TabIndex = 8;
-            this.lblSearch.Text = "Search by Student No. or Name:";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtSearch.Location = new System.Drawing.Point(215, 15);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(250, 23);
-            this.txtSearch.TabIndex = 0;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(46, 63, 102);
-            this.btnSearch.FlatAppearance.BorderSize = 1;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnSearch.Location = new System.Drawing.Point(475, 13);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 27);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // btnShowAll
-            // 
-            this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.btnShowAll.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(46, 63, 102);
-            this.btnShowAll.FlatAppearance.BorderSize = 1;
-            this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowAll.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnShowAll.Location = new System.Drawing.Point(560, 13);
-            this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(75, 27);
-            this.btnShowAll.TabIndex = 2;
-            this.btnShowAll.Text = "Show All";
-            this.btnShowAll.UseVisualStyleBackColor = false;
-            // 
-            // dgvStudents
-            // 
-            this.dgvStudents.AllowUserToAddRows = false;
-            this.dgvStudents.AllowUserToDeleteRows = false;
-            this.dgvStudents.AllowUserToResizeRows = false;
-            this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvStudents.BackgroundColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.dgvStudents.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvStudents.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colStudentId,
-            this.colName,
-            this.colMobile});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(127, 178, 255);
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudents.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvStudents.EnableHeadersVisualStyles = false;
-            this.dgvStudents.GridColor = System.Drawing.Color.FromArgb(46, 63, 102);
-            this.dgvStudents.Location = new System.Drawing.Point(20, 55);
-            this.dgvStudents.MultiSelect = false;
-            this.dgvStudents.Name = "dgvStudents";
-            this.dgvStudents.ReadOnly = true;
-            this.dgvStudents.RowHeadersVisible = false;
-            this.dgvStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudents.Size = new System.Drawing.Size(760, 410);
-            this.dgvStudents.TabIndex = 3;
-            // 
-            // colStudentId
-            // 
-            this.colStudentId.DataPropertyName = "StudentId";
-            this.colStudentId.HeaderText = "Student ID";
-            this.colStudentId.Name = "colStudentId";
-            this.colStudentId.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "FullName";
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colMobile
-            // 
-            this.colMobile.DataPropertyName = "Mobile";
-            this.colMobile.HeaderText = "Mobile";
-            this.colMobile.Name = "colMobile";
-            this.colMobile.ReadOnly = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(242, 184, 75);
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.btnAdd.Location = new System.Drawing.Point(20, 480);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 32);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.btnUpdate.Enabled = false;
-            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(46, 63, 102);
-            this.btnUpdate.FlatAppearance.BorderSize = 1;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnUpdate.Location = new System.Drawing.Point(120, 480);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(90, 32);
-            this.btnUpdate.TabIndex = 5;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            // 
-            // btnArchive
-            // 
-            this.btnArchive.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.btnArchive.Enabled = false;
-            this.btnArchive.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(242, 109, 109);
-            this.btnArchive.FlatAppearance.BorderSize = 1;
-            this.btnArchive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArchive.ForeColor = System.Drawing.Color.FromArgb(242, 109, 109);
-            this.btnArchive.Location = new System.Drawing.Point(220, 480);
-            this.btnArchive.Name = "btnArchive";
-            this.btnArchive.Size = new System.Drawing.Size(90, 32);
-            this.btnArchive.TabIndex = 6;
-            this.btnArchive.Text = "Archive";
-            this.btnArchive.UseVisualStyleBackColor = false;
+            pnlContent.BackColor = Color.FromArgb(16, 25, 43);
+            pnlContent.Controls.Add(btnEnrollStudent);
+            pnlContent.Controls.Add(btnDelete);
+            pnlContent.Controls.Add(btnUpdate);
+            pnlContent.Controls.Add(btnAdd);
+            pnlContent.Controls.Add(dgvStudents);
+            pnlContent.Controls.Add(btnShowAll);
+            pnlContent.Controls.Add(btnSearch);
+            pnlContent.Controls.Add(txtSearch);
+            pnlContent.Controls.Add(lblSearch);
+            pnlContent.Location = new Point(200, 60);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Size = new Size(800, 560);
+            pnlContent.TabIndex = 2;
             // 
             // btnEnrollStudent
             // 
-            this.btnEnrollStudent.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.btnEnrollStudent.Enabled = false;
-            this.btnEnrollStudent.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(46, 63, 102);
-            this.btnEnrollStudent.FlatAppearance.BorderSize = 1;
-            this.btnEnrollStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnrollStudent.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnEnrollStudent.Location = new System.Drawing.Point(320, 480);
-            this.btnEnrollStudent.Name = "btnEnrollStudent";
-            this.btnEnrollStudent.Size = new System.Drawing.Size(120, 32);
-            this.btnEnrollStudent.TabIndex = 7;
-            this.btnEnrollStudent.Text = "Enroll Student";
-            this.btnEnrollStudent.UseVisualStyleBackColor = false;
+            btnEnrollStudent.BackColor = Color.FromArgb(26, 38, 64);
+            btnEnrollStudent.Enabled = false;
+            btnEnrollStudent.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnEnrollStudent.FlatStyle = FlatStyle.Flat;
+            btnEnrollStudent.ForeColor = Color.FromArgb(232, 238, 252);
+            btnEnrollStudent.Location = new Point(320, 480);
+            btnEnrollStudent.Name = "btnEnrollStudent";
+            btnEnrollStudent.Size = new Size(120, 32);
+            btnEnrollStudent.TabIndex = 7;
+            btnEnrollStudent.Text = "Enroll Student";
+            btnEnrollStudent.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.FromArgb(26, 38, 64);
+            btnDelete.Enabled = false;
+            btnDelete.FlatAppearance.BorderColor = Color.FromArgb(242, 109, 109);
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.ForeColor = Color.FromArgb(242, 109, 109);
+            btnDelete.Location = new Point(220, 480);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(90, 32);
+            btnDelete.TabIndex = 6;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.FromArgb(26, 38, 64);
+            btnUpdate.Enabled = false;
+            btnUpdate.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.ForeColor = Color.FromArgb(232, 238, 252);
+            btnUpdate.Location = new Point(120, 480);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(90, 32);
+            btnUpdate.TabIndex = 5;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // btnAdd
+            // 
+            btnAdd.BackColor = Color.FromArgb(242, 184, 75);
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.ForeColor = Color.FromArgb(16, 25, 43);
+            btnAdd.Location = new Point(20, 480);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(90, 32);
+            btnAdd.TabIndex = 4;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // dgvStudents
+            // 
+            dgvStudents.AllowUserToAddRows = false;
+            dgvStudents.AllowUserToDeleteRows = false;
+            dgvStudents.AllowUserToResizeRows = false;
+            dgvStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvStudents.BackgroundColor = Color.FromArgb(16, 25, 43);
+            dgvStudents.BorderStyle = BorderStyle.None;
+            dgvStudents.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStudents.Columns.AddRange(new DataGridViewColumn[] { colStudentId, colName, colMobile });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(26, 38, 64);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(127, 178, 255);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(16, 25, 43);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvStudents.DefaultCellStyle = dataGridViewCellStyle4;
+            dgvStudents.EnableHeadersVisualStyles = false;
+            dgvStudents.GridColor = Color.FromArgb(46, 63, 102);
+            dgvStudents.Location = new Point(20, 55);
+            dgvStudents.MultiSelect = false;
+            dgvStudents.Name = "dgvStudents";
+            dgvStudents.ReadOnly = true;
+            dgvStudents.RowHeadersVisible = false;
+            dgvStudents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvStudents.Size = new Size(760, 410);
+            dgvStudents.TabIndex = 3;
+            // 
+            // colStudentId
+            // 
+            colStudentId.DataPropertyName = "StudentId";
+            colStudentId.HeaderText = "Student ID";
+            colStudentId.Name = "colStudentId";
+            colStudentId.ReadOnly = true;
+            // 
+            // colName
+            // 
+            colName.DataPropertyName = "FullName";
+            colName.HeaderText = "Name";
+            colName.Name = "colName";
+            colName.ReadOnly = true;
+            // 
+            // colMobile
+            // 
+            colMobile.DataPropertyName = "Mobile";
+            colMobile.HeaderText = "Mobile";
+            colMobile.Name = "colMobile";
+            colMobile.ReadOnly = true;
+            // 
+            // btnShowAll
+            // 
+            btnShowAll.BackColor = Color.FromArgb(26, 38, 64);
+            btnShowAll.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnShowAll.FlatStyle = FlatStyle.Flat;
+            btnShowAll.ForeColor = Color.FromArgb(232, 238, 252);
+            btnShowAll.Location = new Point(560, 13);
+            btnShowAll.Name = "btnShowAll";
+            btnShowAll.Size = new Size(75, 27);
+            btnShowAll.TabIndex = 2;
+            btnShowAll.Text = "Show All";
+            btnShowAll.UseVisualStyleBackColor = false;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackColor = Color.FromArgb(26, 38, 64);
+            btnSearch.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.ForeColor = Color.FromArgb(232, 238, 252);
+            btnSearch.Location = new Point(475, 13);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(75, 27);
+            btnSearch.TabIndex = 1;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // txtSearch
+            // 
+            txtSearch.BackColor = Color.FromArgb(34, 50, 83);
+            txtSearch.BorderStyle = BorderStyle.FixedSingle;
+            txtSearch.ForeColor = Color.FromArgb(232, 238, 252);
+            txtSearch.Location = new Point(215, 15);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(250, 23);
+            txtSearch.TabIndex = 0;
+            // 
+            // lblSearch
+            // 
+            lblSearch.AutoSize = true;
+            lblSearch.ForeColor = Color.FromArgb(232, 238, 252);
+            lblSearch.Location = new Point(20, 19);
+            lblSearch.Name = "lblSearch";
+            lblSearch.Size = new Size(176, 15);
+            lblSearch.TabIndex = 8;
+            lblSearch.Text = "Search by Student No. or Name:";
             // 
             // StudentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.ClientSize = new System.Drawing.Size(1000, 620);
-            this.Controls.Add(this.pnlContent);
-            this.Controls.Add(this.pnlHeader);
-            this.Controls.Add(this.pnlSidebar);
-            this.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "StudentForm";
-            this.Text = "Students";
-            this.pnlSidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            this.pnlHeader.ResumeLayout(false);
-            this.pnlHeader.PerformLayout();
-            this.pnlContent.ResumeLayout(false);
-            this.pnlContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(16, 25, 43);
+            ClientSize = new Size(1000, 620);
+            Controls.Add(pnlContent);
+            Controls.Add(pnlHeader);
+            Controls.Add(pnlSidebar);
+            ForeColor = Color.FromArgb(232, 238, 252);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "StudentForm";
+            Text = "Students";
+            pnlSidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
+            pnlContent.ResumeLayout(false);
+            pnlContent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvStudents).EndInit();
+            ResumeLayout(false);
 
         }
 
@@ -498,7 +480,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMobile;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnArchive;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEnrollStudent;
     }
 }

@@ -3,12 +3,12 @@
     partial class SectionForm
     {
         /// <summary>
-        /// Required designer variable.
+        ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,8 +23,8 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -51,33 +51,33 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.dgvSections = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnArchive = new System.Windows.Forms.Button();
             this.colSectionCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSectionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlSidebar.SuspendLayout();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).BeginInit();
+            this.pnlSidebar.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.pnlContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSidebar
             // 
-            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.pnlSidebar.Controls.Add(this.btnExit);
-            this.pnlSidebar.Controls.Add(this.btnReports);
-            this.pnlSidebar.Controls.Add(this.btnEnroll);
-            this.pnlSidebar.Controls.Add(this.btnSections);
-            this.pnlSidebar.Controls.Add(this.btnTeachers);
-            this.pnlSidebar.Controls.Add(this.btnSubjects);
-            this.pnlSidebar.Controls.Add(this.btnStudents);
-            this.pnlSidebar.Controls.Add(this.btnDashboard);
-            this.pnlSidebar.Controls.Add(this.lblSubtitle);
-            this.pnlSidebar.Controls.Add(this.lblTitle);
             this.pnlSidebar.Controls.Add(this.picLogo);
+            this.pnlSidebar.Controls.Add(this.lblTitle);
+            this.pnlSidebar.Controls.Add(this.lblSubtitle);
+            this.pnlSidebar.Controls.Add(this.btnDashboard);
+            this.pnlSidebar.Controls.Add(this.btnStudents);
+            this.pnlSidebar.Controls.Add(this.btnSubjects);
+            this.pnlSidebar.Controls.Add(this.btnTeachers);
+            this.pnlSidebar.Controls.Add(this.btnSections);
+            this.pnlSidebar.Controls.Add(this.btnEnroll);
+            this.pnlSidebar.Controls.Add(this.btnReports);
+            this.pnlSidebar.Controls.Add(this.btnExit);
+            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
             this.pnlSidebar.Name = "pnlSidebar";
@@ -96,8 +96,7 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = false;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(0, 108);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(200, 22);
@@ -108,7 +107,6 @@
             // lblSubtitle
             // 
             this.lblSubtitle.AutoSize = false;
-            this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             this.lblSubtitle.Location = new System.Drawing.Point(0, 132);
             this.lblSubtitle.Name = "lblSubtitle";
             this.lblSubtitle.Size = new System.Drawing.Size(200, 18);
@@ -231,9 +229,9 @@
             // 
             // pnlHeader
             // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.pnlHeader.Controls.Add(this.lblSchoolYear);
             this.pnlHeader.Controls.Add(this.lblPageTitle);
+            this.pnlHeader.Controls.Add(this.lblSchoolYear);
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
             this.pnlHeader.Location = new System.Drawing.Point(200, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(800, 60);
@@ -242,11 +240,10 @@
             // lblPageTitle
             // 
             this.lblPageTitle.AutoSize = true;
-            this.lblPageTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPageTitle.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
+            this.lblPageTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageTitle.Location = new System.Drawing.Point(20, 15);
             this.lblPageTitle.Name = "lblPageTitle";
-            this.lblPageTitle.Size = new System.Drawing.Size(90, 25);
+            this.lblPageTitle.Size = new System.Drawing.Size(105, 25);
             this.lblPageTitle.TabIndex = 0;
             this.lblPageTitle.Text = "Sections";
             // 
@@ -263,15 +260,15 @@
             // 
             // pnlContent
             // 
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.pnlContent.Controls.Add(this.btnArchive);
-            this.pnlContent.Controls.Add(this.btnUpdate);
-            this.pnlContent.Controls.Add(this.btnAdd);
-            this.pnlContent.Controls.Add(this.dgvSections);
-            this.pnlContent.Controls.Add(this.btnShowAll);
-            this.pnlContent.Controls.Add(this.btnSearch);
-            this.pnlContent.Controls.Add(this.txtSearch);
             this.pnlContent.Controls.Add(this.lblSearch);
+            this.pnlContent.Controls.Add(this.txtSearch);
+            this.pnlContent.Controls.Add(this.btnSearch);
+            this.pnlContent.Controls.Add(this.btnShowAll);
+            this.pnlContent.Controls.Add(this.dgvSections);
+            this.pnlContent.Controls.Add(this.btnAdd);
+            this.pnlContent.Controls.Add(this.btnUpdate);
+            this.pnlContent.Controls.Add(this.btnDelete);
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(16, 25, 43);
             this.pnlContent.Location = new System.Drawing.Point(200, 60);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(800, 560);
@@ -280,11 +277,10 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             this.lblSearch.Location = new System.Drawing.Point(20, 19);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(189, 15);
-            this.lblSearch.TabIndex = 8;
+            this.lblSearch.Size = new System.Drawing.Size(190, 15);
+            this.lblSearch.TabIndex = 7;
             this.lblSearch.Text = "Search by Section Code or Name:";
             // 
             // txtSearch
@@ -327,31 +323,30 @@
             // 
             // dgvSections
             // 
-            this.dgvSections.AllowUserToAddRows = false;
-            this.dgvSections.AllowUserToDeleteRows = false;
-            this.dgvSections.AllowUserToResizeRows = false;
-            this.dgvSections.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSections.BackgroundColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.dgvSections.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvSections.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(37, 52, 90);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(37, 52, 90);
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSections.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSections.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colSectionCode,
-            this.colSectionName,
-            this.colDescription});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(127, 178, 255);
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(16, 25, 43);
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSections.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colSectionCode,
+            this.colSectionName,
+            this.colDescription});
+            this.dgvSections.AllowUserToAddRows = false;
+            this.dgvSections.AllowUserToDeleteRows = false;
+            this.dgvSections.AllowUserToResizeRows = false;
+            this.dgvSections.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSections.BackgroundColor = System.Drawing.Color.FromArgb(16, 25, 43);
+            this.dgvSections.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSections.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSections.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSections.EnableHeadersVisualStyles = false;
             this.dgvSections.GridColor = System.Drawing.Color.FromArgb(46, 63, 102);
@@ -360,9 +355,34 @@
             this.dgvSections.Name = "dgvSections";
             this.dgvSections.ReadOnly = true;
             this.dgvSections.RowHeadersVisible = false;
+            this.dgvSections.RowTemplate.Height = 25;
             this.dgvSections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSections.Size = new System.Drawing.Size(760, 410);
             this.dgvSections.TabIndex = 3;
+            // 
+            // colSectionCode
+            // 
+            this.colSectionCode.DataPropertyName = "SectionCode";
+            this.colSectionCode.HeaderText = "Section Code";
+            this.colSectionCode.MinimumWidth = 6;
+            this.colSectionCode.Name = "colSectionCode";
+            this.colSectionCode.ReadOnly = true;
+            // 
+            // colSectionName
+            // 
+            this.colSectionName.DataPropertyName = "SectionName";
+            this.colSectionName.HeaderText = "Section Name";
+            this.colSectionName.MinimumWidth = 6;
+            this.colSectionName.Name = "colSectionName";
+            this.colSectionName.ReadOnly = true;
+            // 
+            // colDescription
+            // 
+            this.colDescription.DataPropertyName = "Description";
+            this.colDescription.HeaderText = "Description";
+            this.colDescription.MinimumWidth = 6;
+            this.colDescription.Name = "colDescription";
+            this.colDescription.ReadOnly = true;
             // 
             // btnAdd
             // 
@@ -392,41 +412,20 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // btnArchive
+            // btnDelete
             // 
-            this.btnArchive.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.btnArchive.Enabled = false;
-            this.btnArchive.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(242, 109, 109);
-            this.btnArchive.FlatAppearance.BorderSize = 1;
-            this.btnArchive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArchive.ForeColor = System.Drawing.Color.FromArgb(242, 109, 109);
-            this.btnArchive.Location = new System.Drawing.Point(220, 480);
-            this.btnArchive.Name = "btnArchive";
-            this.btnArchive.Size = new System.Drawing.Size(90, 32);
-            this.btnArchive.TabIndex = 6;
-            this.btnArchive.Text = "Archive";
-            this.btnArchive.UseVisualStyleBackColor = false;
-            // 
-            // colSectionCode
-            // 
-            this.colSectionCode.DataPropertyName = "SectionCode";
-            this.colSectionCode.HeaderText = "Section Code";
-            this.colSectionCode.Name = "colSectionCode";
-            this.colSectionCode.ReadOnly = true;
-            // 
-            // colSectionName
-            // 
-            this.colSectionName.DataPropertyName = "SectionName";
-            this.colSectionName.HeaderText = "Section Name";
-            this.colSectionName.Name = "colSectionName";
-            this.colSectionName.ReadOnly = true;
-            // 
-            // colDescription
-            // 
-            this.colDescription.DataPropertyName = "Description";
-            this.colDescription.HeaderText = "Description";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.ReadOnly = true;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
+            this.btnDelete.Enabled = false;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(242, 109, 109);
+            this.btnDelete.FlatAppearance.BorderSize = 1;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(242, 109, 109);
+            this.btnDelete.Location = new System.Drawing.Point(220, 480);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(90, 32);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // SectionForm
             // 
@@ -434,23 +433,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(16, 25, 43);
             this.ClientSize = new System.Drawing.Size(1000, 620);
-            this.Controls.Add(this.pnlContent);
-            this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.pnlSidebar);
+            this.Controls.Add(this.pnlHeader);
+            this.Controls.Add(this.pnlContent);
             this.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SectionForm";
             this.Text = "Sections";
-            this.pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).EndInit();
+            this.pnlSidebar.ResumeLayout(false);
+            this.pnlSidebar.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).EndInit();
             this.ResumeLayout(false);
-
+            this.PerformLayout();
         }
 
         #endregion
@@ -476,11 +476,11 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnShowAll;
         private System.Windows.Forms.DataGridView dgvSections;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnArchive;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSectionCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSectionName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

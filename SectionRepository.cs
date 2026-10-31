@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ABCEnrollmentSystem
 {
-    internal class SectionRepositorycs : IRepository<Section>   
+    internal class SectionRepository : IRepository<Section>   
     {
         public List<Section> GetAll() //1
         {

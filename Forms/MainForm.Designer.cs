@@ -3,12 +3,12 @@
     partial class MainForm
     {
         /// <summary>
-        /// Required designer variable.
+        ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,14 +23,13 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSidebar = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -49,35 +48,36 @@
             this.pnlContent = new System.Windows.Forms.Panel();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.dgvActivity = new System.Windows.Forms.DataGridView();
+            this.lblSearchIn = new System.Windows.Forms.Label();
+            this.cboSearchIn = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.dgvResults = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDetails = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblFooter = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.colActivityType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
+            this.pnlSidebar.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.pnlContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvActivity)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSidebar
             // 
-            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.pnlSidebar.Controls.Add(this.btnExit);
-            this.pnlSidebar.Controls.Add(this.btnReports);
-            this.pnlSidebar.Controls.Add(this.btnEnroll);
-            this.pnlSidebar.Controls.Add(this.btnSections);
-            this.pnlSidebar.Controls.Add(this.btnTeachers);
-            this.pnlSidebar.Controls.Add(this.btnSubjects);
-            this.pnlSidebar.Controls.Add(this.btnStudents);
-            this.pnlSidebar.Controls.Add(this.btnDashboard);
-            this.pnlSidebar.Controls.Add(this.lblSubtitle);
-            this.pnlSidebar.Controls.Add(this.lblTitle);
             this.pnlSidebar.Controls.Add(this.picLogo);
+            this.pnlSidebar.Controls.Add(this.lblTitle);
+            this.pnlSidebar.Controls.Add(this.lblSubtitle);
+            this.pnlSidebar.Controls.Add(this.btnDashboard);
+            this.pnlSidebar.Controls.Add(this.btnStudents);
+            this.pnlSidebar.Controls.Add(this.btnSubjects);
+            this.pnlSidebar.Controls.Add(this.btnTeachers);
+            this.pnlSidebar.Controls.Add(this.btnSections);
+            this.pnlSidebar.Controls.Add(this.btnEnroll);
+            this.pnlSidebar.Controls.Add(this.btnReports);
+            this.pnlSidebar.Controls.Add(this.btnExit);
+            this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
             this.pnlSidebar.Name = "pnlSidebar";
@@ -96,8 +96,7 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = false;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(0, 108);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(200, 22);
@@ -108,7 +107,6 @@
             // lblSubtitle
             // 
             this.lblSubtitle.AutoSize = false;
-            this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             this.lblSubtitle.Location = new System.Drawing.Point(0, 132);
             this.lblSubtitle.Name = "lblSubtitle";
             this.lblSubtitle.Size = new System.Drawing.Size(200, 18);
@@ -231,9 +229,9 @@
             // 
             // pnlHeader
             // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.pnlHeader.Controls.Add(this.lblSchoolYear);
             this.pnlHeader.Controls.Add(this.lblPageTitle);
+            this.pnlHeader.Controls.Add(this.lblSchoolYear);
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
             this.pnlHeader.Location = new System.Drawing.Point(200, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(800, 60);
@@ -242,11 +240,10 @@
             // lblPageTitle
             // 
             this.lblPageTitle.AutoSize = true;
-            this.lblPageTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPageTitle.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
+            this.lblPageTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageTitle.Location = new System.Drawing.Point(20, 15);
             this.lblPageTitle.Name = "lblPageTitle";
-            this.lblPageTitle.Size = new System.Drawing.Size(97, 25);
+            this.lblPageTitle.Size = new System.Drawing.Size(105, 25);
             this.lblPageTitle.TabIndex = 0;
             this.lblPageTitle.Text = "Dashboard";
             // 
@@ -263,13 +260,15 @@
             // 
             // pnlContent
             // 
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.pnlContent.Controls.Add(this.lblStatus);
-            this.pnlContent.Controls.Add(this.lblFooter);
-            this.pnlContent.Controls.Add(this.dgvActivity);
-            this.pnlContent.Controls.Add(this.btnExport);
-            this.pnlContent.Controls.Add(this.txtSearch);
             this.pnlContent.Controls.Add(this.lblSearch);
+            this.pnlContent.Controls.Add(this.txtSearch);
+            this.pnlContent.Controls.Add(this.lblSearchIn);
+            this.pnlContent.Controls.Add(this.cboSearchIn);
+            this.pnlContent.Controls.Add(this.btnSearch);
+            this.pnlContent.Controls.Add(this.dgvResults);
+            this.pnlContent.Controls.Add(this.lblFooter);
+            this.pnlContent.Controls.Add(this.lblStatus);
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(16, 25, 43);
             this.pnlContent.Location = new System.Drawing.Point(200, 60);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(800, 560);
@@ -278,11 +277,10 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             this.lblSearch.Location = new System.Drawing.Point(20, 19);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(45, 15);
-            this.lblSearch.TabIndex = 6;
+            this.lblSearch.Size = new System.Drawing.Size(55, 15);
+            this.lblSearch.TabIndex = 4;
             this.lblSearch.Text = "Search:";
             // 
             // txtSearch
@@ -292,71 +290,118 @@
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             this.txtSearch.Location = new System.Drawing.Point(80, 15);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(200, 23);
+            this.txtSearch.Size = new System.Drawing.Size(280, 23);
             this.txtSearch.TabIndex = 0;
             // 
-            // btnExport
+            // lblSearchIn
             // 
-            this.btnExport.BackColor = System.Drawing.Color.FromArgb(242, 184, 75);
-            this.btnExport.FlatAppearance.BorderSize = 0;
-            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport.ForeColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.btnExport.Location = new System.Drawing.Point(610, 11);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(170, 30);
-            this.btnExport.TabIndex = 1;
-            this.btnExport.Text = "Export Activity Log";
-            this.btnExport.UseVisualStyleBackColor = false;
+            this.lblSearchIn.AutoSize = true;
+            this.lblSearchIn.Location = new System.Drawing.Point(375, 19);
+            this.lblSearchIn.Name = "lblSearchIn";
+            this.lblSearchIn.Size = new System.Drawing.Size(20, 15);
+            this.lblSearchIn.TabIndex = 5;
+            this.lblSearchIn.Text = "in:";
             // 
-            // dgvActivity
+            // cboSearchIn
             // 
-            this.dgvActivity.AllowUserToAddRows = false;
-            this.dgvActivity.AllowUserToDeleteRows = false;
-            this.dgvActivity.AllowUserToResizeRows = false;
-            this.dgvActivity.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvActivity.BackgroundColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.dgvActivity.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvActivity.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.cboSearchIn.Items.AddRange(new object[] {
+            "Students",
+            "Teachers",
+            "Subjects",
+            "Sections"});
+            this.cboSearchIn.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
+            this.cboSearchIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSearchIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboSearchIn.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
+            this.cboSearchIn.FormattingEnabled = true;
+            this.cboSearchIn.Location = new System.Drawing.Point(400, 15);
+            this.cboSearchIn.Name = "cboSearchIn";
+            this.cboSearchIn.Size = new System.Drawing.Size(160, 23);
+            this.cboSearchIn.TabIndex = 1;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(46, 63, 102);
+            this.btnSearch.FlatAppearance.BorderSize = 1;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
+            this.btnSearch.Location = new System.Drawing.Point(575, 13);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(90, 27);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // dgvResults
+            // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(37, 52, 90);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(37, 52, 90);
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvActivity.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvActivity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvActivity.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colActivityType,
-            this.colDescription,
-            this.colUser,
-            this.colDate});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(127, 178, 255);
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(16, 25, 43);
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvActivity.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvActivity.EnableHeadersVisualStyles = false;
-            this.dgvActivity.GridColor = System.Drawing.Color.FromArgb(46, 63, 102);
-            this.dgvActivity.Location = new System.Drawing.Point(20, 55);
-            this.dgvActivity.MultiSelect = false;
-            this.dgvActivity.Name = "dgvActivity";
-            this.dgvActivity.ReadOnly = true;
-            this.dgvActivity.RowHeadersVisible = false;
-            this.dgvActivity.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvActivity.Size = new System.Drawing.Size(760, 455);
-            this.dgvActivity.TabIndex = 2;
+            this.dgvResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
+            this.colName,
+            this.colDetails});
+            this.dgvResults.AllowUserToAddRows = false;
+            this.dgvResults.AllowUserToDeleteRows = false;
+            this.dgvResults.AllowUserToResizeRows = false;
+            this.dgvResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResults.BackgroundColor = System.Drawing.Color.FromArgb(16, 25, 43);
+            this.dgvResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResults.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvResults.EnableHeadersVisualStyles = false;
+            this.dgvResults.GridColor = System.Drawing.Color.FromArgb(46, 63, 102);
+            this.dgvResults.Location = new System.Drawing.Point(20, 55);
+            this.dgvResults.MultiSelect = false;
+            this.dgvResults.Name = "dgvResults";
+            this.dgvResults.ReadOnly = true;
+            this.dgvResults.RowHeadersVisible = false;
+            this.dgvResults.RowTemplate.Height = 25;
+            this.dgvResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvResults.Size = new System.Drawing.Size(760, 455);
+            this.dgvResults.TabIndex = 3;
+            // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.MinimumWidth = 6;
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Name";
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colDetails
+            // 
+            this.colDetails.HeaderText = "Details";
+            this.colDetails.MinimumWidth = 6;
+            this.colDetails.Name = "colDetails";
+            this.colDetails.ReadOnly = true;
             // 
             // lblFooter
             // 
-            this.lblFooter.AutoSize = false;
+            this.lblFooter.AutoSize = true;
             this.lblFooter.ForeColor = System.Drawing.Color.FromArgb(154, 168, 199);
             this.lblFooter.Location = new System.Drawing.Point(20, 525);
             this.lblFooter.Name = "lblFooter";
             this.lblFooter.Size = new System.Drawing.Size(500, 15);
-            this.lblFooter.TabIndex = 3;
-            this.lblFooter.Text = "Displaying last 50 activities.";
+            this.lblFooter.TabIndex = 6;
+            this.lblFooter.Text = "Search results will appear here.";
             // 
             // lblStatus
             // 
@@ -365,40 +410,9 @@
             this.lblStatus.Location = new System.Drawing.Point(600, 525);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(180, 15);
-            this.lblStatus.TabIndex = 4;
+            this.lblStatus.TabIndex = 7;
             this.lblStatus.Text = "Status: Ready.";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // colActivityType
-            // 
-            this.colActivityType.DataPropertyName = "ActivityType";
-            this.colActivityType.HeaderText = "Activity Type";
-            this.colActivityType.Name = "colActivityType";
-            this.colActivityType.ReadOnly = true;
-            // 
-            // colDescription
-            // 
-            this.colDescription.DataPropertyName = "Description";
-            this.colDescription.HeaderText = "Description";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.ReadOnly = true;
-            // 
-            // colUser
-            // 
-            this.colUser.DataPropertyName = "UserName";
-            this.colUser.HeaderText = "User";
-            this.colUser.Name = "colUser";
-            this.colUser.ReadOnly = true;
-            // 
-            // colDate
-            // 
-            this.colDate.DataPropertyName = "ActivityDate";
-            dataGridViewCellStyle3.Format = "g";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colDate.HeaderText = "Date & Time";
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -406,23 +420,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(16, 25, 43);
             this.ClientSize = new System.Drawing.Size(1000, 620);
-            this.Controls.Add(this.pnlContent);
-            this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.pnlSidebar);
+            this.Controls.Add(this.pnlHeader);
+            this.Controls.Add(this.pnlContent);
             this.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABC Senior High - Enrollment System";
-            this.pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
+            this.pnlSidebar.ResumeLayout(false);
+            this.pnlSidebar.PerformLayout();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvActivity)).EndInit();
             this.ResumeLayout(false);
-
+            this.PerformLayout();
         }
 
         #endregion
@@ -445,13 +461,14 @@
         private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnExport;
-        private System.Windows.Forms.DataGridView dgvActivity;
+        private System.Windows.Forms.Label lblSearchIn;
+        private System.Windows.Forms.ComboBox cboSearchIn;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView dgvResults;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDetails;
         private System.Windows.Forms.Label lblFooter;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colActivityType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
     }
 }
