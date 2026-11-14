@@ -28,222 +28,207 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpSubject = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSubjectCode = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSubjectName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nudUnits = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboTeacher = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nudUnits)).BeginInit();
-            this.grpSubject.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            label1 = new Label();
+            txtSubjectCode = new TextBox();
+            label2 = new Label();
+            txtSubjectName = new TextBox();
+            label3 = new Label();
+            txtDescription = new TextBox();
+            label4 = new Label();
+            nudUnits = new NumericUpDown();
+            label5 = new Label();
+            cboTeacher = new ComboBox();
+            btnSave = new Button();
+            btnCancel = new Button();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudUnits).BeginInit();
+            SuspendLayout();
             // 
-            // grpSubject
+            // groupBox1
             // 
-            this.grpSubject.Controls.Add(this.label1);
-            this.grpSubject.Controls.Add(this.txtSubjectCode);
-            this.grpSubject.Controls.Add(this.label2);
-            this.grpSubject.Controls.Add(this.txtSubjectName);
-            this.grpSubject.Controls.Add(this.label3);
-            this.grpSubject.Controls.Add(this.txtDescription);
-            this.grpSubject.Controls.Add(this.label4);
-            this.grpSubject.Controls.Add(this.nudUnits);
-            this.grpSubject.Controls.Add(this.label5);
-            this.grpSubject.Controls.Add(this.cboTeacher);
-            this.grpSubject.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.grpSubject.ForeColor = System.Drawing.Color.FromArgb(242, 184, 75);
-            this.grpSubject.Location = new System.Drawing.Point(15, 15);
-            this.grpSubject.Name = "grpSubject";
-            this.grpSubject.Size = new System.Drawing.Size(370, 220);
-            this.grpSubject.TabIndex = 0;
-            this.grpSubject.TabStop = false;
-            this.grpSubject.Text = "Subject Details";
+            groupBox1.BackColor = Color.FromArgb(26, 38, 64);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(txtSubjectCode);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(txtSubjectName);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txtDescription);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(nudUnits);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(cboTeacher);
+            groupBox1.ForeColor = Color.FromArgb(242, 184, 75);
+            groupBox1.Location = new Point(15, 15);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(370, 220);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Subject Details";
             // 
             // label1
             // 
-            this.label1.AutoSize = false;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label1.Location = new System.Drawing.Point(10, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Subject Code";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label1.ForeColor = Color.FromArgb(232, 238, 252);
+            label1.Location = new Point(10, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 23);
+            label1.TabIndex = 5;
+            label1.Text = "Subject Code";
+            label1.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtSubjectCode
             // 
-            this.txtSubjectCode.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtSubjectCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSubjectCode.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtSubjectCode.Location = new System.Drawing.Point(120, 25);
-            this.txtSubjectCode.Name = "txtSubjectCode";
-            this.txtSubjectCode.Size = new System.Drawing.Size(235, 23);
-            this.txtSubjectCode.TabIndex = 0;
+            txtSubjectCode.BackColor = Color.FromArgb(34, 50, 83);
+            txtSubjectCode.BorderStyle = BorderStyle.FixedSingle;
+            txtSubjectCode.ForeColor = Color.FromArgb(232, 238, 252);
+            txtSubjectCode.Location = new Point(120, 25);
+            txtSubjectCode.Name = "txtSubjectCode";
+            txtSubjectCode.Size = new Size(235, 23);
+            txtSubjectCode.TabIndex = 0;
             // 
             // label2
             // 
-            this.label2.AutoSize = false;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label2.Location = new System.Drawing.Point(10, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Subject Name";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label2.ForeColor = Color.FromArgb(232, 238, 252);
+            label2.Location = new Point(10, 56);
+            label2.Name = "label2";
+            label2.Size = new Size(100, 23);
+            label2.TabIndex = 6;
+            label2.Text = "Subject Name";
+            label2.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtSubjectName
             // 
-            this.txtSubjectName.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtSubjectName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSubjectName.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtSubjectName.Location = new System.Drawing.Point(120, 53);
-            this.txtSubjectName.Name = "txtSubjectName";
-            this.txtSubjectName.Size = new System.Drawing.Size(235, 23);
-            this.txtSubjectName.TabIndex = 1;
+            txtSubjectName.BackColor = Color.FromArgb(34, 50, 83);
+            txtSubjectName.BorderStyle = BorderStyle.FixedSingle;
+            txtSubjectName.ForeColor = Color.FromArgb(232, 238, 252);
+            txtSubjectName.Location = new Point(120, 53);
+            txtSubjectName.Name = "txtSubjectName";
+            txtSubjectName.Size = new Size(235, 23);
+            txtSubjectName.TabIndex = 1;
             // 
             // label3
             // 
-            this.label3.AutoSize = false;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label3.Location = new System.Drawing.Point(10, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 23);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Description";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label3.ForeColor = Color.FromArgb(232, 238, 252);
+            label3.Location = new Point(10, 84);
+            label3.Name = "label3";
+            label3.Size = new Size(100, 23);
+            label3.TabIndex = 7;
+            label3.Text = "Description";
+            label3.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtDescription
             // 
-            this.txtDescription.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtDescription.Location = new System.Drawing.Point(120, 81);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(235, 60);
-            this.txtDescription.TabIndex = 2;
+            txtDescription.BackColor = Color.FromArgb(34, 50, 83);
+            txtDescription.BorderStyle = BorderStyle.FixedSingle;
+            txtDescription.ForeColor = Color.FromArgb(232, 238, 252);
+            txtDescription.Location = new Point(120, 81);
+            txtDescription.Multiline = true;
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(235, 60);
+            txtDescription.TabIndex = 2;
             // 
             // label4
             // 
-            this.label4.AutoSize = false;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label4.Location = new System.Drawing.Point(10, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Units";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label4.ForeColor = Color.FromArgb(232, 238, 252);
+            label4.Location = new Point(10, 152);
+            label4.Name = "label4";
+            label4.Size = new Size(100, 23);
+            label4.TabIndex = 8;
+            label4.Text = "Units";
+            label4.TextAlign = ContentAlignment.MiddleRight;
             // 
             // nudUnits
             // 
-            this.nudUnits.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.nudUnits.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.nudUnits.Location = new System.Drawing.Point(120, 149);
-            this.nudUnits.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.nudUnits.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudUnits.Name = "nudUnits";
-            this.nudUnits.Size = new System.Drawing.Size(80, 23);
-            this.nudUnits.TabIndex = 3;
-            this.nudUnits.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            nudUnits.BackColor = Color.FromArgb(34, 50, 83);
+            nudUnits.ForeColor = Color.FromArgb(232, 238, 252);
+            nudUnits.Location = new Point(120, 149);
+            nudUnits.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            nudUnits.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudUnits.Name = "nudUnits";
+            nudUnits.Size = new Size(80, 23);
+            nudUnits.TabIndex = 3;
+            nudUnits.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label5
             // 
-            this.label5.AutoSize = false;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label5.Location = new System.Drawing.Point(10, 180);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 23);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Teacher";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label5.ForeColor = Color.FromArgb(232, 238, 252);
+            label5.Location = new Point(10, 180);
+            label5.Name = "label5";
+            label5.Size = new Size(100, 23);
+            label5.TabIndex = 9;
+            label5.Text = "Teacher";
+            label5.TextAlign = ContentAlignment.MiddleRight;
             // 
             // cboTeacher
             // 
-            this.cboTeacher.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.cboTeacher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboTeacher.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.cboTeacher.FormattingEnabled = true;
-            this.cboTeacher.Location = new System.Drawing.Point(120, 177);
-            this.cboTeacher.Name = "cboTeacher";
-            this.cboTeacher.Size = new System.Drawing.Size(235, 23);
-            this.cboTeacher.TabIndex = 4;
+            cboTeacher.BackColor = Color.FromArgb(34, 50, 83);
+            cboTeacher.DisplayMember = "FullName";
+            cboTeacher.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboTeacher.FlatStyle = FlatStyle.Flat;
+            cboTeacher.ForeColor = Color.FromArgb(232, 238, 252);
+            cboTeacher.FormattingEnabled = true;
+            cboTeacher.Location = new Point(120, 177);
+            cboTeacher.Name = "cboTeacher";
+            cboTeacher.Size = new Size(235, 23);
+            cboTeacher.TabIndex = 4;
+            cboTeacher.ValueMember = "TeacherId";
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(242, 184, 75);
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.btnSave.Location = new System.Drawing.Point(215, 250);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 30);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            btnSave.BackColor = Color.FromArgb(242, 184, 75);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.ForeColor = Color.FromArgb(16, 25, 43);
+            btnSave.Location = new Point(215, 250);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(80, 30);
+            btnSave.TabIndex = 5;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(46, 63, 102);
-            this.btnCancel.FlatAppearance.BorderSize = 1;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnCancel.Location = new System.Drawing.Point(305, 250);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 30);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.BackColor = Color.FromArgb(26, 38, 64);
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.ForeColor = Color.FromArgb(232, 238, 252);
+            btnCancel.Location = new Point(305, 250);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(80, 30);
+            btnCancel.TabIndex = 6;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // SubjectDetailsForm
             // 
-            this.AcceptButton = this.btnSave;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(400, 295);
-            this.Controls.Add(this.grpSubject);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-            this.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "SubjectDetailsForm";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Subject Details";
-            ((System.ComponentModel.ISupportInitialize)(this.nudUnits)).EndInit();
-            this.grpSubject.ResumeLayout(false);
-            this.grpSubject.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AcceptButton = btnSave;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(16, 25, 43);
+            CancelButton = btnCancel;
+            ClientSize = new Size(400, 295);
+            Controls.Add(groupBox1);
+            Controls.Add(btnSave);
+            Controls.Add(btnCancel);
+            ForeColor = Color.FromArgb(232, 238, 252);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "SubjectDetailsForm";
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Subject Details";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudUnits).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpSubject;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSubjectCode;
         private System.Windows.Forms.Label label2;

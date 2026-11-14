@@ -29,16 +29,16 @@ namespace ABCEnrollmentSystem
         public List<Student> Search(string keyword) //3
         {
             string sql =
-                "Select * Students Where " +
-                "StudentId LIKE @k OR FirstName LIKE @k OR MiddleName LIKE @k OR LastName LIKE @k" +
+                "SELECT * FROM Students WHERE " +
+                "StudentId LIKE @k OR FirstName LIKE @k OR MiddleName LIKE @k OR LastName LIKE @k " +
                 "OR (FirstName + ' ' + LastName) LIKE @k " +
                 "OR (FirstName + ' ' + MiddleName + ' ' + LastName) LIKE @k " +
+                "OR (LastName + ', ' + FirstName) LIKE @k " +
                 "ORDER BY LastName, FirstName";
 
             return ToList(Database.GetTable(sql, "%" + keyword + "%"));
-
         }
-        
+
         public void Add(Student s)
         {
             string sql =
@@ -49,9 +49,9 @@ namespace ABCEnrollmentSystem
                 "@Municipality, @Province, @ZipCode, @DateOfBirth, @Gender, @Mobile, @Landline, @Email, " +
                 "@GuardianName, @GuardianAddress, @GuardianMobile, @GuardianLandline)";
 
-            if(GetByID(s.StudentID) != null)
+            if(GetByID(s.StudentId) != null)
             {
-                throw new DuplicateRecordException($"Student ID {s.StudentID} already exists.");
+                throw new DuplicateRecordException($"Student ID {s.StudentId} already exists.");
             }
             Database.Execute(sql, ToValues(s));
         }
@@ -69,7 +69,7 @@ namespace ABCEnrollmentSystem
             int rows = Database.Execute(sql, ToValues(s));
             if (rows == 0)
             {
-                throw new RecordNotFoundException($"Student ID {s.StudentID} not found.");
+                throw new RecordNotFoundException($"Student ID {s.StudentId} not found.");
             }
         }
 
@@ -90,7 +90,7 @@ namespace ABCEnrollmentSystem
         private Dictionary<string, object> ToValues(Student s)
         {
             Dictionary<string, object> values = new Dictionary<string, object>();
-            values["@StudentId"] = s.StudentID;
+            values["@StudentId"] = s.StudentId;
             values["@FirstName"] = s.FirstName;
             values["@MiddleName"] = s.MiddleName;
             values["@LastName"] = s.LastName;
@@ -117,7 +117,7 @@ namespace ABCEnrollmentSystem
             foreach (DataRow row in table.Rows)
             {
                 Student s = new Student();
-                s.StudentID = row["StudentId"].ToString();
+                s.StudentId = row["StudentId"].ToString();
                 s.FirstName = row["FirstName"].ToString();
                 s.MiddleName = row["MiddleName"].ToString();
                 s.LastName = row["LastName"].ToString();

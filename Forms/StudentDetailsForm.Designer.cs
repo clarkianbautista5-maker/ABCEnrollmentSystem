@@ -28,552 +28,532 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpStudent = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtStudentId = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMiddleName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtHouseNo = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtStreet = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtMunicipality = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtProvince = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtZipCode = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cboGender = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtMobile = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtLandline = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.grpGuardian = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtGuardianName = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtGuardianAddress = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtGuardianMobile = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtGuardianLandline = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.grpStudent.SuspendLayout();
-            this.grpGuardian.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            label1 = new Label();
+            txtStudentId = new TextBox();
+            label2 = new Label();
+            txtFirstName = new TextBox();
+            label3 = new Label();
+            txtMiddleName = new TextBox();
+            label4 = new Label();
+            txtLastName = new TextBox();
+            label5 = new Label();
+            txtHouseNo = new TextBox();
+            label6 = new Label();
+            txtStreet = new TextBox();
+            label7 = new Label();
+            txtMunicipality = new TextBox();
+            label8 = new Label();
+            txtProvince = new TextBox();
+            label9 = new Label();
+            txtZipCode = new TextBox();
+            label10 = new Label();
+            dtpBirthDate = new DateTimePicker();
+            label11 = new Label();
+            cboGender = new ComboBox();
+            label12 = new Label();
+            txtMobile = new TextBox();
+            label13 = new Label();
+            txtLandline = new TextBox();
+            label14 = new Label();
+            txtEmail = new TextBox();
+            groupBox2 = new GroupBox();
+            label15 = new Label();
+            txtGuardianName = new TextBox();
+            label16 = new Label();
+            txtGuardianAddress = new TextBox();
+            label17 = new Label();
+            txtGuardianMobile = new TextBox();
+            label18 = new Label();
+            txtGuardianLandline = new TextBox();
+            btnSave = new Button();
+            btnCancel = new Button();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            SuspendLayout();
             // 
-            // grpStudent
+            // groupBox1
             // 
-            this.grpStudent.Controls.Add(this.label1);
-            this.grpStudent.Controls.Add(this.txtStudentId);
-            this.grpStudent.Controls.Add(this.label2);
-            this.grpStudent.Controls.Add(this.txtFirstName);
-            this.grpStudent.Controls.Add(this.label3);
-            this.grpStudent.Controls.Add(this.txtMiddleName);
-            this.grpStudent.Controls.Add(this.label4);
-            this.grpStudent.Controls.Add(this.txtLastName);
-            this.grpStudent.Controls.Add(this.label5);
-            this.grpStudent.Controls.Add(this.txtHouseNo);
-            this.grpStudent.Controls.Add(this.label6);
-            this.grpStudent.Controls.Add(this.txtStreet);
-            this.grpStudent.Controls.Add(this.label7);
-            this.grpStudent.Controls.Add(this.txtMunicipality);
-            this.grpStudent.Controls.Add(this.label8);
-            this.grpStudent.Controls.Add(this.txtProvince);
-            this.grpStudent.Controls.Add(this.label9);
-            this.grpStudent.Controls.Add(this.txtZipCode);
-            this.grpStudent.Controls.Add(this.label10);
-            this.grpStudent.Controls.Add(this.dtpBirthDate);
-            this.grpStudent.Controls.Add(this.label11);
-            this.grpStudent.Controls.Add(this.cboGender);
-            this.grpStudent.Controls.Add(this.label12);
-            this.grpStudent.Controls.Add(this.txtMobile);
-            this.grpStudent.Controls.Add(this.label13);
-            this.grpStudent.Controls.Add(this.txtLandline);
-            this.grpStudent.Controls.Add(this.label14);
-            this.grpStudent.Controls.Add(this.txtEmail);
-            this.grpStudent.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.grpStudent.ForeColor = System.Drawing.Color.FromArgb(242, 184, 75);
-            this.grpStudent.Location = new System.Drawing.Point(15, 15);
-            this.grpStudent.Name = "grpStudent";
-            this.grpStudent.Size = new System.Drawing.Size(380, 430);
-            this.grpStudent.TabIndex = 0;
-            this.grpStudent.TabStop = false;
-            this.grpStudent.Text = "Student Profile Details";
+            groupBox1.BackColor = Color.FromArgb(26, 38, 64);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(txtStudentId);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(txtFirstName);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txtMiddleName);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(txtLastName);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(txtHouseNo);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(txtStreet);
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(txtMunicipality);
+            groupBox1.Controls.Add(label8);
+            groupBox1.Controls.Add(txtProvince);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(txtZipCode);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(dtpBirthDate);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(cboGender);
+            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(txtMobile);
+            groupBox1.Controls.Add(label13);
+            groupBox1.Controls.Add(txtLandline);
+            groupBox1.Controls.Add(label14);
+            groupBox1.Controls.Add(txtEmail);
+            groupBox1.ForeColor = Color.FromArgb(242, 184, 75);
+            groupBox1.Location = new Point(15, 15);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(380, 430);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Student Profile Details";
             // 
             // label1
             // 
-            this.label1.AutoSize = false;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label1.Location = new System.Drawing.Point(10, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 23);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Student ID";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label1.ForeColor = Color.FromArgb(232, 238, 252);
+            label1.Location = new Point(10, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(125, 23);
+            label1.TabIndex = 14;
+            label1.Text = "Student ID";
+            label1.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtStudentId
             // 
-            this.txtStudentId.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtStudentId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStudentId.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtStudentId.Location = new System.Drawing.Point(140, 25);
-            this.txtStudentId.Name = "txtStudentId";
-            this.txtStudentId.ReadOnly = true;
-            this.txtStudentId.Size = new System.Drawing.Size(225, 23);
-            this.txtStudentId.TabIndex = 0;
+            txtStudentId.BackColor = Color.FromArgb(34, 50, 83);
+            txtStudentId.BorderStyle = BorderStyle.FixedSingle;
+            txtStudentId.ForeColor = Color.FromArgb(232, 238, 252);
+            txtStudentId.Location = new Point(140, 25);
+            txtStudentId.Name = "txtStudentId";
+            txtStudentId.ReadOnly = true;
+            txtStudentId.Size = new Size(225, 23);
+            txtStudentId.TabIndex = 0;
             // 
             // label2
             // 
-            this.label2.AutoSize = false;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label2.Location = new System.Drawing.Point(10, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 23);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "First Name";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label2.ForeColor = Color.FromArgb(232, 238, 252);
+            label2.Location = new Point(10, 56);
+            label2.Name = "label2";
+            label2.Size = new Size(125, 23);
+            label2.TabIndex = 15;
+            label2.Text = "First Name";
+            label2.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtFirstName
             // 
-            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFirstName.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtFirstName.Location = new System.Drawing.Point(140, 53);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(225, 23);
-            this.txtFirstName.TabIndex = 1;
+            txtFirstName.BackColor = Color.FromArgb(34, 50, 83);
+            txtFirstName.BorderStyle = BorderStyle.FixedSingle;
+            txtFirstName.ForeColor = Color.FromArgb(232, 238, 252);
+            txtFirstName.Location = new Point(140, 53);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(225, 23);
+            txtFirstName.TabIndex = 1;
             // 
             // label3
             // 
-            this.label3.AutoSize = false;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label3.Location = new System.Drawing.Point(10, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 23);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Middle Name";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label3.ForeColor = Color.FromArgb(232, 238, 252);
+            label3.Location = new Point(10, 84);
+            label3.Name = "label3";
+            label3.Size = new Size(125, 23);
+            label3.TabIndex = 16;
+            label3.Text = "Middle Name";
+            label3.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtMiddleName
             // 
-            this.txtMiddleName.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMiddleName.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtMiddleName.Location = new System.Drawing.Point(140, 81);
-            this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(225, 23);
-            this.txtMiddleName.TabIndex = 2;
+            txtMiddleName.BackColor = Color.FromArgb(34, 50, 83);
+            txtMiddleName.BorderStyle = BorderStyle.FixedSingle;
+            txtMiddleName.ForeColor = Color.FromArgb(232, 238, 252);
+            txtMiddleName.Location = new Point(140, 81);
+            txtMiddleName.Name = "txtMiddleName";
+            txtMiddleName.Size = new Size(225, 23);
+            txtMiddleName.TabIndex = 2;
             // 
             // label4
             // 
-            this.label4.AutoSize = false;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label4.Location = new System.Drawing.Point(10, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 23);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Last Name";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label4.ForeColor = Color.FromArgb(232, 238, 252);
+            label4.Location = new Point(10, 112);
+            label4.Name = "label4";
+            label4.Size = new Size(125, 23);
+            label4.TabIndex = 17;
+            label4.Text = "Last Name";
+            label4.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtLastName
             // 
-            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLastName.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtLastName.Location = new System.Drawing.Point(140, 109);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(225, 23);
-            this.txtLastName.TabIndex = 3;
+            txtLastName.BackColor = Color.FromArgb(34, 50, 83);
+            txtLastName.BorderStyle = BorderStyle.FixedSingle;
+            txtLastName.ForeColor = Color.FromArgb(232, 238, 252);
+            txtLastName.Location = new Point(140, 109);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(225, 23);
+            txtLastName.TabIndex = 3;
             // 
             // label5
             // 
-            this.label5.AutoSize = false;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label5.Location = new System.Drawing.Point(10, 140);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 23);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "House No.";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label5.ForeColor = Color.FromArgb(232, 238, 252);
+            label5.Location = new Point(10, 140);
+            label5.Name = "label5";
+            label5.Size = new Size(125, 23);
+            label5.TabIndex = 18;
+            label5.Text = "House No.";
+            label5.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtHouseNo
             // 
-            this.txtHouseNo.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtHouseNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHouseNo.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtHouseNo.Location = new System.Drawing.Point(140, 137);
-            this.txtHouseNo.Name = "txtHouseNo";
-            this.txtHouseNo.Size = new System.Drawing.Size(225, 23);
-            this.txtHouseNo.TabIndex = 4;
+            txtHouseNo.BackColor = Color.FromArgb(34, 50, 83);
+            txtHouseNo.BorderStyle = BorderStyle.FixedSingle;
+            txtHouseNo.ForeColor = Color.FromArgb(232, 238, 252);
+            txtHouseNo.Location = new Point(140, 137);
+            txtHouseNo.Name = "txtHouseNo";
+            txtHouseNo.Size = new Size(225, 23);
+            txtHouseNo.TabIndex = 4;
             // 
             // label6
             // 
-            this.label6.AutoSize = false;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label6.Location = new System.Drawing.Point(10, 168);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 23);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Street";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label6.ForeColor = Color.FromArgb(232, 238, 252);
+            label6.Location = new Point(10, 168);
+            label6.Name = "label6";
+            label6.Size = new Size(125, 23);
+            label6.TabIndex = 19;
+            label6.Text = "Street";
+            label6.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtStreet
             // 
-            this.txtStreet.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStreet.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtStreet.Location = new System.Drawing.Point(140, 165);
-            this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(225, 23);
-            this.txtStreet.TabIndex = 5;
+            txtStreet.BackColor = Color.FromArgb(34, 50, 83);
+            txtStreet.BorderStyle = BorderStyle.FixedSingle;
+            txtStreet.ForeColor = Color.FromArgb(232, 238, 252);
+            txtStreet.Location = new Point(140, 165);
+            txtStreet.Name = "txtStreet";
+            txtStreet.Size = new Size(225, 23);
+            txtStreet.TabIndex = 5;
             // 
             // label7
             // 
-            this.label7.AutoSize = false;
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label7.Location = new System.Drawing.Point(10, 196);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 23);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Municipality";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label7.ForeColor = Color.FromArgb(232, 238, 252);
+            label7.Location = new Point(10, 196);
+            label7.Name = "label7";
+            label7.Size = new Size(125, 23);
+            label7.TabIndex = 20;
+            label7.Text = "Municipality";
+            label7.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtMunicipality
             // 
-            this.txtMunicipality.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtMunicipality.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMunicipality.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtMunicipality.Location = new System.Drawing.Point(140, 193);
-            this.txtMunicipality.Name = "txtMunicipality";
-            this.txtMunicipality.Size = new System.Drawing.Size(225, 23);
-            this.txtMunicipality.TabIndex = 6;
+            txtMunicipality.BackColor = Color.FromArgb(34, 50, 83);
+            txtMunicipality.BorderStyle = BorderStyle.FixedSingle;
+            txtMunicipality.ForeColor = Color.FromArgb(232, 238, 252);
+            txtMunicipality.Location = new Point(140, 193);
+            txtMunicipality.Name = "txtMunicipality";
+            txtMunicipality.Size = new Size(225, 23);
+            txtMunicipality.TabIndex = 6;
             // 
             // label8
             // 
-            this.label8.AutoSize = false;
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label8.Location = new System.Drawing.Point(10, 224);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 23);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "City / Province";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label8.ForeColor = Color.FromArgb(232, 238, 252);
+            label8.Location = new Point(10, 224);
+            label8.Name = "label8";
+            label8.Size = new Size(125, 23);
+            label8.TabIndex = 21;
+            label8.Text = "City / Province";
+            label8.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtProvince
             // 
-            this.txtProvince.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtProvince.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtProvince.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtProvince.Location = new System.Drawing.Point(140, 221);
-            this.txtProvince.Name = "txtProvince";
-            this.txtProvince.Size = new System.Drawing.Size(225, 23);
-            this.txtProvince.TabIndex = 7;
+            txtProvince.BackColor = Color.FromArgb(34, 50, 83);
+            txtProvince.BorderStyle = BorderStyle.FixedSingle;
+            txtProvince.ForeColor = Color.FromArgb(232, 238, 252);
+            txtProvince.Location = new Point(140, 221);
+            txtProvince.Name = "txtProvince";
+            txtProvince.Size = new Size(225, 23);
+            txtProvince.TabIndex = 7;
             // 
             // label9
             // 
-            this.label9.AutoSize = false;
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label9.Location = new System.Drawing.Point(10, 252);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 23);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Zip Code";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label9.ForeColor = Color.FromArgb(232, 238, 252);
+            label9.Location = new Point(10, 252);
+            label9.Name = "label9";
+            label9.Size = new Size(125, 23);
+            label9.TabIndex = 22;
+            label9.Text = "Zip Code";
+            label9.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtZipCode
             // 
-            this.txtZipCode.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtZipCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtZipCode.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtZipCode.Location = new System.Drawing.Point(140, 249);
-            this.txtZipCode.MaxLength = 4;
-            this.txtZipCode.Name = "txtZipCode";
-            this.txtZipCode.Size = new System.Drawing.Size(225, 23);
-            this.txtZipCode.TabIndex = 8;
+            txtZipCode.BackColor = Color.FromArgb(34, 50, 83);
+            txtZipCode.BorderStyle = BorderStyle.FixedSingle;
+            txtZipCode.ForeColor = Color.FromArgb(232, 238, 252);
+            txtZipCode.Location = new Point(140, 249);
+            txtZipCode.MaxLength = 4;
+            txtZipCode.Name = "txtZipCode";
+            txtZipCode.Size = new Size(225, 23);
+            txtZipCode.TabIndex = 8;
             // 
             // label10
             // 
-            this.label10.AutoSize = false;
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label10.Location = new System.Drawing.Point(10, 280);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 23);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Date of Birth";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label10.ForeColor = Color.FromArgb(232, 238, 252);
+            label10.Location = new Point(10, 280);
+            label10.Name = "label10";
+            label10.Size = new Size(125, 23);
+            label10.TabIndex = 23;
+            label10.Text = "Date of Birth";
+            label10.TextAlign = ContentAlignment.MiddleRight;
             // 
             // dtpBirthDate
             // 
-            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirthDate.Location = new System.Drawing.Point(140, 277);
-            this.dtpBirthDate.Name = "dtpBirthDate";
-            this.dtpBirthDate.Size = new System.Drawing.Size(225, 23);
-            this.dtpBirthDate.TabIndex = 9;
-            this.dtpBirthDate.Value = new System.DateTime(2008, 1, 1, 0, 0, 0, 0);
+            dtpBirthDate.Format = DateTimePickerFormat.Short;
+            dtpBirthDate.Location = new Point(140, 277);
+            dtpBirthDate.Name = "dtpBirthDate";
+            dtpBirthDate.Size = new Size(225, 23);
+            dtpBirthDate.TabIndex = 9;
+            dtpBirthDate.Value = new DateTime(2008, 1, 1, 0, 0, 0, 0);
             // 
             // label11
             // 
-            this.label11.AutoSize = false;
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label11.Location = new System.Drawing.Point(10, 308);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(125, 23);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Gender";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label11.ForeColor = Color.FromArgb(232, 238, 252);
+            label11.Location = new Point(10, 308);
+            label11.Name = "label11";
+            label11.Size = new Size(125, 23);
+            label11.TabIndex = 24;
+            label11.Text = "Gender";
+            label11.TextAlign = ContentAlignment.MiddleRight;
             // 
             // cboGender
             // 
-            this.cboGender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.cboGender.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.cboGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboGender.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.cboGender.FormattingEnabled = true;
-            this.cboGender.Location = new System.Drawing.Point(140, 305);
-            this.cboGender.Name = "cboGender";
-            this.cboGender.Size = new System.Drawing.Size(225, 23);
-            this.cboGender.TabIndex = 10;
+            cboGender.BackColor = Color.FromArgb(34, 50, 83);
+            cboGender.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboGender.FlatStyle = FlatStyle.Flat;
+            cboGender.ForeColor = Color.FromArgb(232, 238, 252);
+            cboGender.FormattingEnabled = true;
+            cboGender.Items.AddRange(new object[] { "Male", "Female" });
+            cboGender.Location = new Point(140, 305);
+            cboGender.Name = "cboGender";
+            cboGender.Size = new Size(225, 23);
+            cboGender.TabIndex = 10;
             // 
             // label12
             // 
-            this.label12.AutoSize = false;
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label12.Location = new System.Drawing.Point(10, 336);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(125, 23);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "Mobile No.";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label12.ForeColor = Color.FromArgb(232, 238, 252);
+            label12.Location = new Point(10, 336);
+            label12.Name = "label12";
+            label12.Size = new Size(125, 23);
+            label12.TabIndex = 25;
+            label12.Text = "Mobile No.";
+            label12.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtMobile
             // 
-            this.txtMobile.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtMobile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMobile.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtMobile.Location = new System.Drawing.Point(140, 333);
-            this.txtMobile.MaxLength = 11;
-            this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(225, 23);
-            this.txtMobile.TabIndex = 11;
+            txtMobile.BackColor = Color.FromArgb(34, 50, 83);
+            txtMobile.BorderStyle = BorderStyle.FixedSingle;
+            txtMobile.ForeColor = Color.FromArgb(232, 238, 252);
+            txtMobile.Location = new Point(140, 333);
+            txtMobile.MaxLength = 11;
+            txtMobile.Name = "txtMobile";
+            txtMobile.Size = new Size(225, 23);
+            txtMobile.TabIndex = 11;
             // 
             // label13
             // 
-            this.label13.AutoSize = false;
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label13.Location = new System.Drawing.Point(10, 364);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(125, 23);
-            this.label13.TabIndex = 26;
-            this.label13.Text = "Landline No.";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label13.ForeColor = Color.FromArgb(232, 238, 252);
+            label13.Location = new Point(10, 364);
+            label13.Name = "label13";
+            label13.Size = new Size(125, 23);
+            label13.TabIndex = 26;
+            label13.Text = "Landline No.";
+            label13.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtLandline
             // 
-            this.txtLandline.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtLandline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLandline.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtLandline.Location = new System.Drawing.Point(140, 361);
-            this.txtLandline.Name = "txtLandline";
-            this.txtLandline.Size = new System.Drawing.Size(225, 23);
-            this.txtLandline.TabIndex = 12;
+            txtLandline.BackColor = Color.FromArgb(34, 50, 83);
+            txtLandline.BorderStyle = BorderStyle.FixedSingle;
+            txtLandline.ForeColor = Color.FromArgb(232, 238, 252);
+            txtLandline.Location = new Point(140, 361);
+            txtLandline.Name = "txtLandline";
+            txtLandline.Size = new Size(225, 23);
+            txtLandline.TabIndex = 12;
             // 
             // label14
             // 
-            this.label14.AutoSize = false;
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label14.Location = new System.Drawing.Point(10, 392);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(125, 23);
-            this.label14.TabIndex = 27;
-            this.label14.Text = "Email";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label14.ForeColor = Color.FromArgb(232, 238, 252);
+            label14.Location = new Point(10, 392);
+            label14.Name = "label14";
+            label14.Size = new Size(125, 23);
+            label14.TabIndex = 27;
+            label14.Text = "Email";
+            label14.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtEmail
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtEmail.Location = new System.Drawing.Point(140, 389);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(225, 23);
-            this.txtEmail.TabIndex = 13;
+            txtEmail.BackColor = Color.FromArgb(34, 50, 83);
+            txtEmail.BorderStyle = BorderStyle.FixedSingle;
+            txtEmail.ForeColor = Color.FromArgb(232, 238, 252);
+            txtEmail.Location = new Point(140, 389);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(225, 23);
+            txtEmail.TabIndex = 13;
             // 
-            // grpGuardian
+            // groupBox2
             // 
-            this.grpGuardian.Controls.Add(this.label15);
-            this.grpGuardian.Controls.Add(this.txtGuardianName);
-            this.grpGuardian.Controls.Add(this.label16);
-            this.grpGuardian.Controls.Add(this.txtGuardianAddress);
-            this.grpGuardian.Controls.Add(this.label17);
-            this.grpGuardian.Controls.Add(this.txtGuardianMobile);
-            this.grpGuardian.Controls.Add(this.label18);
-            this.grpGuardian.Controls.Add(this.txtGuardianLandline);
-            this.grpGuardian.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.grpGuardian.ForeColor = System.Drawing.Color.FromArgb(242, 184, 75);
-            this.grpGuardian.Location = new System.Drawing.Point(410, 15);
-            this.grpGuardian.Name = "grpGuardian";
-            this.grpGuardian.Size = new System.Drawing.Size(355, 150);
-            this.grpGuardian.TabIndex = 1;
-            this.grpGuardian.TabStop = false;
-            this.grpGuardian.Text = "Guardian Details";
+            groupBox2.BackColor = Color.FromArgb(26, 38, 64);
+            groupBox2.Controls.Add(label15);
+            groupBox2.Controls.Add(txtGuardianName);
+            groupBox2.Controls.Add(label16);
+            groupBox2.Controls.Add(txtGuardianAddress);
+            groupBox2.Controls.Add(label17);
+            groupBox2.Controls.Add(txtGuardianMobile);
+            groupBox2.Controls.Add(label18);
+            groupBox2.Controls.Add(txtGuardianLandline);
+            groupBox2.ForeColor = Color.FromArgb(242, 184, 75);
+            groupBox2.Location = new Point(410, 15);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(355, 150);
+            groupBox2.TabIndex = 1;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Guardian Details";
             // 
             // label15
             // 
-            this.label15.AutoSize = false;
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label15.Location = new System.Drawing.Point(10, 28);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(105, 23);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "Name";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label15.ForeColor = Color.FromArgb(232, 238, 252);
+            label15.Location = new Point(10, 28);
+            label15.Name = "label15";
+            label15.Size = new Size(105, 23);
+            label15.TabIndex = 18;
+            label15.Text = "Name";
+            label15.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtGuardianName
             // 
-            this.txtGuardianName.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtGuardianName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGuardianName.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtGuardianName.Location = new System.Drawing.Point(120, 25);
-            this.txtGuardianName.Name = "txtGuardianName";
-            this.txtGuardianName.Size = new System.Drawing.Size(215, 23);
-            this.txtGuardianName.TabIndex = 14;
+            txtGuardianName.BackColor = Color.FromArgb(34, 50, 83);
+            txtGuardianName.BorderStyle = BorderStyle.FixedSingle;
+            txtGuardianName.ForeColor = Color.FromArgb(232, 238, 252);
+            txtGuardianName.Location = new Point(120, 25);
+            txtGuardianName.Name = "txtGuardianName";
+            txtGuardianName.Size = new Size(215, 23);
+            txtGuardianName.TabIndex = 14;
             // 
             // label16
             // 
-            this.label16.AutoSize = false;
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label16.Location = new System.Drawing.Point(10, 56);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(105, 23);
-            this.label16.TabIndex = 19;
-            this.label16.Text = "Address";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label16.ForeColor = Color.FromArgb(232, 238, 252);
+            label16.Location = new Point(10, 56);
+            label16.Name = "label16";
+            label16.Size = new Size(105, 23);
+            label16.TabIndex = 19;
+            label16.Text = "Address";
+            label16.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtGuardianAddress
             // 
-            this.txtGuardianAddress.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtGuardianAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGuardianAddress.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtGuardianAddress.Location = new System.Drawing.Point(120, 53);
-            this.txtGuardianAddress.Name = "txtGuardianAddress";
-            this.txtGuardianAddress.Size = new System.Drawing.Size(215, 23);
-            this.txtGuardianAddress.TabIndex = 15;
+            txtGuardianAddress.BackColor = Color.FromArgb(34, 50, 83);
+            txtGuardianAddress.BorderStyle = BorderStyle.FixedSingle;
+            txtGuardianAddress.ForeColor = Color.FromArgb(232, 238, 252);
+            txtGuardianAddress.Location = new Point(120, 53);
+            txtGuardianAddress.Name = "txtGuardianAddress";
+            txtGuardianAddress.Size = new Size(215, 23);
+            txtGuardianAddress.TabIndex = 15;
             // 
             // label17
             // 
-            this.label17.AutoSize = false;
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label17.Location = new System.Drawing.Point(10, 84);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(105, 23);
-            this.label17.TabIndex = 20;
-            this.label17.Text = "Mobile No.";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label17.ForeColor = Color.FromArgb(232, 238, 252);
+            label17.Location = new Point(10, 84);
+            label17.Name = "label17";
+            label17.Size = new Size(105, 23);
+            label17.TabIndex = 20;
+            label17.Text = "Mobile No.";
+            label17.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtGuardianMobile
             // 
-            this.txtGuardianMobile.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtGuardianMobile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGuardianMobile.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtGuardianMobile.Location = new System.Drawing.Point(120, 81);
-            this.txtGuardianMobile.MaxLength = 11;
-            this.txtGuardianMobile.Name = "txtGuardianMobile";
-            this.txtGuardianMobile.Size = new System.Drawing.Size(215, 23);
-            this.txtGuardianMobile.TabIndex = 16;
+            txtGuardianMobile.BackColor = Color.FromArgb(34, 50, 83);
+            txtGuardianMobile.BorderStyle = BorderStyle.FixedSingle;
+            txtGuardianMobile.ForeColor = Color.FromArgb(232, 238, 252);
+            txtGuardianMobile.Location = new Point(120, 81);
+            txtGuardianMobile.MaxLength = 11;
+            txtGuardianMobile.Name = "txtGuardianMobile";
+            txtGuardianMobile.Size = new Size(215, 23);
+            txtGuardianMobile.TabIndex = 16;
             // 
             // label18
             // 
-            this.label18.AutoSize = false;
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label18.Location = new System.Drawing.Point(10, 112);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(105, 23);
-            this.label18.TabIndex = 21;
-            this.label18.Text = "Landline No.";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label18.ForeColor = Color.FromArgb(232, 238, 252);
+            label18.Location = new Point(10, 112);
+            label18.Name = "label18";
+            label18.Size = new Size(105, 23);
+            label18.TabIndex = 21;
+            label18.Text = "Landline No.";
+            label18.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtGuardianLandline
             // 
-            this.txtGuardianLandline.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtGuardianLandline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGuardianLandline.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtGuardianLandline.Location = new System.Drawing.Point(120, 109);
-            this.txtGuardianLandline.Name = "txtGuardianLandline";
-            this.txtGuardianLandline.Size = new System.Drawing.Size(215, 23);
-            this.txtGuardianLandline.TabIndex = 17;
+            txtGuardianLandline.BackColor = Color.FromArgb(34, 50, 83);
+            txtGuardianLandline.BorderStyle = BorderStyle.FixedSingle;
+            txtGuardianLandline.ForeColor = Color.FromArgb(232, 238, 252);
+            txtGuardianLandline.Location = new Point(120, 109);
+            txtGuardianLandline.Name = "txtGuardianLandline";
+            txtGuardianLandline.Size = new Size(215, 23);
+            txtGuardianLandline.TabIndex = 17;
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(242, 184, 75);
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.btnSave.Location = new System.Drawing.Point(595, 460);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 30);
-            this.btnSave.TabIndex = 18;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            btnSave.BackColor = Color.FromArgb(242, 184, 75);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.ForeColor = Color.FromArgb(16, 25, 43);
+            btnSave.Location = new Point(595, 460);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(80, 30);
+            btnSave.TabIndex = 18;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(46, 63, 102);
-            this.btnCancel.FlatAppearance.BorderSize = 1;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnCancel.Location = new System.Drawing.Point(685, 460);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 30);
-            this.btnCancel.TabIndex = 19;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.BackColor = Color.FromArgb(26, 38, 64);
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.ForeColor = Color.FromArgb(232, 238, 252);
+            btnCancel.Location = new Point(685, 460);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(80, 30);
+            btnCancel.TabIndex = 19;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // StudentDetailsForm
             // 
-            this.AcceptButton = this.btnSave;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(780, 510);
-            this.Controls.Add(this.grpStudent);
-            this.Controls.Add(this.grpGuardian);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-            this.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "StudentDetailsForm";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Student Details";
-            this.grpStudent.ResumeLayout(false);
-            this.grpStudent.PerformLayout();
-            this.grpGuardian.ResumeLayout(false);
-            this.grpGuardian.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AcceptButton = btnSave;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(16, 25, 43);
+            CancelButton = btnCancel;
+            ClientSize = new Size(780, 510);
+            Controls.Add(groupBox1);
+            Controls.Add(groupBox2);
+            Controls.Add(btnSave);
+            Controls.Add(btnCancel);
+            ForeColor = Color.FromArgb(232, 238, 252);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "StudentDetailsForm";
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Student Details";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpStudent;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtStudentId;
         private System.Windows.Forms.Label label2;
@@ -602,7 +582,7 @@
         private System.Windows.Forms.TextBox txtLandline;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.GroupBox grpGuardian;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtGuardianName;
         private System.Windows.Forms.Label label16;

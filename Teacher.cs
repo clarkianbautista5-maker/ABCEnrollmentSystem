@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ABCEnrollmentSystem
 {
-    internal class Teacher
+    public class Teacher
     {
         public string TeacherId { get; set; }
         public string FirstName { get; set; }

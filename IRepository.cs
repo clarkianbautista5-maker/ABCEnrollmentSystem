@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ABCEnrollmentSystem
 {
-    internal interface IRepository<T>//G
+    public interface IRepository<T>//G
     {
         List<T> GetAll(); //GetAll record  #1
         T GetByID(string id);  //GetOne record  #2

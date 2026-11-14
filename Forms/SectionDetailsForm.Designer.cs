@@ -28,154 +28,151 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpSection = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSectionCode = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtSectionName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.grpSection.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            label1 = new Label();
+            txtSectionCode = new TextBox();
+            label2 = new Label();
+            txtSectionName = new TextBox();
+            label3 = new Label();
+            txtDescription = new TextBox();
+            btnSave = new Button();
+            btnCancel = new Button();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
-            // grpSection
+            // groupBox1
             // 
-            this.grpSection.Controls.Add(this.label1);
-            this.grpSection.Controls.Add(this.txtSectionCode);
-            this.grpSection.Controls.Add(this.label2);
-            this.grpSection.Controls.Add(this.txtSectionName);
-            this.grpSection.Controls.Add(this.label3);
-            this.grpSection.Controls.Add(this.txtDescription);
-            this.grpSection.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.grpSection.ForeColor = System.Drawing.Color.FromArgb(242, 184, 75);
-            this.grpSection.Location = new System.Drawing.Point(15, 15);
-            this.grpSection.Name = "grpSection";
-            this.grpSection.Size = new System.Drawing.Size(370, 160);
-            this.grpSection.TabIndex = 0;
-            this.grpSection.TabStop = false;
-            this.grpSection.Text = "Section Details";
+            groupBox1.BackColor = Color.FromArgb(26, 38, 64);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(txtSectionCode);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(txtSectionName);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txtDescription);
+            groupBox1.ForeColor = Color.FromArgb(242, 184, 75);
+            groupBox1.Location = new Point(15, 15);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(370, 160);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Section Details";
             // 
             // label1
             // 
-            this.label1.AutoSize = false;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label1.Location = new System.Drawing.Point(10, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Section Code";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label1.ForeColor = Color.FromArgb(232, 238, 252);
+            label1.Location = new Point(10, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 23);
+            label1.TabIndex = 3;
+            label1.Text = "Section Code";
+            label1.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtSectionCode
             // 
-            this.txtSectionCode.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtSectionCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSectionCode.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtSectionCode.Location = new System.Drawing.Point(120, 25);
-            this.txtSectionCode.Name = "txtSectionCode";
-            this.txtSectionCode.Size = new System.Drawing.Size(235, 23);
-            this.txtSectionCode.TabIndex = 0;
+            txtSectionCode.BackColor = Color.FromArgb(34, 50, 83);
+            txtSectionCode.BorderStyle = BorderStyle.FixedSingle;
+            txtSectionCode.ForeColor = Color.FromArgb(232, 238, 252);
+            txtSectionCode.Location = new Point(120, 25);
+            txtSectionCode.Name = "txtSectionCode";
+            txtSectionCode.Size = new Size(235, 23);
+            txtSectionCode.TabIndex = 0;
             // 
             // label2
             // 
-            this.label2.AutoSize = false;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label2.Location = new System.Drawing.Point(10, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Section Name";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label2.ForeColor = Color.FromArgb(232, 238, 252);
+            label2.Location = new Point(10, 56);
+            label2.Name = "label2";
+            label2.Size = new Size(100, 23);
+            label2.TabIndex = 4;
+            label2.Text = "Section Name";
+            label2.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtSectionName
             // 
-            this.txtSectionName.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtSectionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSectionName.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtSectionName.Location = new System.Drawing.Point(120, 53);
-            this.txtSectionName.Name = "txtSectionName";
-            this.txtSectionName.Size = new System.Drawing.Size(235, 23);
-            this.txtSectionName.TabIndex = 1;
+            txtSectionName.BackColor = Color.FromArgb(34, 50, 83);
+            txtSectionName.BorderStyle = BorderStyle.FixedSingle;
+            txtSectionName.ForeColor = Color.FromArgb(232, 238, 252);
+            txtSectionName.Location = new Point(120, 53);
+            txtSectionName.Name = "txtSectionName";
+            txtSectionName.Size = new Size(235, 23);
+            txtSectionName.TabIndex = 1;
             // 
             // label3
             // 
-            this.label3.AutoSize = false;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.label3.Location = new System.Drawing.Point(10, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 23);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Description";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label3.ForeColor = Color.FromArgb(232, 238, 252);
+            label3.Location = new Point(10, 84);
+            label3.Name = "label3";
+            label3.Size = new Size(100, 23);
+            label3.TabIndex = 5;
+            label3.Text = "Description";
+            label3.TextAlign = ContentAlignment.MiddleRight;
             // 
             // txtDescription
             // 
-            this.txtDescription.BackColor = System.Drawing.Color.FromArgb(34, 50, 83);
-            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.txtDescription.Location = new System.Drawing.Point(120, 81);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(235, 60);
-            this.txtDescription.TabIndex = 2;
+            txtDescription.BackColor = Color.FromArgb(34, 50, 83);
+            txtDescription.BorderStyle = BorderStyle.FixedSingle;
+            txtDescription.ForeColor = Color.FromArgb(232, 238, 252);
+            txtDescription.Location = new Point(120, 81);
+            txtDescription.Multiline = true;
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(235, 60);
+            txtDescription.TabIndex = 2;
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(242, 184, 75);
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.btnSave.Location = new System.Drawing.Point(215, 190);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 30);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            btnSave.BackColor = Color.FromArgb(242, 184, 75);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.ForeColor = Color.FromArgb(16, 25, 43);
+            btnSave.Location = new Point(215, 190);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(80, 30);
+            btnSave.TabIndex = 3;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(26, 38, 64);
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(46, 63, 102);
-            this.btnCancel.FlatAppearance.BorderSize = 1;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.btnCancel.Location = new System.Drawing.Point(305, 190);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 30);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.BackColor = Color.FromArgb(26, 38, 64);
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.ForeColor = Color.FromArgb(232, 238, 252);
+            btnCancel.Location = new Point(305, 190);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(80, 30);
+            btnCancel.TabIndex = 4;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // SectionDetailsForm
             // 
-            this.AcceptButton = this.btnSave;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(16, 25, 43);
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(400, 235);
-            this.Controls.Add(this.grpSection);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-            this.ForeColor = System.Drawing.Color.FromArgb(232, 238, 252);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "SectionDetailsForm";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Section Details";
-            this.grpSection.ResumeLayout(false);
-            this.grpSection.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AcceptButton = btnSave;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(16, 25, 43);
+            CancelButton = btnCancel;
+            ClientSize = new Size(400, 235);
+            Controls.Add(groupBox1);
+            Controls.Add(btnSave);
+            Controls.Add(btnCancel);
+            ForeColor = Color.FromArgb(232, 238, 252);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "SectionDetailsForm";
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Section Details";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpSection;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSectionCode;
         private System.Windows.Forms.Label label2;

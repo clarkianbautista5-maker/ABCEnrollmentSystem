@@ -71,56 +71,9 @@ namespace ABCEnrollmentSystem
             }
         }
 
-        public Dictionary<string, List<string>> GetClassListPerSection(EnrollmentFilter filter)
-        {
-            try
-            {
-                //Getall students
-                Dictionary<string, Student> studentById = new Dictionary<string, Student>();
-                foreach (Student s in _students.GetAll())
-                {
-                    studentById[s.StudentID] = s;
-                }
-
-                //Getall sections
-                Dictionary<string, Section> sectionByCode = new Dictionary<string, Section>();
-                foreach (Section sec in _sections.GetAll())
-                {
-                    sectionByCode[sec.SectionCode] = sec;
-                }
-
-                // Each section has a list for student
-                Dictionary<string, List<string>> report = new Dictionary<string, List<string>>();
-                foreach (Section sec in _sections.GetAll())
-                {
-                    report[sec.SectionCode + " - " + sec.SectionName] = new List<string>();
-                }
-
-                //Does through enrollment record to add it in its correspanding list
-                foreach(EnrollmentRecord e in _enrollments.GetAll())
-                {
-                    if (filter != null && !filter(e))
-                    {
-                        continue;
-                    }
-                    string key = e.SectionCode + " - " + sectionByCode[e.SectionCode].SectionName;
-                    string studentName = studentById[e.StudentID].FullName;
-                    if (!report[key].Contains(studentName))
-                    {
-                        report[key].Add(studentName);
-                    }
-                }
-                return report;
-            }
-            catch (Exception ex)
-            {
-                throw new InvalidOperationException("Could not create the class list per section report: " + ex.Message);
-            }
-        }
 
         //to do:
-        //create report for class list per subject
-        //report for teacher
+        //create report
     }
         
 }   

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ABCEnrollmentSystem
 {
-    internal class Subject
+    public class Subject
     {
         public string SubjectCode { get; set; }
         public string SubjectName { get; set; }
