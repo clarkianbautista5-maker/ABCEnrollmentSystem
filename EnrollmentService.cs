@@ -56,6 +56,8 @@ namespace ABCEnrollmentSystem
                 record.SectionCode = sectionCode;
                 record.SchoolYear = schoolYear;
 
+                _enrollments.add(record);
+
             }
             catch (RecordNotFoundException)
             {

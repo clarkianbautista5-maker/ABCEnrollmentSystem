@@ -9,8 +9,8 @@ namespace ABCEnrollmentSystem
     {
         public void add(EnrollmentRecord e)
         {
-            string sql = "INSERT INTO EnrollmentRecords (StudentID, SubjectCode, SectionCode, SchoolYear) " +
-                         "VALUES (@StudentID, @SubjectCode, @SectionCode, @SchoolYear)";
+            string sql = "INSERT INTO Enrollments (StudentID, SubjectCode, SectionCode, SchoolYear) " +
+             "VALUES (@StudentID, @SubjectCode, @SectionCode, @SchoolYear)";
 
             Dictionary<string, object> values = new Dictionary<string, object>();
             values["@StudentID"] = e.StudentID;
@@ -25,14 +25,14 @@ namespace ABCEnrollmentSystem
                     throw new DuplicateRecordException("Enrollment record already exists.");
                 }
             }
-
             Database.Execute(sql, values);
         }
+        
 
         public List<EnrollmentRecord> GetAll()
         {
-           
-            DataTable table = Database.GetTable("SELECT * FROM EnrollmentRecords ORDER BY EnrollmentID", null);
+
+            DataTable table = Database.GetTable("SELECT * FROM Enrollments ORDER BY EnrollmentID", null);
             List<EnrollmentRecord> list = new List<EnrollmentRecord>();
             
             foreach (DataRow row in table.Rows)

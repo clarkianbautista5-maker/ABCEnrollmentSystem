@@ -40,13 +40,26 @@
             DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             pnlBody = new Panel();
+            pnlDashboard = new Panel();
             pnlActivityLog = new Panel();
             dgvActivityLog = new DataGridView();
             btnActivityLogShowAll = new Button();
             btnActivityLogSearch = new Button();
             txtActivityLogSearch = new TextBox();
             lblActivityLogSearch = new Label();
+            pnlEnroll = new Panel();
+            label5 = new Label();
+            cboEnrollStudent = new ComboBox();
+            label6 = new Label();
+            cboEnrollSubject = new ComboBox();
+            label7 = new Label();
+            cboEnrollSection = new ComboBox();
+            label8 = new Label();
+            txtEnrollSchoolYear = new TextBox();
+            btnEnrollSave = new Button();
+            btnEnrollClose = new Button();
             pnlUserLog = new Panel();
             dgvUserLog = new DataGridView();
             btnUserLogShowAll = new Button();
@@ -64,7 +77,6 @@
             btnTeachersAdd = new Button();
             btnTeachersUpdate = new Button();
             btnTeachersDelete = new Button();
-            pnlDashboard = new Panel();
             pnlSubjects = new Panel();
             label2 = new Label();
             txtSubjectsSearch = new TextBox();
@@ -78,17 +90,6 @@
             btnSubjectsAdd = new Button();
             btnSubjectsUpdate = new Button();
             btnSubjectsDelete = new Button();
-            pnlEnroll = new Panel();
-            label5 = new Label();
-            cboEnrollStudent = new ComboBox();
-            label6 = new Label();
-            cboEnrollSubject = new ComboBox();
-            label7 = new Label();
-            cboEnrollSection = new ComboBox();
-            label8 = new Label();
-            txtEnrollSchoolYear = new TextBox();
-            btnEnrollSave = new Button();
-            btnEnrollClose = new Button();
             pnlSections = new Panel();
             label4 = new Label();
             txtSectionsSearch = new TextBox();
@@ -141,13 +142,13 @@
             pnlBody.SuspendLayout();
             pnlActivityLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvActivityLog).BeginInit();
+            pnlEnroll.SuspendLayout();
             pnlUserLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUserLog).BeginInit();
             pnlTeachers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTeachers).BeginInit();
             pnlSubjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSubjects).BeginInit();
-            pnlEnroll.SuspendLayout();
             pnlSections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSections).BeginInit();
             pnlStudents.SuspendLayout();
@@ -161,12 +162,12 @@
             // pnlBody
             // 
             pnlBody.BackColor = Color.FromArgb(16, 25, 43);
+            pnlBody.Controls.Add(pnlDashboard);
             pnlBody.Controls.Add(pnlActivityLog);
+            pnlBody.Controls.Add(pnlEnroll);
             pnlBody.Controls.Add(pnlUserLog);
             pnlBody.Controls.Add(pnlTeachers);
-            pnlBody.Controls.Add(pnlDashboard);
             pnlBody.Controls.Add(pnlSubjects);
-            pnlBody.Controls.Add(pnlEnroll);
             pnlBody.Controls.Add(pnlSections);
             pnlBody.Controls.Add(pnlStudents);
             pnlBody.Controls.Add(pnlReports);
@@ -175,6 +176,15 @@
             pnlBody.Name = "pnlBody";
             pnlBody.Size = new Size(800, 560);
             pnlBody.TabIndex = 2;
+            // 
+            // pnlDashboard
+            // 
+            pnlDashboard.BackColor = Color.FromArgb(16, 25, 43);
+            pnlDashboard.Dock = DockStyle.Fill;
+            pnlDashboard.Location = new Point(0, 0);
+            pnlDashboard.Name = "pnlDashboard";
+            pnlDashboard.Size = new Size(800, 560);
+            pnlDashboard.TabIndex = 0;
             // 
             // pnlActivityLog
             // 
@@ -272,6 +282,143 @@
             lblActivityLogSearch.Size = new Size(186, 15);
             lblActivityLogSearch.TabIndex = 0;
             lblActivityLogSearch.Text = "Search by User, Action or Module:";
+            // 
+            // pnlEnroll
+            // 
+            pnlEnroll.BackColor = Color.FromArgb(16, 25, 43);
+            pnlEnroll.Controls.Add(label5);
+            pnlEnroll.Controls.Add(cboEnrollStudent);
+            pnlEnroll.Controls.Add(label6);
+            pnlEnroll.Controls.Add(cboEnrollSubject);
+            pnlEnroll.Controls.Add(label7);
+            pnlEnroll.Controls.Add(cboEnrollSection);
+            pnlEnroll.Controls.Add(label8);
+            pnlEnroll.Controls.Add(txtEnrollSchoolYear);
+            pnlEnroll.Controls.Add(btnEnrollSave);
+            pnlEnroll.Controls.Add(btnEnrollClose);
+            pnlEnroll.Dock = DockStyle.Fill;
+            pnlEnroll.Location = new Point(0, 0);
+            pnlEnroll.Name = "pnlEnroll";
+            pnlEnroll.Size = new Size(800, 560);
+            pnlEnroll.TabIndex = 5;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(15, 23);
+            label5.Name = "label5";
+            label5.Size = new Size(48, 15);
+            label5.TabIndex = 6;
+            label5.Text = "Student";
+            // 
+            // cboEnrollStudent
+            // 
+            cboEnrollStudent.BackColor = Color.FromArgb(34, 50, 83);
+            cboEnrollStudent.DisplayMember = "FullName";
+            cboEnrollStudent.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEnrollStudent.FlatStyle = FlatStyle.Flat;
+            cboEnrollStudent.ForeColor = Color.FromArgb(232, 238, 252);
+            cboEnrollStudent.FormattingEnabled = true;
+            cboEnrollStudent.Location = new Point(120, 20);
+            cboEnrollStudent.Name = "cboEnrollStudent";
+            cboEnrollStudent.Size = new Size(250, 23);
+            cboEnrollStudent.TabIndex = 0;
+            cboEnrollStudent.ValueMember = "StudentId";
+            cboEnrollStudent.SelectedIndexChanged += cboEnrollStudent_SelectedIndexChanged;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(15, 58);
+            label6.Name = "label6";
+            label6.Size = new Size(46, 15);
+            label6.TabIndex = 7;
+            label6.Text = "Subject";
+            // 
+            // cboEnrollSubject
+            // 
+            cboEnrollSubject.BackColor = Color.FromArgb(34, 50, 83);
+            cboEnrollSubject.DisplayMember = "SubjectName";
+            cboEnrollSubject.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEnrollSubject.FlatStyle = FlatStyle.Flat;
+            cboEnrollSubject.ForeColor = Color.FromArgb(232, 238, 252);
+            cboEnrollSubject.FormattingEnabled = true;
+            cboEnrollSubject.Location = new Point(120, 55);
+            cboEnrollSubject.Name = "cboEnrollSubject";
+            cboEnrollSubject.Size = new Size(250, 23);
+            cboEnrollSubject.TabIndex = 1;
+            cboEnrollSubject.ValueMember = "SubjectCode";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(15, 93);
+            label7.Name = "label7";
+            label7.Size = new Size(46, 15);
+            label7.TabIndex = 8;
+            label7.Text = "Section";
+            // 
+            // cboEnrollSection
+            // 
+            cboEnrollSection.BackColor = Color.FromArgb(34, 50, 83);
+            cboEnrollSection.DisplayMember = "SectionName";
+            cboEnrollSection.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEnrollSection.FlatStyle = FlatStyle.Flat;
+            cboEnrollSection.ForeColor = Color.FromArgb(232, 238, 252);
+            cboEnrollSection.FormattingEnabled = true;
+            cboEnrollSection.Location = new Point(120, 90);
+            cboEnrollSection.Name = "cboEnrollSection";
+            cboEnrollSection.Size = new Size(250, 23);
+            cboEnrollSection.TabIndex = 2;
+            cboEnrollSection.ValueMember = "SectionCode";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(15, 128);
+            label8.Name = "label8";
+            label8.Size = new Size(68, 15);
+            label8.TabIndex = 9;
+            label8.Text = "School Year";
+            // 
+            // txtEnrollSchoolYear
+            // 
+            txtEnrollSchoolYear.BackColor = Color.FromArgb(34, 50, 83);
+            txtEnrollSchoolYear.BorderStyle = BorderStyle.FixedSingle;
+            txtEnrollSchoolYear.ForeColor = Color.FromArgb(232, 238, 252);
+            txtEnrollSchoolYear.Location = new Point(120, 125);
+            txtEnrollSchoolYear.Name = "txtEnrollSchoolYear";
+            txtEnrollSchoolYear.Size = new Size(250, 23);
+            txtEnrollSchoolYear.TabIndex = 3;
+            txtEnrollSchoolYear.Text = "2026-2027";
+            // 
+            // btnEnrollSave
+            // 
+            btnEnrollSave.BackColor = Color.FromArgb(242, 184, 75);
+            btnEnrollSave.FlatAppearance.BorderSize = 0;
+            btnEnrollSave.FlatStyle = FlatStyle.Flat;
+            btnEnrollSave.ForeColor = Color.FromArgb(16, 25, 43);
+            btnEnrollSave.Location = new Point(120, 170);
+            btnEnrollSave.Name = "btnEnrollSave";
+            btnEnrollSave.Size = new Size(120, 32);
+            btnEnrollSave.TabIndex = 4;
+            btnEnrollSave.Text = "Enroll";
+            btnEnrollSave.UseVisualStyleBackColor = false;
+            btnEnrollSave.Click += btnEnrollSave_Click;
+            // 
+            // btnEnrollClose
+            // 
+            btnEnrollClose.BackColor = Color.FromArgb(26, 38, 64);
+            btnEnrollClose.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnEnrollClose.FlatStyle = FlatStyle.Flat;
+            btnEnrollClose.ForeColor = Color.FromArgb(232, 238, 252);
+            btnEnrollClose.Location = new Point(250, 170);
+            btnEnrollClose.Name = "btnEnrollClose";
+            btnEnrollClose.Size = new Size(120, 32);
+            btnEnrollClose.TabIndex = 5;
+            btnEnrollClose.Text = "Close";
+            btnEnrollClose.UseVisualStyleBackColor = false;
+            btnEnrollClose.Click += btnEnrollClose_Click;
             // 
             // pnlUserLog
             // 
@@ -390,7 +537,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(20, 19);
             label3.Name = "label3";
-            label3.Size = new Size(168, 15);
+            label3.Size = new Size(167, 15);
             label3.TabIndex = 7;
             label3.Text = "Search by Teacher ID or Name:";
             // 
@@ -525,15 +672,6 @@
             btnTeachersDelete.Text = "Delete";
             btnTeachersDelete.UseVisualStyleBackColor = false;
             btnTeachersDelete.Click += btnTeachersDelete_Click;
-            // 
-            // pnlDashboard
-            // 
-            pnlDashboard.BackColor = Color.FromArgb(16, 25, 43);
-            pnlDashboard.Dock = DockStyle.Fill;
-            pnlDashboard.Location = new Point(0, 0);
-            pnlDashboard.Name = "pnlDashboard";
-            pnlDashboard.Size = new Size(800, 560);
-            pnlDashboard.TabIndex = 0;
             // 
             // pnlSubjects
             // 
@@ -708,142 +846,6 @@
             btnSubjectsDelete.Text = "Delete";
             btnSubjectsDelete.UseVisualStyleBackColor = false;
             btnSubjectsDelete.Click += btnSubjectsDelete_Click;
-            // 
-            // pnlEnroll
-            // 
-            pnlEnroll.BackColor = Color.FromArgb(16, 25, 43);
-            pnlEnroll.Controls.Add(label5);
-            pnlEnroll.Controls.Add(cboEnrollStudent);
-            pnlEnroll.Controls.Add(label6);
-            pnlEnroll.Controls.Add(cboEnrollSubject);
-            pnlEnroll.Controls.Add(label7);
-            pnlEnroll.Controls.Add(cboEnrollSection);
-            pnlEnroll.Controls.Add(label8);
-            pnlEnroll.Controls.Add(txtEnrollSchoolYear);
-            pnlEnroll.Controls.Add(btnEnrollSave);
-            pnlEnroll.Controls.Add(btnEnrollClose);
-            pnlEnroll.Dock = DockStyle.Fill;
-            pnlEnroll.Location = new Point(0, 0);
-            pnlEnroll.Name = "pnlEnroll";
-            pnlEnroll.Size = new Size(800, 560);
-            pnlEnroll.TabIndex = 5;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(15, 23);
-            label5.Name = "label5";
-            label5.Size = new Size(48, 15);
-            label5.TabIndex = 6;
-            label5.Text = "Student";
-            // 
-            // cboEnrollStudent
-            // 
-            cboEnrollStudent.BackColor = Color.FromArgb(34, 50, 83);
-            cboEnrollStudent.DisplayMember = "FullName";
-            cboEnrollStudent.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboEnrollStudent.FlatStyle = FlatStyle.Flat;
-            cboEnrollStudent.ForeColor = Color.FromArgb(232, 238, 252);
-            cboEnrollStudent.FormattingEnabled = true;
-            cboEnrollStudent.Location = new Point(120, 20);
-            cboEnrollStudent.Name = "cboEnrollStudent";
-            cboEnrollStudent.Size = new Size(250, 23);
-            cboEnrollStudent.TabIndex = 0;
-            cboEnrollStudent.ValueMember = "StudentId";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(15, 58);
-            label6.Name = "label6";
-            label6.Size = new Size(46, 15);
-            label6.TabIndex = 7;
-            label6.Text = "Subject";
-            // 
-            // cboEnrollSubject
-            // 
-            cboEnrollSubject.BackColor = Color.FromArgb(34, 50, 83);
-            cboEnrollSubject.DisplayMember = "SubjectName";
-            cboEnrollSubject.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboEnrollSubject.FlatStyle = FlatStyle.Flat;
-            cboEnrollSubject.ForeColor = Color.FromArgb(232, 238, 252);
-            cboEnrollSubject.FormattingEnabled = true;
-            cboEnrollSubject.Location = new Point(120, 55);
-            cboEnrollSubject.Name = "cboEnrollSubject";
-            cboEnrollSubject.Size = new Size(250, 23);
-            cboEnrollSubject.TabIndex = 1;
-            cboEnrollSubject.ValueMember = "SubjectCode";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(15, 93);
-            label7.Name = "label7";
-            label7.Size = new Size(46, 15);
-            label7.TabIndex = 8;
-            label7.Text = "Section";
-            // 
-            // cboEnrollSection
-            // 
-            cboEnrollSection.BackColor = Color.FromArgb(34, 50, 83);
-            cboEnrollSection.DisplayMember = "SectionName";
-            cboEnrollSection.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboEnrollSection.FlatStyle = FlatStyle.Flat;
-            cboEnrollSection.ForeColor = Color.FromArgb(232, 238, 252);
-            cboEnrollSection.FormattingEnabled = true;
-            cboEnrollSection.Location = new Point(120, 90);
-            cboEnrollSection.Name = "cboEnrollSection";
-            cboEnrollSection.Size = new Size(250, 23);
-            cboEnrollSection.TabIndex = 2;
-            cboEnrollSection.ValueMember = "SectionCode";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(15, 128);
-            label8.Name = "label8";
-            label8.Size = new Size(68, 15);
-            label8.TabIndex = 9;
-            label8.Text = "School Year";
-            // 
-            // txtEnrollSchoolYear
-            // 
-            txtEnrollSchoolYear.BackColor = Color.FromArgb(34, 50, 83);
-            txtEnrollSchoolYear.BorderStyle = BorderStyle.FixedSingle;
-            txtEnrollSchoolYear.ForeColor = Color.FromArgb(232, 238, 252);
-            txtEnrollSchoolYear.Location = new Point(120, 125);
-            txtEnrollSchoolYear.Name = "txtEnrollSchoolYear";
-            txtEnrollSchoolYear.Size = new Size(250, 23);
-            txtEnrollSchoolYear.TabIndex = 3;
-            txtEnrollSchoolYear.Text = "2026-2027";
-            // 
-            // btnEnrollSave
-            // 
-            btnEnrollSave.BackColor = Color.FromArgb(242, 184, 75);
-            btnEnrollSave.FlatAppearance.BorderSize = 0;
-            btnEnrollSave.FlatStyle = FlatStyle.Flat;
-            btnEnrollSave.ForeColor = Color.FromArgb(16, 25, 43);
-            btnEnrollSave.Location = new Point(120, 170);
-            btnEnrollSave.Name = "btnEnrollSave";
-            btnEnrollSave.Size = new Size(120, 32);
-            btnEnrollSave.TabIndex = 4;
-            btnEnrollSave.Text = "Enroll";
-            btnEnrollSave.UseVisualStyleBackColor = false;
-            btnEnrollSave.Click += btnEnrollSave_Click;
-            // 
-            // btnEnrollClose
-            // 
-            btnEnrollClose.BackColor = Color.FromArgb(26, 38, 64);
-            btnEnrollClose.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
-            btnEnrollClose.FlatStyle = FlatStyle.Flat;
-            btnEnrollClose.ForeColor = Color.FromArgb(232, 238, 252);
-            btnEnrollClose.Location = new Point(250, 170);
-            btnEnrollClose.Name = "btnEnrollClose";
-            btnEnrollClose.Size = new Size(120, 32);
-            btnEnrollClose.TabIndex = 5;
-            btnEnrollClose.Text = "Close";
-            btnEnrollClose.UseVisualStyleBackColor = false;
-            btnEnrollClose.Click += btnEnrollClose_Click;
             // 
             // pnlSections
             // 
@@ -1349,7 +1351,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.AbcLogo;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(60, 20);
             pictureBox1.Name = "pictureBox1";
@@ -1508,6 +1510,8 @@
             pnlActivityLog.ResumeLayout(false);
             pnlActivityLog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvActivityLog).EndInit();
+            pnlEnroll.ResumeLayout(false);
+            pnlEnroll.PerformLayout();
             pnlUserLog.ResumeLayout(false);
             pnlUserLog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUserLog).EndInit();
@@ -1517,8 +1521,6 @@
             pnlSubjects.ResumeLayout(false);
             pnlSubjects.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSubjects).EndInit();
-            pnlEnroll.ResumeLayout(false);
-            pnlEnroll.PerformLayout();
             pnlSections.ResumeLayout(false);
             pnlSections.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSections).EndInit();

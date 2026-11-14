@@ -39,6 +39,13 @@ namespace ABCEnrollmentSystem
             {
                 throw new DuplicateRecordException("Subject code " + s.SubjectCode + " already exists.");
             }
+            foreach (Subject existing in GetAll())
+            {
+                if (existing.SubjectName.ToLower() == s.SubjectName.ToLower())
+                {
+                    throw new DuplicateRecordException("Subject name " + s.SubjectName + " already exists.");
+                }
+            }
 
             Database.Execute(sql, ToValues(s));
         }
@@ -47,6 +54,16 @@ namespace ABCEnrollmentSystem
         {
             string sql = "UPDATE Subjects SET SubjectName=@SubjectName, Description=@Description, " +
                          "Units=@Units, TeacherId=@TeacherId WHERE SubjectCode=@SubjectCode";
+
+            foreach (Subject existing in GetAll())
+            {
+                if (existing.SubjectCode != s.SubjectCode &&
+                    existing.SubjectName.ToLower() == s.SubjectName.ToLower())
+                {
+                    throw new DuplicateRecordException("Subject name " + s.SubjectName + " already exists.");
+                }
+            }
+
             int rows = Database.Execute(sql, ToValues(s));
             if (rows == 0)
             {
