@@ -28,15 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             pnlBody = new Panel();
+            pnlActivityLog = new Panel();
+            dgvActivityLog = new DataGridView();
+            btnActivityLogShowAll = new Button();
+            btnActivityLogSearch = new Button();
+            txtActivityLogSearch = new TextBox();
+            lblActivityLogSearch = new Label();
+            pnlUserLog = new Panel();
+            dgvUserLog = new DataGridView();
+            btnUserLogShowAll = new Button();
+            btnUserLogSearch = new Button();
+            txtUserLogSearch = new TextBox();
+            lblUserLogSearch = new Label();
+            pnlTeachers = new Panel();
+            label3 = new Label();
+            txtTeachersSearch = new TextBox();
+            btnTeachersSearch = new Button();
+            btnTeachersShowAll = new Button();
+            dgvTeachers = new DataGridView();
+            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            btnTeachersAdd = new Button();
+            btnTeachersUpdate = new Button();
+            btnTeachersDelete = new Button();
             pnlDashboard = new Panel();
             pnlSubjects = new Panel();
             label2 = new Label();
@@ -51,17 +78,6 @@
             btnSubjectsAdd = new Button();
             btnSubjectsUpdate = new Button();
             btnSubjectsDelete = new Button();
-            pnlTeachers = new Panel();
-            label3 = new Label();
-            txtTeachersSearch = new TextBox();
-            btnTeachersSearch = new Button();
-            btnTeachersShowAll = new Button();
-            dgvTeachers = new DataGridView();
-            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
-            btnTeachersAdd = new Button();
-            btnTeachersUpdate = new Button();
-            btnTeachersDelete = new Button();
             pnlEnroll = new Panel();
             label5 = new Label();
             cboEnrollStudent = new ComboBox();
@@ -109,6 +125,8 @@
             lblPageTitle = new Label();
             label12 = new Label();
             pnlSidebar = new Panel();
+            btnActivityLog = new Button();
+            btnUserLog = new Button();
             pictureBox1 = new PictureBox();
             label13 = new Label();
             label14 = new Label();
@@ -121,10 +139,14 @@
             btnReports = new Button();
             btnExit = new Button();
             pnlBody.SuspendLayout();
-            pnlSubjects.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvSubjects).BeginInit();
+            pnlActivityLog.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvActivityLog).BeginInit();
+            pnlUserLog.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvUserLog).BeginInit();
             pnlTeachers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTeachers).BeginInit();
+            pnlSubjects.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSubjects).BeginInit();
             pnlEnroll.SuspendLayout();
             pnlSections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSections).BeginInit();
@@ -139,6 +161,8 @@
             // pnlBody
             // 
             pnlBody.BackColor = Color.FromArgb(16, 25, 43);
+            pnlBody.Controls.Add(pnlActivityLog);
+            pnlBody.Controls.Add(pnlUserLog);
             pnlBody.Controls.Add(pnlTeachers);
             pnlBody.Controls.Add(pnlDashboard);
             pnlBody.Controls.Add(pnlSubjects);
@@ -151,6 +175,356 @@
             pnlBody.Name = "pnlBody";
             pnlBody.Size = new Size(800, 560);
             pnlBody.TabIndex = 2;
+            // 
+            // pnlActivityLog
+            // 
+            pnlActivityLog.Controls.Add(dgvActivityLog);
+            pnlActivityLog.Controls.Add(btnActivityLogShowAll);
+            pnlActivityLog.Controls.Add(btnActivityLogSearch);
+            pnlActivityLog.Controls.Add(txtActivityLogSearch);
+            pnlActivityLog.Controls.Add(lblActivityLogSearch);
+            pnlActivityLog.Dock = DockStyle.Fill;
+            pnlActivityLog.Location = new Point(0, 0);
+            pnlActivityLog.Name = "pnlActivityLog";
+            pnlActivityLog.Size = new Size(800, 560);
+            pnlActivityLog.TabIndex = 11;
+            pnlActivityLog.Visible = false;
+            // 
+            // dgvActivityLog
+            // 
+            dgvActivityLog.AllowUserToAddRows = false;
+            dgvActivityLog.AllowUserToDeleteRows = false;
+            dgvActivityLog.AllowUserToResizeRows = false;
+            dgvActivityLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvActivityLog.BackgroundColor = Color.FromArgb(16, 25, 43);
+            dgvActivityLog.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvActivityLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvActivityLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 38, 64);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(127, 178, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(16, 25, 43);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvActivityLog.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvActivityLog.EnableHeadersVisualStyles = false;
+            dgvActivityLog.GridColor = Color.FromArgb(46, 63, 102);
+            dgvActivityLog.Location = new Point(20, 75);
+            dgvActivityLog.MultiSelect = false;
+            dgvActivityLog.Name = "dgvActivityLog";
+            dgvActivityLog.ReadOnly = true;
+            dgvActivityLog.RowHeadersVisible = false;
+            dgvActivityLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvActivityLog.Size = new Size(760, 410);
+            dgvActivityLog.TabIndex = 4;
+            // 
+            // btnActivityLogShowAll
+            // 
+            btnActivityLogShowAll.BackColor = Color.FromArgb(26, 38, 64);
+            btnActivityLogShowAll.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnActivityLogShowAll.FlatStyle = FlatStyle.Flat;
+            btnActivityLogShowAll.ForeColor = Color.FromArgb(232, 238, 252);
+            btnActivityLogShowAll.Location = new Point(560, 13);
+            btnActivityLogShowAll.Name = "btnActivityLogShowAll";
+            btnActivityLogShowAll.Size = new Size(75, 27);
+            btnActivityLogShowAll.TabIndex = 2;
+            btnActivityLogShowAll.Text = "Show All";
+            btnActivityLogShowAll.UseVisualStyleBackColor = false;
+            btnActivityLogShowAll.Click += btnActivityLogShowAll_Click;
+            // 
+            // btnActivityLogSearch
+            // 
+            btnActivityLogSearch.BackColor = Color.FromArgb(26, 38, 64);
+            btnActivityLogSearch.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnActivityLogSearch.FlatStyle = FlatStyle.Flat;
+            btnActivityLogSearch.ForeColor = Color.FromArgb(232, 238, 252);
+            btnActivityLogSearch.Location = new Point(475, 13);
+            btnActivityLogSearch.Name = "btnActivityLogSearch";
+            btnActivityLogSearch.Size = new Size(75, 27);
+            btnActivityLogSearch.TabIndex = 1;
+            btnActivityLogSearch.Text = "Search";
+            btnActivityLogSearch.UseVisualStyleBackColor = false;
+            btnActivityLogSearch.Click += btnActivityLogSearch_Click;
+            // 
+            // txtActivityLogSearch
+            // 
+            txtActivityLogSearch.BackColor = Color.FromArgb(34, 50, 83);
+            txtActivityLogSearch.BorderStyle = BorderStyle.FixedSingle;
+            txtActivityLogSearch.ForeColor = Color.FromArgb(232, 238, 252);
+            txtActivityLogSearch.Location = new Point(215, 15);
+            txtActivityLogSearch.Name = "txtActivityLogSearch";
+            txtActivityLogSearch.Size = new Size(250, 23);
+            txtActivityLogSearch.TabIndex = 0;
+            // 
+            // lblActivityLogSearch
+            // 
+            lblActivityLogSearch.AutoSize = true;
+            lblActivityLogSearch.Location = new Point(20, 19);
+            lblActivityLogSearch.Name = "lblActivityLogSearch";
+            lblActivityLogSearch.Size = new Size(186, 15);
+            lblActivityLogSearch.TabIndex = 0;
+            lblActivityLogSearch.Text = "Search by User, Action or Module:";
+            // 
+            // pnlUserLog
+            // 
+            pnlUserLog.Controls.Add(dgvUserLog);
+            pnlUserLog.Controls.Add(btnUserLogShowAll);
+            pnlUserLog.Controls.Add(btnUserLogSearch);
+            pnlUserLog.Controls.Add(txtUserLogSearch);
+            pnlUserLog.Controls.Add(lblUserLogSearch);
+            pnlUserLog.Dock = DockStyle.Fill;
+            pnlUserLog.Location = new Point(0, 0);
+            pnlUserLog.Name = "pnlUserLog";
+            pnlUserLog.Size = new Size(800, 560);
+            pnlUserLog.TabIndex = 0;
+            pnlUserLog.Visible = false;
+            // 
+            // dgvUserLog
+            // 
+            dgvUserLog.AllowUserToAddRows = false;
+            dgvUserLog.AllowUserToDeleteRows = false;
+            dgvUserLog.AllowUserToResizeRows = false;
+            dgvUserLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUserLog.BackgroundColor = Color.FromArgb(16, 25, 43);
+            dgvUserLog.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvUserLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvUserLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(26, 38, 64);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(127, 178, 255);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(16, 25, 43);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvUserLog.DefaultCellStyle = dataGridViewCellStyle4;
+            dgvUserLog.EnableHeadersVisualStyles = false;
+            dgvUserLog.GridColor = Color.FromArgb(46, 63, 102);
+            dgvUserLog.Location = new Point(20, 55);
+            dgvUserLog.MultiSelect = false;
+            dgvUserLog.Name = "dgvUserLog";
+            dgvUserLog.ReadOnly = true;
+            dgvUserLog.RowHeadersVisible = false;
+            dgvUserLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUserLog.Size = new Size(760, 410);
+            dgvUserLog.TabIndex = 3;
+            // 
+            // btnUserLogShowAll
+            // 
+            btnUserLogShowAll.BackColor = Color.FromArgb(26, 38, 64);
+            btnUserLogShowAll.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnUserLogShowAll.FlatStyle = FlatStyle.Flat;
+            btnUserLogShowAll.Location = new Point(560, 13);
+            btnUserLogShowAll.Name = "btnUserLogShowAll";
+            btnUserLogShowAll.Size = new Size(75, 27);
+            btnUserLogShowAll.TabIndex = 2;
+            btnUserLogShowAll.Text = "Show All";
+            btnUserLogShowAll.UseVisualStyleBackColor = false;
+            btnUserLogShowAll.Click += btnUserLogShowAll_Click;
+            // 
+            // btnUserLogSearch
+            // 
+            btnUserLogSearch.BackColor = Color.FromArgb(26, 38, 64);
+            btnUserLogSearch.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnUserLogSearch.FlatStyle = FlatStyle.Flat;
+            btnUserLogSearch.Location = new Point(475, 13);
+            btnUserLogSearch.Name = "btnUserLogSearch";
+            btnUserLogSearch.Size = new Size(75, 27);
+            btnUserLogSearch.TabIndex = 1;
+            btnUserLogSearch.Text = "Search";
+            btnUserLogSearch.UseVisualStyleBackColor = false;
+            btnUserLogSearch.Click += btnUserLogSearch_Click;
+            // 
+            // txtUserLogSearch
+            // 
+            txtUserLogSearch.BackColor = Color.FromArgb(34, 50, 83);
+            txtUserLogSearch.BorderStyle = BorderStyle.FixedSingle;
+            txtUserLogSearch.ForeColor = Color.FromArgb(232, 238, 252);
+            txtUserLogSearch.Location = new Point(215, 15);
+            txtUserLogSearch.Name = "txtUserLogSearch";
+            txtUserLogSearch.Size = new Size(250, 23);
+            txtUserLogSearch.TabIndex = 2;
+            // 
+            // lblUserLogSearch
+            // 
+            lblUserLogSearch.AutoSize = true;
+            lblUserLogSearch.Location = new Point(20, 19);
+            lblUserLogSearch.Name = "lblUserLogSearch";
+            lblUserLogSearch.Size = new Size(199, 15);
+            lblUserLogSearch.TabIndex = 1;
+            lblUserLogSearch.Text = "Search by Username, Action or Date:";
+            // 
+            // pnlTeachers
+            // 
+            pnlTeachers.BackColor = Color.FromArgb(16, 25, 43);
+            pnlTeachers.Controls.Add(label3);
+            pnlTeachers.Controls.Add(txtTeachersSearch);
+            pnlTeachers.Controls.Add(btnTeachersSearch);
+            pnlTeachers.Controls.Add(btnTeachersShowAll);
+            pnlTeachers.Controls.Add(dgvTeachers);
+            pnlTeachers.Controls.Add(btnTeachersAdd);
+            pnlTeachers.Controls.Add(btnTeachersUpdate);
+            pnlTeachers.Controls.Add(btnTeachersDelete);
+            pnlTeachers.Dock = DockStyle.Fill;
+            pnlTeachers.Location = new Point(0, 0);
+            pnlTeachers.Name = "pnlTeachers";
+            pnlTeachers.Size = new Size(800, 560);
+            pnlTeachers.TabIndex = 3;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(20, 19);
+            label3.Name = "label3";
+            label3.Size = new Size(168, 15);
+            label3.TabIndex = 7;
+            label3.Text = "Search by Teacher ID or Name:";
+            // 
+            // txtTeachersSearch
+            // 
+            txtTeachersSearch.BackColor = Color.FromArgb(34, 50, 83);
+            txtTeachersSearch.BorderStyle = BorderStyle.FixedSingle;
+            txtTeachersSearch.ForeColor = Color.FromArgb(232, 238, 252);
+            txtTeachersSearch.Location = new Point(215, 15);
+            txtTeachersSearch.Name = "txtTeachersSearch";
+            txtTeachersSearch.Size = new Size(250, 23);
+            txtTeachersSearch.TabIndex = 0;
+            // 
+            // btnTeachersSearch
+            // 
+            btnTeachersSearch.BackColor = Color.FromArgb(26, 38, 64);
+            btnTeachersSearch.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnTeachersSearch.FlatStyle = FlatStyle.Flat;
+            btnTeachersSearch.ForeColor = Color.FromArgb(232, 238, 252);
+            btnTeachersSearch.Location = new Point(475, 13);
+            btnTeachersSearch.Name = "btnTeachersSearch";
+            btnTeachersSearch.Size = new Size(75, 27);
+            btnTeachersSearch.TabIndex = 1;
+            btnTeachersSearch.Text = "Search";
+            btnTeachersSearch.UseVisualStyleBackColor = false;
+            btnTeachersSearch.Click += btnTeachersSearch_Click;
+            // 
+            // btnTeachersShowAll
+            // 
+            btnTeachersShowAll.BackColor = Color.FromArgb(26, 38, 64);
+            btnTeachersShowAll.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnTeachersShowAll.FlatStyle = FlatStyle.Flat;
+            btnTeachersShowAll.ForeColor = Color.FromArgb(232, 238, 252);
+            btnTeachersShowAll.Location = new Point(560, 13);
+            btnTeachersShowAll.Name = "btnTeachersShowAll";
+            btnTeachersShowAll.Size = new Size(75, 27);
+            btnTeachersShowAll.TabIndex = 2;
+            btnTeachersShowAll.Text = "Show All";
+            btnTeachersShowAll.UseVisualStyleBackColor = false;
+            btnTeachersShowAll.Click += btnTeachersShowAll_Click;
+            // 
+            // dgvTeachers
+            // 
+            dgvTeachers.AllowUserToAddRows = false;
+            dgvTeachers.AllowUserToDeleteRows = false;
+            dgvTeachers.AllowUserToResizeRows = false;
+            dgvTeachers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTeachers.BackgroundColor = Color.FromArgb(16, 25, 43);
+            dgvTeachers.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvTeachers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgvTeachers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTeachers.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9 });
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(26, 38, 64);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(127, 178, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(16, 25, 43);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvTeachers.DefaultCellStyle = dataGridViewCellStyle6;
+            dgvTeachers.EnableHeadersVisualStyles = false;
+            dgvTeachers.GridColor = Color.FromArgb(46, 63, 102);
+            dgvTeachers.Location = new Point(20, 55);
+            dgvTeachers.MultiSelect = false;
+            dgvTeachers.Name = "dgvTeachers";
+            dgvTeachers.ReadOnly = true;
+            dgvTeachers.RowHeadersVisible = false;
+            dgvTeachers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTeachers.Size = new Size(760, 410);
+            dgvTeachers.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewTextBoxColumn8.DataPropertyName = "TeacherId";
+            dataGridViewTextBoxColumn8.HeaderText = "Teacher ID";
+            dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewTextBoxColumn9.DataPropertyName = "FullName";
+            dataGridViewTextBoxColumn9.HeaderText = "Name";
+            dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // btnTeachersAdd
+            // 
+            btnTeachersAdd.BackColor = Color.FromArgb(242, 184, 75);
+            btnTeachersAdd.FlatAppearance.BorderSize = 0;
+            btnTeachersAdd.FlatStyle = FlatStyle.Flat;
+            btnTeachersAdd.ForeColor = Color.FromArgb(16, 25, 43);
+            btnTeachersAdd.Location = new Point(20, 480);
+            btnTeachersAdd.Name = "btnTeachersAdd";
+            btnTeachersAdd.Size = new Size(90, 32);
+            btnTeachersAdd.TabIndex = 4;
+            btnTeachersAdd.Text = "Add";
+            btnTeachersAdd.UseVisualStyleBackColor = false;
+            btnTeachersAdd.Click += btnTeachersAdd_Click;
+            // 
+            // btnTeachersUpdate
+            // 
+            btnTeachersUpdate.BackColor = Color.FromArgb(26, 38, 64);
+            btnTeachersUpdate.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnTeachersUpdate.FlatStyle = FlatStyle.Flat;
+            btnTeachersUpdate.ForeColor = Color.FromArgb(232, 238, 252);
+            btnTeachersUpdate.Location = new Point(120, 480);
+            btnTeachersUpdate.Name = "btnTeachersUpdate";
+            btnTeachersUpdate.Size = new Size(90, 32);
+            btnTeachersUpdate.TabIndex = 5;
+            btnTeachersUpdate.Text = "Update";
+            btnTeachersUpdate.UseVisualStyleBackColor = false;
+            btnTeachersUpdate.Click += btnTeachersUpdate_Click;
+            // 
+            // btnTeachersDelete
+            // 
+            btnTeachersDelete.BackColor = Color.FromArgb(26, 38, 64);
+            btnTeachersDelete.FlatAppearance.BorderColor = Color.FromArgb(242, 109, 109);
+            btnTeachersDelete.FlatStyle = FlatStyle.Flat;
+            btnTeachersDelete.ForeColor = Color.FromArgb(242, 109, 109);
+            btnTeachersDelete.Location = new Point(220, 480);
+            btnTeachersDelete.Name = "btnTeachersDelete";
+            btnTeachersDelete.Size = new Size(90, 32);
+            btnTeachersDelete.TabIndex = 6;
+            btnTeachersDelete.Text = "Delete";
+            btnTeachersDelete.UseVisualStyleBackColor = false;
+            btnTeachersDelete.Click += btnTeachersDelete_Click;
             // 
             // pnlDashboard
             // 
@@ -233,23 +607,23 @@
             dgvSubjects.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSubjects.BackgroundColor = Color.FromArgb(16, 25, 43);
             dgvSubjects.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvSubjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvSubjects.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvSubjects.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSubjects.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7 });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(26, 38, 64);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(127, 178, 255);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(16, 25, 43);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvSubjects.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(26, 38, 64);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(127, 178, 255);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(16, 25, 43);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvSubjects.DefaultCellStyle = dataGridViewCellStyle8;
             dgvSubjects.EnableHeadersVisualStyles = false;
             dgvSubjects.GridColor = Color.FromArgb(46, 63, 102);
             dgvSubjects.Location = new Point(20, 55);
@@ -334,164 +708,6 @@
             btnSubjectsDelete.Text = "Delete";
             btnSubjectsDelete.UseVisualStyleBackColor = false;
             btnSubjectsDelete.Click += btnSubjectsDelete_Click;
-            // 
-            // pnlTeachers
-            // 
-            pnlTeachers.BackColor = Color.FromArgb(16, 25, 43);
-            pnlTeachers.Controls.Add(label3);
-            pnlTeachers.Controls.Add(txtTeachersSearch);
-            pnlTeachers.Controls.Add(btnTeachersSearch);
-            pnlTeachers.Controls.Add(btnTeachersShowAll);
-            pnlTeachers.Controls.Add(dgvTeachers);
-            pnlTeachers.Controls.Add(btnTeachersAdd);
-            pnlTeachers.Controls.Add(btnTeachersUpdate);
-            pnlTeachers.Controls.Add(btnTeachersDelete);
-            pnlTeachers.Dock = DockStyle.Fill;
-            pnlTeachers.Location = new Point(0, 0);
-            pnlTeachers.Name = "pnlTeachers";
-            pnlTeachers.Size = new Size(800, 560);
-            pnlTeachers.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(20, 19);
-            label3.Name = "label3";
-            label3.Size = new Size(167, 15);
-            label3.TabIndex = 7;
-            label3.Text = "Search by Teacher ID or Name:";
-            // 
-            // txtTeachersSearch
-            // 
-            txtTeachersSearch.BackColor = Color.FromArgb(34, 50, 83);
-            txtTeachersSearch.BorderStyle = BorderStyle.FixedSingle;
-            txtTeachersSearch.ForeColor = Color.FromArgb(232, 238, 252);
-            txtTeachersSearch.Location = new Point(215, 15);
-            txtTeachersSearch.Name = "txtTeachersSearch";
-            txtTeachersSearch.Size = new Size(250, 23);
-            txtTeachersSearch.TabIndex = 0;
-            // 
-            // btnTeachersSearch
-            // 
-            btnTeachersSearch.BackColor = Color.FromArgb(26, 38, 64);
-            btnTeachersSearch.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
-            btnTeachersSearch.FlatStyle = FlatStyle.Flat;
-            btnTeachersSearch.ForeColor = Color.FromArgb(232, 238, 252);
-            btnTeachersSearch.Location = new Point(475, 13);
-            btnTeachersSearch.Name = "btnTeachersSearch";
-            btnTeachersSearch.Size = new Size(75, 27);
-            btnTeachersSearch.TabIndex = 1;
-            btnTeachersSearch.Text = "Search";
-            btnTeachersSearch.UseVisualStyleBackColor = false;
-            btnTeachersSearch.Click += btnTeachersSearch_Click;
-            // 
-            // btnTeachersShowAll
-            // 
-            btnTeachersShowAll.BackColor = Color.FromArgb(26, 38, 64);
-            btnTeachersShowAll.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
-            btnTeachersShowAll.FlatStyle = FlatStyle.Flat;
-            btnTeachersShowAll.ForeColor = Color.FromArgb(232, 238, 252);
-            btnTeachersShowAll.Location = new Point(560, 13);
-            btnTeachersShowAll.Name = "btnTeachersShowAll";
-            btnTeachersShowAll.Size = new Size(75, 27);
-            btnTeachersShowAll.TabIndex = 2;
-            btnTeachersShowAll.Text = "Show All";
-            btnTeachersShowAll.UseVisualStyleBackColor = false;
-            btnTeachersShowAll.Click += btnTeachersShowAll_Click;
-            // 
-            // dgvTeachers
-            // 
-            dgvTeachers.AllowUserToAddRows = false;
-            dgvTeachers.AllowUserToDeleteRows = false;
-            dgvTeachers.AllowUserToResizeRows = false;
-            dgvTeachers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvTeachers.BackgroundColor = Color.FromArgb(16, 25, 43);
-            dgvTeachers.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvTeachers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvTeachers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTeachers.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(26, 38, 64);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(127, 178, 255);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(16, 25, 43);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvTeachers.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvTeachers.EnableHeadersVisualStyles = false;
-            dgvTeachers.GridColor = Color.FromArgb(46, 63, 102);
-            dgvTeachers.Location = new Point(20, 55);
-            dgvTeachers.MultiSelect = false;
-            dgvTeachers.Name = "dgvTeachers";
-            dgvTeachers.ReadOnly = true;
-            dgvTeachers.RowHeadersVisible = false;
-            dgvTeachers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTeachers.Size = new Size(760, 410);
-            dgvTeachers.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            dataGridViewTextBoxColumn8.DataPropertyName = "TeacherId";
-            dataGridViewTextBoxColumn8.HeaderText = "Teacher ID";
-            dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            dataGridViewTextBoxColumn9.DataPropertyName = "FullName";
-            dataGridViewTextBoxColumn9.HeaderText = "Name";
-            dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // btnTeachersAdd
-            // 
-            btnTeachersAdd.BackColor = Color.FromArgb(242, 184, 75);
-            btnTeachersAdd.FlatAppearance.BorderSize = 0;
-            btnTeachersAdd.FlatStyle = FlatStyle.Flat;
-            btnTeachersAdd.ForeColor = Color.FromArgb(16, 25, 43);
-            btnTeachersAdd.Location = new Point(20, 480);
-            btnTeachersAdd.Name = "btnTeachersAdd";
-            btnTeachersAdd.Size = new Size(90, 32);
-            btnTeachersAdd.TabIndex = 4;
-            btnTeachersAdd.Text = "Add";
-            btnTeachersAdd.UseVisualStyleBackColor = false;
-            btnTeachersAdd.Click += btnTeachersAdd_Click;
-            // 
-            // btnTeachersUpdate
-            // 
-            btnTeachersUpdate.BackColor = Color.FromArgb(26, 38, 64);
-            btnTeachersUpdate.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
-            btnTeachersUpdate.FlatStyle = FlatStyle.Flat;
-            btnTeachersUpdate.ForeColor = Color.FromArgb(232, 238, 252);
-            btnTeachersUpdate.Location = new Point(120, 480);
-            btnTeachersUpdate.Name = "btnTeachersUpdate";
-            btnTeachersUpdate.Size = new Size(90, 32);
-            btnTeachersUpdate.TabIndex = 5;
-            btnTeachersUpdate.Text = "Update";
-            btnTeachersUpdate.UseVisualStyleBackColor = false;
-            btnTeachersUpdate.Click += btnTeachersUpdate_Click;
-            // 
-            // btnTeachersDelete
-            // 
-            btnTeachersDelete.BackColor = Color.FromArgb(26, 38, 64);
-            btnTeachersDelete.FlatAppearance.BorderColor = Color.FromArgb(242, 109, 109);
-            btnTeachersDelete.FlatStyle = FlatStyle.Flat;
-            btnTeachersDelete.ForeColor = Color.FromArgb(242, 109, 109);
-            btnTeachersDelete.Location = new Point(220, 480);
-            btnTeachersDelete.Name = "btnTeachersDelete";
-            btnTeachersDelete.Size = new Size(90, 32);
-            btnTeachersDelete.TabIndex = 6;
-            btnTeachersDelete.Text = "Delete";
-            btnTeachersDelete.UseVisualStyleBackColor = false;
-            btnTeachersDelete.Click += btnTeachersDelete_Click;
             // 
             // pnlEnroll
             // 
@@ -701,23 +917,23 @@
             dgvSections.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSections.BackgroundColor = Color.FromArgb(16, 25, 43);
             dgvSections.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvSections.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvSections.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dgvSections.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSections.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12 });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(26, 38, 64);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(127, 178, 255);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(16, 25, 43);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvSections.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(26, 38, 64);
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(127, 178, 255);
+            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(16, 25, 43);
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
+            dgvSections.DefaultCellStyle = dataGridViewCellStyle10;
             dgvSections.EnableHeadersVisualStyles = false;
             dgvSections.GridColor = Color.FromArgb(46, 63, 102);
             dgvSections.Location = new Point(20, 55);
@@ -868,23 +1084,23 @@
             dgvStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvStudents.BackgroundColor = Color.FromArgb(16, 25, 43);
             dgvStudents.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle11.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dgvStudents.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             dgvStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvStudents.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(26, 38, 64);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(127, 178, 255);
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(16, 25, 43);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvStudents.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(26, 38, 64);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle12.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(127, 178, 255);
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(16, 25, 43);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            dgvStudents.DefaultCellStyle = dataGridViewCellStyle12;
             dgvStudents.EnableHeadersVisualStyles = false;
             dgvStudents.GridColor = Color.FromArgb(46, 63, 102);
             dgvStudents.Location = new Point(20, 55);
@@ -1084,6 +1300,8 @@
             // pnlSidebar
             // 
             pnlSidebar.BackColor = Color.FromArgb(26, 38, 64);
+            pnlSidebar.Controls.Add(btnActivityLog);
+            pnlSidebar.Controls.Add(btnUserLog);
             pnlSidebar.Controls.Add(pictureBox1);
             pnlSidebar.Controls.Add(label13);
             pnlSidebar.Controls.Add(label14);
@@ -1100,6 +1318,34 @@
             pnlSidebar.Name = "pnlSidebar";
             pnlSidebar.Size = new Size(200, 620);
             pnlSidebar.TabIndex = 0;
+            // 
+            // btnActivityLog
+            // 
+            btnActivityLog.BackColor = Color.FromArgb(34, 50, 83);
+            btnActivityLog.FlatAppearance.BorderColor = Color.FromArgb(127, 178, 255);
+            btnActivityLog.FlatStyle = FlatStyle.Flat;
+            btnActivityLog.ForeColor = Color.FromArgb(232, 238, 252);
+            btnActivityLog.Location = new Point(20, 511);
+            btnActivityLog.Name = "btnActivityLog";
+            btnActivityLog.Size = new Size(160, 34);
+            btnActivityLog.TabIndex = 12;
+            btnActivityLog.Text = "Activity Log";
+            btnActivityLog.UseVisualStyleBackColor = false;
+            btnActivityLog.Click += btnActivityLog_Click;
+            // 
+            // btnUserLog
+            // 
+            btnUserLog.BackColor = Color.FromArgb(34, 50, 83);
+            btnUserLog.FlatAppearance.BorderColor = Color.FromArgb(127, 178, 255);
+            btnUserLog.FlatStyle = FlatStyle.Flat;
+            btnUserLog.ForeColor = Color.FromArgb(232, 238, 252);
+            btnUserLog.Location = new Point(20, 469);
+            btnUserLog.Name = "btnUserLog";
+            btnUserLog.Size = new Size(160, 34);
+            btnUserLog.TabIndex = 11;
+            btnUserLog.Text = "User Log";
+            btnUserLog.UseVisualStyleBackColor = false;
+            btnUserLog.Click += btnUserLog_Click;
             // 
             // pictureBox1
             // 
@@ -1259,12 +1505,18 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ABC Senior High - Enrollment System";
             pnlBody.ResumeLayout(false);
-            pnlSubjects.ResumeLayout(false);
-            pnlSubjects.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvSubjects).EndInit();
+            pnlActivityLog.ResumeLayout(false);
+            pnlActivityLog.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvActivityLog).EndInit();
+            pnlUserLog.ResumeLayout(false);
+            pnlUserLog.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvUserLog).EndInit();
             pnlTeachers.ResumeLayout(false);
             pnlTeachers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTeachers).EndInit();
+            pnlSubjects.ResumeLayout(false);
+            pnlSubjects.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSubjects).EndInit();
             pnlEnroll.ResumeLayout(false);
             pnlEnroll.PerformLayout();
             pnlSections.ResumeLayout(false);
@@ -1368,5 +1620,19 @@
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnExit;
         private Label label15;
+        private Button btnUserLog;
+        private Button btnActivityLog;
+        private Panel pnlUserLog;
+        private TextBox txtUserLogSearch;
+        private Label lblUserLogSearch;
+        private Button btnUserLogShowAll;
+        private Button btnUserLogSearch;
+        private DataGridView dgvUserLog;
+        private Panel pnlActivityLog;
+        private Label lblActivityLogSearch;
+        private DataGridView dgvActivityLog;
+        private Button btnActivityLogShowAll;
+        private Button btnActivityLogSearch;
+        private TextBox txtActivityLogSearch;
     }
 }
