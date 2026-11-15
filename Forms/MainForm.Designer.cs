@@ -40,9 +40,39 @@
             DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             pnlBody = new Panel();
             pnlDashboard = new Panel();
+            tlpDashboard = new TableLayoutPanel();
+            flpKpi = new FlowLayoutPanel();
+            pnlKpiStudents = new Panel();
+            lblKpiStudents = new Label();
+            lblKpiStudentsTitle = new Label();
+            pnlKpiSubjects = new Panel();
+            lblKpiSubjects = new Label();
+            lblKpiSubjectsTitle = new Label();
+            pnlKpiTeachers = new Panel();
+            lblKpiTeachers = new Label();
+            lblKpiTeachersTitle = new Label();
+            pnlKpiSections = new Panel();
+            lblKpiSections = new Label();
+            lblKpiSectionsTitle = new Label();
+            chartGender = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            chartSubjects = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            chartActivity = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            dgvRecent = new DataGridView();
             pnlActivityLog = new Panel();
             dgvActivityLog = new DataGridView();
             btnActivityLogShowAll = new Button();
@@ -140,6 +170,17 @@
             btnReports = new Button();
             btnExit = new Button();
             pnlBody.SuspendLayout();
+            pnlDashboard.SuspendLayout();
+            tlpDashboard.SuspendLayout();
+            flpKpi.SuspendLayout();
+            pnlKpiStudents.SuspendLayout();
+            pnlKpiSubjects.SuspendLayout();
+            pnlKpiTeachers.SuspendLayout();
+            pnlKpiSections.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartGender).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartSubjects).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartActivity).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRecent).BeginInit();
             pnlActivityLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvActivityLog).BeginInit();
             pnlEnroll.SuspendLayout();
@@ -180,11 +221,309 @@
             // pnlDashboard
             // 
             pnlDashboard.BackColor = Color.FromArgb(16, 25, 43);
+            pnlDashboard.Controls.Add(tlpDashboard);
             pnlDashboard.Dock = DockStyle.Fill;
             pnlDashboard.Location = new Point(0, 0);
             pnlDashboard.Name = "pnlDashboard";
             pnlDashboard.Size = new Size(800, 560);
             pnlDashboard.TabIndex = 0;
+            // 
+            // tlpDashboard
+            // 
+            tlpDashboard.ColumnCount = 2;
+            tlpDashboard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpDashboard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpDashboard.Controls.Add(flpKpi, 0, 0);
+            tlpDashboard.Controls.Add(chartGender, 0, 1);
+            tlpDashboard.Controls.Add(chartSubjects, 1, 1);
+            tlpDashboard.Controls.Add(chartActivity, 0, 2);
+            tlpDashboard.Controls.Add(dgvRecent, 1, 2);
+            tlpDashboard.Dock = DockStyle.Fill;
+            tlpDashboard.Location = new Point(0, 0);
+            tlpDashboard.Name = "tlpDashboard";
+            tlpDashboard.RowCount = 3;
+            tlpDashboard.RowStyles.Add(new RowStyle(SizeType.Absolute, 90F));
+            tlpDashboard.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpDashboard.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpDashboard.Size = new Size(800, 560);
+            tlpDashboard.TabIndex = 0;
+            // 
+            // flpKpi
+            // 
+            tlpDashboard.SetColumnSpan(flpKpi, 2);
+            flpKpi.Controls.Add(pnlKpiStudents);
+            flpKpi.Controls.Add(pnlKpiSubjects);
+            flpKpi.Controls.Add(pnlKpiTeachers);
+            flpKpi.Controls.Add(pnlKpiSections);
+            flpKpi.Dock = DockStyle.Fill;
+            flpKpi.Location = new Point(3, 3);
+            flpKpi.Name = "flpKpi";
+            flpKpi.Size = new Size(794, 84);
+            flpKpi.TabIndex = 0;
+            // 
+            // pnlKpiStudents
+            // 
+            pnlKpiStudents.BackColor = Color.FromArgb(28, 42, 69);
+            pnlKpiStudents.Controls.Add(lblKpiStudents);
+            pnlKpiStudents.Controls.Add(lblKpiStudentsTitle);
+            pnlKpiStudents.Location = new Point(5, 5);
+            pnlKpiStudents.Margin = new Padding(5);
+            pnlKpiStudents.Name = "pnlKpiStudents";
+            pnlKpiStudents.Size = new Size(170, 70);
+            pnlKpiStudents.TabIndex = 0;
+            // 
+            // lblKpiStudents
+            // 
+            lblKpiStudents.Dock = DockStyle.Fill;
+            lblKpiStudents.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblKpiStudents.ForeColor = Color.White;
+            lblKpiStudents.Location = new Point(0, 24);
+            lblKpiStudents.Name = "lblKpiStudents";
+            lblKpiStudents.Size = new Size(170, 46);
+            lblKpiStudents.TabIndex = 1;
+            lblKpiStudents.Text = "0";
+            lblKpiStudents.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblKpiStudentsTitle
+            // 
+            lblKpiStudentsTitle.Dock = DockStyle.Top;
+            lblKpiStudentsTitle.ForeColor = Color.Silver;
+            lblKpiStudentsTitle.Location = new Point(0, 0);
+            lblKpiStudentsTitle.Name = "lblKpiStudentsTitle";
+            lblKpiStudentsTitle.Size = new Size(170, 24);
+            lblKpiStudentsTitle.TabIndex = 0;
+            lblKpiStudentsTitle.Text = "Students";
+            lblKpiStudentsTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pnlKpiSubjects
+            // 
+            pnlKpiSubjects.BackColor = Color.FromArgb(28, 42, 69);
+            pnlKpiSubjects.Controls.Add(lblKpiSubjects);
+            pnlKpiSubjects.Controls.Add(lblKpiSubjectsTitle);
+            pnlKpiSubjects.Location = new Point(185, 5);
+            pnlKpiSubjects.Margin = new Padding(5);
+            pnlKpiSubjects.Name = "pnlKpiSubjects";
+            pnlKpiSubjects.Size = new Size(170, 70);
+            pnlKpiSubjects.TabIndex = 1;
+            // 
+            // lblKpiSubjects
+            // 
+            lblKpiSubjects.Dock = DockStyle.Fill;
+            lblKpiSubjects.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblKpiSubjects.ForeColor = Color.White;
+            lblKpiSubjects.Location = new Point(0, 24);
+            lblKpiSubjects.Name = "lblKpiSubjects";
+            lblKpiSubjects.Size = new Size(170, 46);
+            lblKpiSubjects.TabIndex = 1;
+            lblKpiSubjects.Text = "0";
+            lblKpiSubjects.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblKpiSubjectsTitle
+            // 
+            lblKpiSubjectsTitle.Dock = DockStyle.Top;
+            lblKpiSubjectsTitle.ForeColor = Color.Silver;
+            lblKpiSubjectsTitle.Location = new Point(0, 0);
+            lblKpiSubjectsTitle.Name = "lblKpiSubjectsTitle";
+            lblKpiSubjectsTitle.Size = new Size(170, 24);
+            lblKpiSubjectsTitle.TabIndex = 0;
+            lblKpiSubjectsTitle.Text = "Subjects";
+            lblKpiSubjectsTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pnlKpiTeachers
+            // 
+            pnlKpiTeachers.BackColor = Color.FromArgb(28, 42, 69);
+            pnlKpiTeachers.Controls.Add(lblKpiTeachers);
+            pnlKpiTeachers.Controls.Add(lblKpiTeachersTitle);
+            pnlKpiTeachers.Location = new Point(365, 5);
+            pnlKpiTeachers.Margin = new Padding(5);
+            pnlKpiTeachers.Name = "pnlKpiTeachers";
+            pnlKpiTeachers.Size = new Size(170, 70);
+            pnlKpiTeachers.TabIndex = 2;
+            // 
+            // lblKpiTeachers
+            // 
+            lblKpiTeachers.Dock = DockStyle.Fill;
+            lblKpiTeachers.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblKpiTeachers.ForeColor = Color.White;
+            lblKpiTeachers.Location = new Point(0, 24);
+            lblKpiTeachers.Name = "lblKpiTeachers";
+            lblKpiTeachers.Size = new Size(170, 46);
+            lblKpiTeachers.TabIndex = 1;
+            lblKpiTeachers.Text = "0";
+            lblKpiTeachers.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblKpiTeachersTitle
+            // 
+            lblKpiTeachersTitle.Dock = DockStyle.Top;
+            lblKpiTeachersTitle.ForeColor = Color.Silver;
+            lblKpiTeachersTitle.Location = new Point(0, 0);
+            lblKpiTeachersTitle.Name = "lblKpiTeachersTitle";
+            lblKpiTeachersTitle.Size = new Size(170, 24);
+            lblKpiTeachersTitle.TabIndex = 0;
+            lblKpiTeachersTitle.Text = "Teachers";
+            lblKpiTeachersTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pnlKpiSections
+            // 
+            pnlKpiSections.BackColor = Color.FromArgb(28, 42, 69);
+            pnlKpiSections.Controls.Add(lblKpiSections);
+            pnlKpiSections.Controls.Add(lblKpiSectionsTitle);
+            pnlKpiSections.Location = new Point(545, 5);
+            pnlKpiSections.Margin = new Padding(5);
+            pnlKpiSections.Name = "pnlKpiSections";
+            pnlKpiSections.Size = new Size(170, 70);
+            pnlKpiSections.TabIndex = 3;
+            // 
+            // lblKpiSections
+            // 
+            lblKpiSections.Dock = DockStyle.Fill;
+            lblKpiSections.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblKpiSections.ForeColor = Color.White;
+            lblKpiSections.Location = new Point(0, 24);
+            lblKpiSections.Name = "lblKpiSections";
+            lblKpiSections.Size = new Size(170, 46);
+            lblKpiSections.TabIndex = 1;
+            lblKpiSections.Text = "0";
+            lblKpiSections.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblKpiSectionsTitle
+            // 
+            lblKpiSectionsTitle.Dock = DockStyle.Top;
+            lblKpiSectionsTitle.ForeColor = Color.Silver;
+            lblKpiSectionsTitle.Location = new Point(0, 0);
+            lblKpiSectionsTitle.Name = "lblKpiSectionsTitle";
+            lblKpiSectionsTitle.Size = new Size(170, 24);
+            lblKpiSectionsTitle.TabIndex = 0;
+            lblKpiSectionsTitle.Text = "Sections";
+            lblKpiSectionsTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // chartGender
+            // 
+            chartGender.BackColor = Color.FromArgb(28, 42, 69);
+            chartArea1.BackColor = Color.FromArgb(28, 42, 69);
+            chartArea1.Name = "ChartArea1";
+            chartGender.ChartAreas.Add(chartArea1);
+            chartGender.Dock = DockStyle.Fill;
+            legend1.BackColor = Color.Transparent;
+            legend1.ForeColor = Color.White;
+            legend1.Name = "Legend1";
+            chartGender.Legends.Add(legend1);
+            chartGender.Location = new Point(3, 93);
+            chartGender.Name = "chartGender";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.IsValueShownAsLabel = true;
+            series1.LabelForeColor = Color.White;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartGender.Series.Add(series1);
+            chartGender.Size = new Size(394, 232);
+            chartGender.TabIndex = 1;
+            chartGender.Text = "chartGender";
+            title1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            title1.ForeColor = Color.White;
+            title1.Name = "Title1";
+            title1.Text = "Students by Gender";
+            chartGender.Titles.Add(title1);
+            // 
+            // chartSubjects
+            // 
+            chartSubjects.BackColor = Color.FromArgb(28, 42, 69);
+            chartArea2.AxisX.LabelStyle.ForeColor = Color.FromArgb(232, 238, 252);
+            chartArea2.AxisX.LineColor = Color.Gray;
+            chartArea2.AxisX.MajorGrid.LineColor = Color.FromArgb(50, 70, 100);
+            chartArea2.AxisY.LabelStyle.ForeColor = Color.FromArgb(232, 238, 252);
+            chartArea2.AxisY.LineColor = Color.Gray;
+            chartArea2.AxisY.MajorGrid.LineColor = Color.FromArgb(50, 70, 100);
+            chartArea2.AxisY.Minimum = 0D;
+            chartArea2.BackColor = Color.FromArgb(28, 42, 69);
+            chartArea2.Name = "ChartArea1";
+            chartSubjects.ChartAreas.Add(chartArea2);
+            chartSubjects.Dock = DockStyle.Fill;
+            chartSubjects.Location = new Point(403, 93);
+            chartSubjects.Name = "chartSubjects";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            series2.IsValueShownAsLabel = true;
+            series2.LabelForeColor = Color.White;
+            series2.Name = "Series1";
+            chartSubjects.Series.Add(series2);
+            chartSubjects.Size = new Size(394, 232);
+            chartSubjects.TabIndex = 2;
+            chartSubjects.Text = "chartSubjects";
+            title2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            title2.ForeColor = Color.White;
+            title2.Name = "Title1";
+            title2.Text = "Enrollments per Subject";
+            chartSubjects.Titles.Add(title2);
+            // 
+            // chartActivity
+            // 
+            chartActivity.BackColor = Color.FromArgb(28, 42, 69);
+            chartArea3.AxisX.LabelStyle.ForeColor = Color.FromArgb(232, 238, 252);
+            chartArea3.AxisX.LineColor = Color.Gray;
+            chartArea3.AxisX.MajorGrid.LineColor = Color.FromArgb(50, 70, 100);
+            chartArea3.AxisY.LabelStyle.ForeColor = Color.FromArgb(232, 238, 252);
+            chartArea3.AxisY.LineColor = Color.Gray;
+            chartArea3.AxisY.MajorGrid.LineColor = Color.FromArgb(50, 70, 100);
+            chartArea3.AxisY.Minimum = 0D;
+            chartArea3.BackColor = Color.FromArgb(28, 42, 69);
+            chartArea3.Name = "ChartArea1";
+            chartActivity.ChartAreas.Add(chartArea3);
+            chartActivity.Dock = DockStyle.Fill;
+            chartActivity.Location = new Point(3, 331);
+            chartActivity.Name = "chartActivity";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.IsValueShownAsLabel = true;
+            series3.LabelForeColor = Color.White;
+            series3.Name = "Series1";
+            chartActivity.Series.Add(series3);
+            chartActivity.Size = new Size(394, 226);
+            chartActivity.TabIndex = 3;
+            chartActivity.Text = "chartActivity";
+            title3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            title3.ForeColor = Color.White;
+            title3.Name = "Title1";
+            title3.Text = "Activity (Last 7 Days)";
+            chartActivity.Titles.Add(title3);
+            // 
+            // dgvRecent
+            // 
+            dgvRecent.AllowUserToAddRows = false;
+            dgvRecent.AllowUserToDeleteRows = false;
+            dgvRecent.AllowUserToResizeRows = false;
+            dgvRecent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRecent.BackgroundColor = Color.FromArgb(28, 42, 69);
+            dgvRecent.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle13.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            dgvRecent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dgvRecent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(26, 38, 64);
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle14.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle14.SelectionBackColor = Color.FromArgb(127, 178, 255);
+            dataGridViewCellStyle14.SelectionForeColor = Color.FromArgb(16, 25, 43);
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
+            dgvRecent.DefaultCellStyle = dataGridViewCellStyle14;
+            dgvRecent.Dock = DockStyle.Fill;
+            dgvRecent.EnableHeadersVisualStyles = false;
+            dgvRecent.GridColor = Color.FromArgb(46, 63, 102);
+            dgvRecent.Location = new Point(403, 331);
+            dgvRecent.MultiSelect = false;
+            dgvRecent.Name = "dgvRecent";
+            dgvRecent.ReadOnly = true;
+            dgvRecent.RowHeadersVisible = false;
+            dgvRecent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvRecent.Size = new Size(394, 226);
+            dgvRecent.TabIndex = 4;
             // 
             // pnlActivityLog
             // 
@@ -1507,6 +1846,17 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ABC Senior High - Enrollment System";
             pnlBody.ResumeLayout(false);
+            pnlDashboard.ResumeLayout(false);
+            tlpDashboard.ResumeLayout(false);
+            flpKpi.ResumeLayout(false);
+            pnlKpiStudents.ResumeLayout(false);
+            pnlKpiSubjects.ResumeLayout(false);
+            pnlKpiTeachers.ResumeLayout(false);
+            pnlKpiSections.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)chartGender).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartSubjects).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartActivity).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRecent).EndInit();
             pnlActivityLog.ResumeLayout(false);
             pnlActivityLog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvActivityLog).EndInit();
@@ -1636,5 +1986,23 @@
         private Button btnActivityLogShowAll;
         private Button btnActivityLogSearch;
         private TextBox txtActivityLogSearch;
+        private TableLayoutPanel tlpDashboard;
+        private FlowLayoutPanel flpKpi;
+        private Panel pnlKpiStudents;
+        private Label lblKpiStudents;
+        private Label lblKpiStudentsTitle;
+        private Panel pnlKpiSubjects;
+        private Label lblKpiSubjects;
+        private Label lblKpiSubjectsTitle;
+        private Panel pnlKpiTeachers;
+        private Label lblKpiTeachers;
+        private Label lblKpiTeachersTitle;
+        private Panel pnlKpiSections;
+        private Label lblKpiSections;
+        private Label lblKpiSectionsTitle;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartGender;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartSubjects;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartActivity;
+        private DataGridView dgvRecent;
     }
 }

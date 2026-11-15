@@ -1,5 +1,6 @@
 using ABCEnrollmentSystem.Forms;
 using System.Diagnostics.Eventing.Reader;
+using System.Data;
 
 namespace ABCEnrollmentSystem
 {
@@ -30,7 +31,7 @@ namespace ABCEnrollmentSystem
             dgvTeachers.AutoGenerateColumns = false;
             dgvSections.AutoGenerateColumns = false;
 
-
+            ShowDashboard(); // [NEW]
         }
 
         private void ShowPanel(Panel panel, string title)
@@ -89,6 +90,42 @@ namespace ABCEnrollmentSystem
         private void ShowDashboard()
         {
             ShowPanel(pnlDashboard, "Dashboard");
+            LoadDashboard(); // [NEW]
+        }
+
+        // [NEW] Dashboard data
+        private void LoadDashboard()
+        {
+            try
+            {
+                // KPI
+                lblKpiStudents.Text = DashboardRepository.CountOf("Students").ToString();
+                lblKpiSubjects.Text = DashboardRepository.CountOf("Subjects").ToString();
+                lblKpiTeachers.Text = DashboardRepository.CountOf("Teachers").ToString();
+                lblKpiSections.Text = DashboardRepository.CountOf("Sections").ToString();
+
+                // Pie
+                chartGender.Series[0].Points.Clear();
+                foreach (DataRow r in DashboardRepository.GetGenderCounts().Rows)
+                    chartGender.Series[0].Points.AddXY(r["Gender"].ToString(), Convert.ToInt32(r["Total"]));
+
+                // Bar
+                chartSubjects.Series[0].Points.Clear();
+                foreach (DataRow r in DashboardRepository.GetEnrollmentsPerSubject().Rows)
+                    chartSubjects.Series[0].Points.AddXY(r["SubjectName"].ToString(), Convert.ToInt32(r["Total"]));
+
+                // Line
+                chartActivity.Series[0].Points.Clear();
+                foreach (DataRow r in DashboardRepository.GetActivityLast7Days().Rows)
+                    chartActivity.Series[0].Points.AddXY(Convert.ToDateTime(r["Day"]).ToString("MMM dd"), Convert.ToInt32(r["Total"]));
+
+                // Recent
+                dgvRecent.DataSource = DashboardRepository.GetRecentActivity();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Dashboard error: " + ex.Message);
+            }
         }
         //Sulit lagay mo dito yung activity log
         // sa Enrollment service yung reports metthod
@@ -703,8 +740,8 @@ namespace ABCEnrollmentSystem
                 _service.Enroll(cboEnrollStudent.SelectedValue.ToString(), cboEnrollSubject.SelectedValue.ToString(), cboEnrollSection.SelectedValue.ToString(), txtEnrollSchoolYear.Text);
                 string message = cboEnrollStudent.Text + " was enrolled in " + cboEnrollSubject.Text + " (" + cboEnrollSection.Text + ") for " + txtEnrollSchoolYear.Text.Trim() + ".";
                 MessageBox.Show(message, "Enrollment successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadEnrollSubjects(); 
-                
+                LoadEnrollSubjects();
+
             }
             catch (Exception ex)
             {
@@ -835,6 +872,6 @@ namespace ABCEnrollmentSystem
             ActivityLogShowAll();
         }
 
-        
+
     }
 }
