@@ -77,41 +77,34 @@ namespace ABCEnrollmentSystem.Forms
             }
             try
             {
-                using (SqlConnection connection = new SqlConnection("Server = DESKTOP-JG0361V\\SQLEXPRESS; Database = ABCEnrollmentDb; Trusted_Connection = True; TrustServerCertificate = True;"))
+                DataTable table = Database.GetTable("SELECT Username, Password FROM Users WHERE Username = @k", username);
+
+                if (table.Rows.Count == 1 && table.Rows[0]["Password"].ToString() == password)
                 {
-                    connection.Open();
+                    Session.CurrentUser = username;
+                    LogRepository.AddUserLog("Login");
 
-                    string query = "SELECT Username, Password FROM Users WHERE Username = @Username";
+                    this.Hide();                    
+                    MainForm main = new MainForm();
+                    main.ShowDialog();       
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Username", username);
-
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read() && reader["Password"].ToString() == password)
-                            {
-                                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                DialogResult = DialogResult.OK;
-                                MainForm mainForm = new MainForm();
-                                mainForm.Show();
-                                this.Hide();
-                            }
-                            else
-                            {
-                                ShowError(lblerrorpass, "Invalid username or password. Please try again.");
-                                txtPass.Clear();
-                                txtPass.Focus();
-                            }
-                        }
-                    }
+ 
+                    txtUser.Clear();
+                    txtPass.Clear();
+                    ClearErrors();
+                    this.Show();
+                    txtUser.Focus();
+                }
+                else
+                {
+                    ShowError(lblerrorpass, "Invalid username or password. Please try again.");
+                    txtPass.Clear();
+                    txtPass.Focus();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to complete the login request. Please contact the system administrator.\n\nDetails: " + ex.Message, "System Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+                MessageBox.Show("Unable to log in. " + ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

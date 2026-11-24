@@ -60,6 +60,7 @@ CREATE TABLE Enrollments (
 
     CONSTRAINT UQ_Enrollment UNIQUE (StudentId, SubjectCode, SchoolYear)
 );
+
 create table Users (
 UserId int identity(1,1) not null primary key,
 Username nvarchar(50) not null,

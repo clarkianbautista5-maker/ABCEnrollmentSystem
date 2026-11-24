@@ -8,7 +8,9 @@ namespace ABCEnrollmentSystem
 {
     internal static class Database
     {
-        public const string ConnectionString = "Server=DESKTOP-JG0361V\\SQLEXPRESS;Database=ABCEnrollmentDb;Trusted_Connection=True;TrustServerCertificate=True;"; public static DataTable GetTable(string sql, string keyword)
+        //public const string ConnectionString = "Server=DESKTOP-JG0361V\\SQLEXPRESS;Database=ABCEnrollmentDb;Trusted_Connection=True;TrustServerCertificate=True;"; //Rodd con string
+        public const string ConnectionString = "Server=DESKTOP-7LPU3PN\\SQLEXPRESS;Database=ABCTest;Trusted_Connection=True;TrustServerCertificate=True;"; //Clark con string
+        public static DataTable GetTable(string sql, string keyword)
         {
             DataTable table = new DataTable();
 
