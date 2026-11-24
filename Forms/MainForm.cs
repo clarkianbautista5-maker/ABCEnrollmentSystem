@@ -1,6 +1,7 @@
 using ABCEnrollmentSystem.Forms;
 using System.Diagnostics.Eventing.Reader;
 using System.Data;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ABCEnrollmentSystem
 {
@@ -25,13 +26,12 @@ namespace ABCEnrollmentSystem
             _enrollments = new EnrollmentRepository();
             _service = new EnrollmentService(_students, _subjects, _teachers, _sections, _enrollments);
 
-            //nag dudupe yung columns pag wala
             dgvStudents.AutoGenerateColumns = false;
             dgvSubjects.AutoGenerateColumns = false;
             dgvTeachers.AutoGenerateColumns = false;
             dgvSections.AutoGenerateColumns = false;
 
-            ShowDashboard(); // [NEW]
+            ShowDashboard();
         }
 
         private void ShowPanel(Panel panel, string title)
@@ -86,18 +86,67 @@ namespace ABCEnrollmentSystem
             ShowPanel(pnlReports, "Reports");
         }
 
-        //Dashboard
         private void ShowDashboard()
         {
             ShowPanel(pnlDashboard, "Dashboard");
-            LoadDashboard(); // [NEW]
+            LoadDashboard();
+        }
+        private void BuildCharts()
+        {
+            chartGender = MakeChart("Students by Gender", SeriesChartType.Pie);
+            chartSubjects = MakeChart("Enrollments per Subject", SeriesChartType.Column);
+            chartActivity = MakeChart("Activity (Last 7 Days)", SeriesChartType.Line);
+
+            tlpDashboard.Controls.Add(chartGender, 0, 1);
+            tlpDashboard.Controls.Add(chartSubjects, 1, 1);
+            tlpDashboard.Controls.Add(chartActivity, 0, 2);
         }
 
-        // [NEW] Dashboard data
+        private Chart MakeChart(string title, SeriesChartType type)
+        {
+            Color textColor = Color.FromArgb(232, 238, 252);
+            Color gridColor = Color.FromArgb(46, 63, 102);
+
+            Chart chart = new Chart();
+            chart.Dock = DockStyle.Fill;
+            chart.BackColor = Color.FromArgb(28, 42, 69);
+
+            ChartArea area = new ChartArea("Main");
+            area.BackColor = Color.Transparent;
+            area.AxisX.LabelStyle.ForeColor = textColor;
+            area.AxisY.LabelStyle.ForeColor = textColor;
+            area.AxisX.LineColor = gridColor;
+            area.AxisY.LineColor = gridColor;
+            area.AxisX.MajorGrid.LineColor = gridColor;
+            area.AxisY.MajorGrid.LineColor = gridColor;
+            chart.ChartAreas.Add(area);
+
+            Series series = new Series("Data");
+            series.ChartType = type;
+            series.IsValueShownAsLabel = true;
+            series.LabelForeColor = textColor;
+            chart.Series.Add(series);
+
+            if (type == SeriesChartType.Pie)
+            {
+                Legend legend = new Legend("Legend");
+                legend.BackColor = Color.Transparent;
+                legend.ForeColor = textColor;
+                chart.Legends.Add(legend);
+            }
+
+            chart.Titles.Add(new Title(title, Docking.Top, new Font("Segoe UI", 11F, FontStyle.Bold), Color.White));
+            return chart;
+        }
+
         private void LoadDashboard()
         {
             try
             {
+                if (chartGender == null)
+                {
+                    BuildCharts();
+                }
                 // KPI
                 lblKpiStudents.Text = DashboardRepository.CountOf("Students").ToString();
                 lblKpiSubjects.Text = DashboardRepository.CountOf("Subjects").ToString();
@@ -872,6 +921,23 @@ namespace ABCEnrollmentSystem
             ActivityLogShowAll();
         }
 
+        private void tlpDashboard_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Confirm Exit",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                LogInForm loginForm = new LogInForm();
+                loginForm.Show();
+                this.Hide();
+            }
+
+        }
     }
 }
