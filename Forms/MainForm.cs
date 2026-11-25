@@ -928,14 +928,12 @@ namespace ABCEnrollmentSystem
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Confirm Exit",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (result == DialogResult.Yes)
             {
-                LogInForm loginForm = new LogInForm();
-                loginForm.Show();
-                this.Hide();
+                LogRepository.AddUserLog("Logout");
+                this.Close();
             }
 
         }
