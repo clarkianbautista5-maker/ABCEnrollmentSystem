@@ -72,23 +72,6 @@ insert into Users (Username, Password) values
 
 GO
 
-
---Pang demo kay sirrrrrr
-
-INSERT INTO Teachers (TeacherId, FirstName, MiddleName, LastName) VALUES
-('T-001', 'Maria', 'Lopez', 'Santos'),
-('T-002', 'Jose', 'Reyes', 'Garcia');
-
-INSERT INTO Sections (SectionCode, SectionName, Description) VALUES
-('SEC-A', 'Grade 11 - Newton', 'STEM strand'),
-('SEC-B', 'Grade 11 - Einstein', 'ABM strand');
-
-INSERT INTO Subjects (SubjectCode, SubjectName, Description, Units, TeacherId) VALUES
-('MATH11', 'General Mathematics', 'Core subject', 3, 'T-001'),
-('ENG11', 'Oral Communication', 'Core subject', 3, 'T-002'),
-('PHY11', 'Physical Science', 'Science subject', 3, 'T-001');
-GO
-
 -- sulit activity log and user log table for Activity Log and User Log
 CREATE TABLE UserLogs (
     UserLogId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
@@ -106,3 +89,21 @@ CREATE TABLE ActivityLogs (
     LogDate DATETIME NOT NULL DEFAULT GETDATE()
 );
 GO
+
+
+--Pang demo kay sirrrrrr
+
+INSERT INTO Teachers (TeacherId, FirstName, MiddleName, LastName) VALUES
+('T-001', 'Maria', 'Lopez', 'Santos'),
+('T-002', 'Jose', 'Reyes', 'Garcia');
+
+INSERT INTO Sections (SectionCode, SectionName, Description) VALUES
+('SEC-A', 'Grade 11 - Newton', 'STEM strand'),
+('SEC-B', 'Grade 11 - Einstein', 'ABM strand');
+
+INSERT INTO Subjects (SubjectCode, SubjectName, Description, Units, TeacherId) VALUES
+('MATH11', 'General Mathematics', 'Core subject', 3, 'T-001'),
+('ENG11', 'Oral Communication', 'Core subject', 3, 'T-002'),
+('PHY11', 'Physical Science', 'Science subject', 3, 'T-001');
+GO
+
