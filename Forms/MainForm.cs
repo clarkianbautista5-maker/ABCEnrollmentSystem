@@ -2,6 +2,8 @@ using ABCEnrollmentSystem.Forms;
 using System.Diagnostics.Eventing.Reader;
 using System.Data;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Collections.Generic;
+using System.Drawing.Printing;
 
 namespace ABCEnrollmentSystem
 {
@@ -14,6 +16,11 @@ namespace ABCEnrollmentSystem
         private IEnrollmentRepository _enrollments;
         private EnrollmentService _service;
 
+        private List<string> _reportLines;
+        private string _reportTitle;
+        private string _reportInfo;
+        private int _reportIndex;
+
 
         public MainForm()
         {
@@ -25,6 +32,8 @@ namespace ABCEnrollmentSystem
             _sections = new SectionRepository();
             _enrollments = new EnrollmentRepository();
             _service = new EnrollmentService(_students, _subjects, _teachers, _sections, _enrollments);
+
+            this.FormClosing += MainForm_FormClosing; // log logout
 
             dgvStudents.AutoGenerateColumns = false;
             dgvSubjects.AutoGenerateColumns = false;
@@ -42,46 +51,44 @@ namespace ABCEnrollmentSystem
             pnlTeachers.Visible = false;
             pnlSections.Visible = false;
             pnlEnroll.Visible = false;
-            pnlReports.Visible = false;
             pnlUserLog.Visible = false;
             pnlActivityLog.Visible = false;
+            pnlReports.Visible = false;
             panel.Visible = true;
             panel.BringToFront();
             lblPageTitle.Text = title;
         }
-        private void btnDashboard_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs eventArgs)
         {
             ShowDashboard();
         }
 
-        private void btnStudents_Click(object sender, EventArgs e)
+        private void btnStudents_Click(object sender, EventArgs eventArgs)
         {
             StudentsOpen();
         }
 
-        private void btnSubjects_Click(object sender, EventArgs e)
+        private void btnSubjects_Click(object sender, EventArgs eventArgs)
         {
             SubjectsOpen();
         }
 
-        private void btnTeachers_Click(object sender, EventArgs e)
+        private void btnTeachers_Click(object sender, EventArgs eventArgs)
         {
             TeacherOpen();
         }
 
-        private void btnSections_Click(object sender, EventArgs e)
+        private void btnSections_Click(object sender, EventArgs eventArgs)
         {
             SectionsOpen();
         }
 
-
-
-        private void btnEnroll_Click(object sender, EventArgs e)
+        private void btnEnroll_Click(object sender, EventArgs eventArgs)
         {
             EnrollOpen(null);
         }
 
-        private void btnReports_Click(object sender, EventArgs e)
+        private void btnReports_Click(object sender, EventArgs eventArgs)
         {
             ShowPanel(pnlReports, "Reports");
         }
@@ -155,25 +162,25 @@ namespace ABCEnrollmentSystem
 
                 // Pie
                 chartGender.Series[0].Points.Clear();
-                foreach (DataRow r in DashboardRepository.GetGenderCounts().Rows)
-                    chartGender.Series[0].Points.AddXY(r["Gender"].ToString(), Convert.ToInt32(r["Total"]));
+                foreach (DataRow row in DashboardRepository.GetGenderCounts().Rows)
+                    chartGender.Series[0].Points.AddXY(row["Gender"].ToString(), Convert.ToInt32(row["Total"]));
 
                 // Bar
                 chartSubjects.Series[0].Points.Clear();
-                foreach (DataRow r in DashboardRepository.GetEnrollmentsPerSubject().Rows)
-                    chartSubjects.Series[0].Points.AddXY(r["SubjectName"].ToString(), Convert.ToInt32(r["Total"]));
+                foreach (DataRow row in DashboardRepository.GetEnrollmentsPerSubject().Rows)
+                    chartSubjects.Series[0].Points.AddXY(row["SubjectName"].ToString(), Convert.ToInt32(row["Total"]));
 
                 // Line
                 chartActivity.Series[0].Points.Clear();
-                foreach (DataRow r in DashboardRepository.GetActivityLast7Days().Rows)
-                    chartActivity.Series[0].Points.AddXY(Convert.ToDateTime(r["Day"]).ToString("MMM dd"), Convert.ToInt32(r["Total"]));
+                foreach (DataRow row in DashboardRepository.GetActivityLast7Days().Rows)
+                    chartActivity.Series[0].Points.AddXY(Convert.ToDateTime(row["Day"]).ToString("MMM dd"), Convert.ToInt32(row["Total"]));
 
                 // Recent
                 dgvRecent.DataSource = DashboardRepository.GetRecentActivity();
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Dashboard error: " + ex.Message);
+                MessageBox.Show("Dashboard error: " + error.Message);
             }
         }
         //Sulit lagay mo dito yung activity log
@@ -187,7 +194,7 @@ namespace ABCEnrollmentSystem
             txtStudentsSearch.Clear();
             StudentShowAll();
         }
-        private void btnStudentsSearch_Click(object sender, EventArgs e)
+        private void btnStudentsSearch_Click(object sender, EventArgs eventArgs)
         {
             try
             {
@@ -201,19 +208,19 @@ namespace ABCEnrollmentSystem
                     StudentsShowList(_students.Search(searchTerm));
                 }
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
 
-        private void btnStudentsShowAll_Click(object sender, EventArgs e)
+        private void btnStudentsShowAll_Click(object sender, EventArgs eventArgs)
         {
             txtStudentsSearch.Clear();
             StudentShowAll();
         }
 
-        private void btnStudentsAdd_Click(object sender, EventArgs e)
+        private void btnStudentsAdd_Click(object sender, EventArgs eventArgs)
         {
             try
             {
@@ -227,12 +234,12 @@ namespace ABCEnrollmentSystem
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
-        private void btnStudentsUpdate_Click(object sender, EventArgs e)
+        private void btnStudentsUpdate_Click(object sender, EventArgs eventArgs)
         {
             Student selected = StudentGetSelected();
             if (selected == null)
@@ -252,14 +259,14 @@ namespace ABCEnrollmentSystem
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
 
 
-        private void btnStudentsDelete_Click(object sender, EventArgs e)
+        private void btnStudentsDelete_Click(object sender, EventArgs eventArgs)
         {
             Student selected = StudentGetSelected();
             if (selected == null)
@@ -276,21 +283,21 @@ namespace ABCEnrollmentSystem
             try
             {
                 _students.Delete(selected.StudentId);
-                LogRepository.AddActivityLog("Delete", "Students", "Deleted student " + selected.StudentId);   // [NEW]
-                MessageBox.Show("Student deletd.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LogRepository.AddActivityLog("Delete", "Students", "Deleted student " + selected.StudentId);
+                MessageBox.Show("Student deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 StudentShowAll();
             }
-            catch (RecordNotFoundException ex)
+            catch (RecordNotFoundException error)
             {
-                MessageBox.Show(ex.Message, "Not found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(error.Message, "Not found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
 
-        private void btnStudentsEnroll_Click(object sender, EventArgs e)
+        private void btnStudentsEnroll_Click(object sender, EventArgs eventArgs)
         {
             Student selected = StudentGetSelected();
             if (selected == null)
@@ -307,9 +314,9 @@ namespace ABCEnrollmentSystem
             {
                 StudentsShowList(_students.GetAll());
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Could not load students" + ex.Message);
+                MessageBox.Show("Could not load students" + error.Message);
             }
         }
 
@@ -335,7 +342,7 @@ namespace ABCEnrollmentSystem
             txtSubjectsSearch.Clear();
             SubjectsShowAll();
         }
-        private void btnSubjectsSearch_Click(object sender, EventArgs e)
+        private void btnSubjectsSearch_Click(object sender, EventArgs eventArgs)
         {
             try
             {
@@ -349,19 +356,19 @@ namespace ABCEnrollmentSystem
                     SubjectsShowList(_subjects.Search(searchTerm));
                 }
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
 
-        private void btnSubjectsShowAll_Click(object sender, EventArgs e)
+        private void btnSubjectsShowAll_Click(object sender, EventArgs eventArgs)
         {
             txtSubjectsSearch.Clear();
             SubjectsShowAll();
         }
 
-        private void btnSubjectsAdd_Click(object sender, EventArgs e)
+        private void btnSubjectsAdd_Click(object sender, EventArgs eventArgs)
         {
             try
             {
@@ -375,13 +382,13 @@ namespace ABCEnrollmentSystem
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
 
-        private void btnSubjectsUpdate_Click(object sender, EventArgs e)
+        private void btnSubjectsUpdate_Click(object sender, EventArgs eventArgs)
         {
             Subject selected = SubjectGetSelected();
             if (selected == null)
@@ -401,13 +408,13 @@ namespace ABCEnrollmentSystem
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
 
-        private void btnSubjectsDelete_Click(object sender, EventArgs e)
+        private void btnSubjectsDelete_Click(object sender, EventArgs eventArgs)
         {
             Subject selected = SubjectGetSelected();
             if (selected == null)
@@ -429,13 +436,13 @@ namespace ABCEnrollmentSystem
                 MessageBox.Show("Subject deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SubjectsShowAll();
             }
-            catch (RecordNotFoundException ex)
+            catch (RecordNotFoundException error)
             {
-                MessageBox.Show(ex.Message, "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(error.Message, "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Could not delete the record: " + ex.Message);
+                MessageBox.Show("Could not delete the record: " + error.Message);
             }
         }
 
@@ -445,9 +452,9 @@ namespace ABCEnrollmentSystem
             {
                 SubjectsShowList(_subjects.GetAll());
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Could not load subjects" + ex.Message);
+                MessageBox.Show("Could not load subjects" + error.Message);
             }
         }
         private void SubjectsShowList(List<Subject> subjects)
@@ -472,7 +479,7 @@ namespace ABCEnrollmentSystem
             TeachersShowAll();
         }
 
-        private void btnTeachersSearch_Click(object sender, EventArgs e)
+        private void btnTeachersSearch_Click(object sender, EventArgs eventArgs)
         {
             try
             {
@@ -487,14 +494,14 @@ namespace ABCEnrollmentSystem
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
 
             }
         }
 
-        private void btnTeachersShowAll_Click(object sender, EventArgs e)
+        private void btnTeachersShowAll_Click(object sender, EventArgs eventArgs)
         {
             try
             {
@@ -502,12 +509,12 @@ namespace ABCEnrollmentSystem
                 TeachersShowAll();
 
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
-        private void btnTeachersAdd_Click(object sender, EventArgs e)
+        private void btnTeachersAdd_Click(object sender, EventArgs eventArgs)
         {
             try
             {
@@ -521,13 +528,13 @@ namespace ABCEnrollmentSystem
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
 
-        private void btnTeachersUpdate_Click(object sender, EventArgs e)
+        private void btnTeachersUpdate_Click(object sender, EventArgs eventArgs)
         {
             Teacher selected = TeacherGetSelected();
             if (selected == null)
@@ -547,13 +554,13 @@ namespace ABCEnrollmentSystem
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
 
-        private void btnTeachersDelete_Click(object sender, EventArgs e)
+        private void btnTeachersDelete_Click(object sender, EventArgs eventArgs)
         {
             Teacher selected = TeacherGetSelected();
             if (selected == null)
@@ -576,13 +583,13 @@ namespace ABCEnrollmentSystem
                 TeachersShowAll();
 
             }
-            catch (RecordNotFoundException ex)
+            catch (RecordNotFoundException error)
             {
-                MessageBox.Show(ex.Message, "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(error.Message, "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Could not delete the record: " + ex.Message);
+                MessageBox.Show("Could not delete the record: " + error.Message);
             }
         }
         private void TeachersShowAll()
@@ -591,9 +598,9 @@ namespace ABCEnrollmentSystem
             {
                 TeachersShowList(_teachers.GetAll());
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Could not load teachers" + ex.Message);
+                MessageBox.Show("Could not load teachers" + error.Message);
             }
         }
 
@@ -619,7 +626,7 @@ namespace ABCEnrollmentSystem
             SectionsShowAll();
         }
 
-        private void btnSectionsSearch_Click(object sender, EventArgs e)
+        private void btnSectionsSearch_Click(object sender, EventArgs eventArgs)
         {
             try
             {
@@ -634,19 +641,19 @@ namespace ABCEnrollmentSystem
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
 
             }
         }
-        private void btnSectionsShowAll_Click(object sender, EventArgs e)
+        private void btnSectionsShowAll_Click(object sender, EventArgs eventArgs)
         {
             txtSectionsSearch.Clear();
             SectionsShowAll();
         }
 
-        private void btnSectionsAdd_Click(object sender, EventArgs e)
+        private void btnSectionsAdd_Click(object sender, EventArgs eventArgs)
         {
             try
             {
@@ -660,12 +667,12 @@ namespace ABCEnrollmentSystem
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
-        private void btnSectionsUpdate_Click(object sender, EventArgs e)
+        private void btnSectionsUpdate_Click(object sender, EventArgs eventArgs)
         {
             Section selected = SectionGetSelected();
             if (selected == null)
@@ -686,12 +693,12 @@ namespace ABCEnrollmentSystem
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Something went wrong: " + ex.Message);
+                MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
-        private void btnSectionsDelete_Click(object sender, EventArgs e)
+        private void btnSectionsDelete_Click(object sender, EventArgs eventArgs)
         {
             Section selected = SectionGetSelected();
             if (selected == null)
@@ -714,13 +721,13 @@ namespace ABCEnrollmentSystem
                 SectionsShowAll();
 
             }
-            catch (RecordNotFoundException ex)
+            catch (RecordNotFoundException error)
             {
-                MessageBox.Show(ex.Message, "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(error.Message, "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Could not delete the record: " + ex.Message);
+                MessageBox.Show("Could not delete the record: " + error.Message);
             }
         }
         private void SectionsShowAll()
@@ -729,9 +736,9 @@ namespace ABCEnrollmentSystem
             {
                 SectionsShowList(_sections.GetAll());
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Could not load sections" + ex.Message);
+                MessageBox.Show("Could not load sections" + error.Message);
             }
         }
 
@@ -771,12 +778,12 @@ namespace ABCEnrollmentSystem
                     cboEnrollStudent.Enabled = false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Could not load data: " + ex.Message);
+                MessageBox.Show("Could not load data: " + error.Message);
             }
         }
-        private void btnEnrollSave_Click(object sender, EventArgs e)
+        private void btnEnrollSave_Click(object sender, EventArgs eventArgs)
         {
             if (cboEnrollStudent.SelectedItem == null || cboEnrollSubject.SelectedItem == null || cboEnrollSection.SelectedItem == null)
             {
@@ -787,17 +794,21 @@ namespace ABCEnrollmentSystem
             try
             {
                 _service.Enroll(cboEnrollStudent.SelectedValue.ToString(), cboEnrollSubject.SelectedValue.ToString(), cboEnrollSection.SelectedValue.ToString(), txtEnrollSchoolYear.Text);
+
+                // log enroll
+                LogRepository.AddActivityLog("Enroll", "Enrollment", "Enrolled " + cboEnrollStudent.Text + " in " + cboEnrollSubject.Text);
+
                 string message = cboEnrollStudent.Text + " was enrolled in " + cboEnrollSubject.Text + " (" + cboEnrollSection.Text + ") for " + txtEnrollSchoolYear.Text.Trim() + ".";
                 MessageBox.Show(message, "Enrollment successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadEnrollSubjects();
 
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Could not enroll student: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Could not enroll student: " + error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void btnEnrollClose_Click(object sender, EventArgs e)
+        private void btnEnrollClose_Click(object sender, EventArgs eventArgs)
         {
             if (_enrollFromStudents)
             {
@@ -841,13 +852,13 @@ namespace ABCEnrollmentSystem
             cboEnrollSubject.DataSource = available;
         }
 
-        private void cboEnrollStudent_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboEnrollStudent_SelectedIndexChanged(object sender, EventArgs eventArgs)
         {
             LoadEnrollSubjects();
         }
 
         // All User Log
-        private void btnUserLog_Click(object sender, EventArgs e)
+        private void btnUserLog_Click(object sender, EventArgs eventArgs)
         {
             ShowPanel(pnlUserLog, "User Log");
             txtUserLogSearch.Clear();
@@ -860,31 +871,31 @@ namespace ABCEnrollmentSystem
             {
                 dgvUserLog.DataSource = LogRepository.GetUserLogs(null);
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Cannot load user log: " + ex.Message);
+                MessageBox.Show("Cannot load user log: " + error.Message);
             }
         }
 
-        private void btnUserLogSearch_Click(object sender, EventArgs e)
+        private void btnUserLogSearch_Click(object sender, EventArgs eventArgs)
         {
             try
             {
                 dgvUserLog.DataSource = LogRepository.GetUserLogs(txtUserLogSearch.Text);
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Search failed: " + ex.Message);
+                MessageBox.Show("Search failed: " + error.Message);
             }
         }
 
-        private void btnUserLogShowAll_Click(object sender, EventArgs e)
+        private void btnUserLogShowAll_Click(object sender, EventArgs eventArgs)
         {
             txtUserLogSearch.Clear();
             UserLogShowAll();
         }
 
-        private void btnActivityLog_Click(object sender, EventArgs e)
+        private void btnActivityLog_Click(object sender, EventArgs eventArgs)
         {
             ShowPanel(pnlActivityLog, "Activity Log");
             txtActivityLogSearch.Clear();
@@ -897,45 +908,189 @@ namespace ABCEnrollmentSystem
             {
                 dgvActivityLog.DataSource = LogRepository.GetActivityLogs(null);
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Cannot load activity log: " + ex.Message);
+                MessageBox.Show("Cannot load activity log: " + error.Message);
             }
         }
 
-        private void btnActivityLogSearch_Click(object sender, EventArgs e)
+        private void btnActivityLogSearch_Click(object sender, EventArgs eventArgs)
         {
             try
             {
                 dgvActivityLog.DataSource = LogRepository.GetActivityLogs(txtActivityLogSearch.Text);
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                MessageBox.Show("Search failed: " + ex.Message);
+                MessageBox.Show("Search failed: " + error.Message);
             }
         }
 
-        private void btnActivityLogShowAll_Click(object sender, EventArgs e)
+        private void btnActivityLogShowAll_Click(object sender, EventArgs eventArgs)
         {
             txtActivityLogSearch.Clear();
             ActivityLogShowAll();
         }
 
-        private void tlpDashboard_Paint(object sender, PaintEventArgs e)
+        private void tlpDashboard_Paint(object sender, PaintEventArgs eventArgs)
         {
 
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs eventArgs)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                LogRepository.AddUserLog("Logout");
                 this.Close();
             }
 
+        }
+
+        //log logout
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs eventArgs)
+        {
+            LogRepository.AddUserLog("Logout");
+        }
+
+        private void btnPrintReport_Click(object sender, EventArgs eventArgs)
+        {
+            if (cboReportType.SelectedIndex < 0)
+            {
+                MessageBox.Show("Select a report type.", "Report", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                DataTable reportData;
+                string reportTitle;
+
+                switch (cboReportType.SelectedIndex)
+                {
+                    case 0:
+                        reportTitle = "Class List Per Section";
+                        reportData = ReportRepository.GetClassListPerSection(txtReportsSchoolYear.Text);
+                        break;
+                    case 1:
+                        reportTitle = "Class List Per Subject";
+                        reportData = ReportRepository.GetClassListPerSubject(txtReportsSchoolYear.Text);
+                        break;
+                    default:
+                        reportTitle = "Subjects Assigned To Teachers";
+                        reportData = ReportRepository.GetSubjectsPerTeacher();
+                        break;
+                }
+
+                if (reportData.Rows.Count == 0)
+                {
+                    MessageBox.Show("No records found.", "Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                BuildReport(reportTitle, reportData);
+
+                if (printDialogReport.ShowDialog() == DialogResult.OK)
+                {
+                    printDocReport.Print();
+
+                    // log print
+                    LogRepository.AddActivityLog("Print", "Reports", "Printed report: " + reportTitle);
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Report error: " + error.Message);
+            }
+        }
+
+        // report lines
+        private void BuildReport(string reportTitle, DataTable reportData)
+        {
+            bool isTeacherReport = cboReportType.SelectedIndex == 2;
+            string schoolYear = string.IsNullOrWhiteSpace(txtReportsSchoolYear.Text) ? "All" : txtReportsSchoolYear.Text.Trim();
+            string today = DateTime.Now.ToString("MMMM dd, yyyy");
+
+            _reportTitle = reportTitle;
+            _reportInfo = isTeacherReport ? "Date: " + today : "School Year: " + schoolYear + "   Date: " + today;
+            _reportLines = new List<string>();
+
+            string currentGroup = null;
+            int groupIndex = 0;
+            int itemCount = 0;
+
+            foreach (DataRow row in reportData.Rows)
+            {
+                string group = row["GroupName"].ToString();
+                string item = row["Item"].ToString();
+
+                if (group != currentGroup)
+                {
+                    if (currentGroup != null)
+                    {
+                        _reportLines.Add("");
+                    }
+
+                    _reportLines.Add(group);
+                    groupIndex = _reportLines.Count - 1;
+                    currentGroup = group;
+                    itemCount = 0;
+                }
+
+                if (item != "(none)")
+                {
+                    itemCount++;
+                }
+
+                _reportLines[groupIndex] = group + " (" + itemCount + ")";
+                _reportLines.Add("     " + item);
+            }
+        }
+
+        private void printDocReport_BeginPrint(object sender, PrintEventArgs printArgs)
+        {
+            _reportIndex = 0; // reset
+        }
+
+        private void printDocReport_PrintPage(object sender, PrintPageEventArgs printPageArgs)
+        {
+            using (Font titleFont = new Font("Arial", 16, FontStyle.Bold))
+            using (Font boldFont = new Font("Arial", 11, FontStyle.Bold))
+            using (Font normalFont = new Font("Arial", 11))
+            {
+                float leftMargin = printPageArgs.MarginBounds.Left;
+                float currentTop = printPageArgs.MarginBounds.Top;
+                float lineHeight = normalFont.GetHeight(printPageArgs.Graphics) + 4;
+
+                printPageArgs.Graphics.DrawString("ABC Senior High", titleFont, Brushes.Black, leftMargin, currentTop);
+                currentTop += titleFont.GetHeight(printPageArgs.Graphics) + 4;
+                printPageArgs.Graphics.DrawString(_reportTitle, boldFont, Brushes.Black, leftMargin, currentTop);
+                currentTop += lineHeight;
+                printPageArgs.Graphics.DrawString(_reportInfo, normalFont, Brushes.Black, leftMargin, currentTop);
+                currentTop += lineHeight;
+                printPageArgs.Graphics.DrawLine(Pens.Black, leftMargin, currentTop, printPageArgs.MarginBounds.Right, currentTop);
+                currentTop += lineHeight;
+
+                while (_reportIndex < _reportLines.Count)
+                {
+                    if (currentTop + lineHeight > printPageArgs.MarginBounds.Bottom)
+                    {
+                        printPageArgs.HasMorePages = true; // next page
+                        return;
+                    }
+
+                    string line = _reportLines[_reportIndex];
+                    bool isGroupLine = line != "" && !line.StartsWith(" ");
+                    Font lineFont = isGroupLine ? boldFont : normalFont;
+
+                    printPageArgs.Graphics.DrawString(line, lineFont, Brushes.Black, leftMargin, currentTop);
+                    currentTop += lineHeight;
+                    _reportIndex++;
+                }
+
+                printPageArgs.HasMorePages = false;
+            }
         }
     }
 }
