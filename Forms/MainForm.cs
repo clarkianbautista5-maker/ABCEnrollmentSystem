@@ -7,6 +7,7 @@ using System.Drawing.Printing;
 
 namespace ABCEnrollmentSystem
 {
+
     public partial class MainForm : Form
     {
         private IRepository<Student> _students;
@@ -25,7 +26,8 @@ namespace ABCEnrollmentSystem
         public MainForm()
         {
             InitializeComponent();
-
+            timer1.Stop();
+            timer1.Interval = 300;
             _students = new StudentRepository();
             _subjects = new SubjectRepository();
             _teachers = new TeacherRepository();
@@ -196,22 +198,8 @@ namespace ABCEnrollmentSystem
         }
         private void btnStudentsSearch_Click(object sender, EventArgs eventArgs)
         {
-            try
-            {
-                string searchTerm = txtStudentsSearch.Text.Trim();
-                if (searchTerm == "")
-                {
-                    StudentShowAll();
-                }
-                else
-                {
-                    StudentsShowList(_students.Search(searchTerm));
-                }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Something went wrong: " + error.Message);
-            }
+            timer1.Stop();
+            StudentsSearch();
         }
 
         private void btnStudentsShowAll_Click(object sender, EventArgs eventArgs)
@@ -344,22 +332,9 @@ namespace ABCEnrollmentSystem
         }
         private void btnSubjectsSearch_Click(object sender, EventArgs eventArgs)
         {
-            try
-            {
-                string searchTerm = txtSubjectsSearch.Text.Trim();
-                if (searchTerm == "")
-                {
-                    SubjectsShowAll();
-                }
-                else
-                {
-                    SubjectsShowList(_subjects.Search(searchTerm));
-                }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Something went wrong: " + error.Message);
-            }
+            timer1.Stop();
+            SubjectsSearch();
+
         }
 
         private void btnSubjectsShowAll_Click(object sender, EventArgs eventArgs)
@@ -481,24 +456,8 @@ namespace ABCEnrollmentSystem
 
         private void btnTeachersSearch_Click(object sender, EventArgs eventArgs)
         {
-            try
-            {
-                string searchTerm = txtTeachersSearch.Text.Trim();
-                if (searchTerm == "")
-                {
-                    TeachersShowAll();
-                }
-                else
-                {
-                    TeachersShowList(_teachers.Search(searchTerm));
-                }
-
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Something went wrong: " + error.Message);
-
-            }
+            timer1.Stop();
+            TeachersSearch();
         }
 
         private void btnTeachersShowAll_Click(object sender, EventArgs eventArgs)
@@ -628,24 +587,9 @@ namespace ABCEnrollmentSystem
 
         private void btnSectionsSearch_Click(object sender, EventArgs eventArgs)
         {
-            try
-            {
-                string searchTerm = txtSectionsSearch.Text.Trim();
-                if (searchTerm == "")
-                {
-                    SectionsShowAll();
-                }
-                else
-                {
-                    SectionsShowList(_sections.Search(searchTerm));
-                }
+            timer1.Stop();
+            SectionsSearch();
 
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Something went wrong: " + error.Message);
-
-            }
         }
         private void btnSectionsShowAll_Click(object sender, EventArgs eventArgs)
         {
@@ -916,14 +860,9 @@ namespace ABCEnrollmentSystem
 
         private void btnActivityLogSearch_Click(object sender, EventArgs eventArgs)
         {
-            try
-            {
-                dgvActivityLog.DataSource = LogRepository.GetActivityLogs(txtActivityLogSearch.Text);
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Search failed: " + error.Message);
-            }
+            timer1.Stop();
+            ActivityLogSearch();
+
         }
 
         private void btnActivityLogShowAll_Click(object sender, EventArgs eventArgs)
@@ -1092,5 +1031,247 @@ namespace ABCEnrollmentSystem
                 printPageArgs.HasMorePages = false;
             }
         }
+        private Action _pendingSearch;
+
+        private void StartSearchTimer(Action search)
+        {
+            _pendingSearch = search;
+            timer1.Stop();
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            if (_pendingSearch != null)
+            {
+                _pendingSearch();
+            }
+
+        }
+
+
+        private void txtStudentsSearch_TextChanged(object sender, EventArgs e)
+        {
+            StartSearchTimer(StudentsSearch);
+
+        }
+        private void StudentsSearch()
+        {
+            try
+            {
+                string searchTerm = txtStudentsSearch.Text.Trim();
+                if (searchTerm == "")
+                {
+                    StudentShowAll();
+                }
+                else
+                {
+                    StudentsShowList(_students.Search(searchTerm));
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Something went wrong: " + error.Message);
+            }
+        }
+
+        private void txtSubjectsSearch_TextChanged(object sender, EventArgs e)
+        {
+            StartSearchTimer(SubjectsSearch);
+        }
+        private void SubjectsSearch()
+        {
+            try
+            {
+                string searchTerm = txtSubjectsSearch.Text.Trim();
+                if (searchTerm == "")
+                {
+                    SubjectsShowAll();
+                }
+                else
+                {
+                    SubjectsShowList(_subjects.Search(searchTerm));
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Something went wrong: " + error.Message);
+            }
+        }
+
+        private void txtTeachersSearch_TextChanged(object sender, EventArgs e)
+        {
+            StartSearchTimer(TeachersSearch);
+
+        }
+        private void TeachersSearch()
+        {
+            try
+            {
+                string searchTerm = txtTeachersSearch.Text.Trim();
+                if (searchTerm == "")
+                {
+                    TeachersShowAll();
+                }
+                else
+                {
+                    TeachersShowList(_teachers.Search(searchTerm));
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Something went wrong: " + error.Message);
+            }
+        }
+
+        private void txtSectionsSearch_TextChanged(object sender, EventArgs e)
+        {
+            StartSearchTimer(SectionsSearch);
+
+        }
+        private void SectionsSearch()
+        {
+            try
+            {
+                string searchTerm = txtSectionsSearch.Text.Trim();
+
+                if (searchTerm == "")
+                {
+                    SectionsShowAll();
+                    return;
+                }
+
+                List<Section> result = new List<Section>();
+
+                foreach (Section section in _sections.GetAll())
+                {
+                    bool match =
+                        (section.SectionCode ?? "").Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                        (section.SectionName ?? "").Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                        (section.Description ?? "").Contains(searchTerm, StringComparison.OrdinalIgnoreCase);
+
+                    if (match)
+                    {
+                        result.Add(section);
+                    }
+                }
+
+                SectionsShowList(result);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Something went wrong: " + error.Message);
+            }
+        }
+
+        private void txtUserLogSearch_TextChanged(object sender, EventArgs e)
+        {
+            StartSearchTimer(UserlogSearch);
+
+        }
+
+        private void btnUserLogSearch_Click_1(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            UserlogSearch();
+
+        }
+        private void UserlogSearch()
+        {
+            try
+            {
+                string keyword = txtUserLogSearch.Text.Trim().ToLower();
+                keyword = keyword.Replace(" ", "").Replace(",", "");
+
+                DataTable all = LogRepository.GetUserLogs(null);
+
+                DataTable result = all.Clone();
+
+                foreach (DataRow row in all.Rows)
+                {
+                    string username = row["Username"].ToString();
+                    string action = row["Action"].ToString();
+
+                    string module = "";
+                    if (all.Columns.Contains("Module"))
+                    {
+                        module = row["Module"].ToString();
+                    }
+
+                    string details = "";
+                    if (all.Columns.Contains("Details"))
+                    {
+                        details = row["Details"].ToString();
+                    }
+
+                    DateTime date = Convert.ToDateTime(row["LogDate"]);
+                    string dateText = date.ToString("dd/MM/yyyy h:mm tt");
+
+                    string usernameCheck = username.ToLower().Replace(" ", "").Replace(",", "");
+                    string actionCheck = action.ToLower().Replace(" ", "").Replace(",", "");
+                    string moduleCheck = module.ToLower().Replace(" ", "").Replace(",", "");
+                    string detailsCheck = details.ToLower().Replace(" ", "").Replace(",", "");
+                    string dateCheck = dateText.ToLower().Replace(" ", "").Replace(",", "");
+
+                    if (keyword == "" ||
+                        usernameCheck.Contains(keyword) ||
+                        actionCheck.Contains(keyword) ||
+                        moduleCheck.Contains(keyword) ||
+                        detailsCheck.Contains(keyword) ||
+                        dateCheck.Contains(keyword))
+                    {
+                        result.ImportRow(row);
+                    }
+                }
+                dgvUserLog.DataSource = result;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Something went wrong: " + error.Message);
+            }
+        }
+
+        private void txtActivityLogSearch_TextChanged(object sender, EventArgs e)
+        {
+            StartSearchTimer(ActivityLogSearch);
+
+        }
+        private void ActivityLogSearch()
+        {
+            try
+            {
+                string keyword = txtActivityLogSearch.Text.Trim().ToLower();
+                keyword = keyword.Replace(" ", "").Replace(",", "");
+                DataTable all = LogRepository.GetActivityLogs(null);
+                DataTable result = all.Clone();
+                foreach (DataRow row in all.Rows)
+                {
+                    string action = row["Action"].ToString();
+                    string module = row["Module"].ToString();
+                    string description = row["Description"].ToString();
+                    DateTime date = Convert.ToDateTime(row["LogDate"]);
+                    string dateText = date.ToString("dd/MM/yyyy h:mm tt");
+                    string actionCheck = action.ToLower().Replace(" ", "").Replace(",", "");
+                    string moduleCheck = module.ToLower().Replace(" ", "").Replace(",", "");
+                    string descriptionCheck = description.ToLower().Replace(" ", "").Replace(",", "");
+                    string dateCheck = dateText.ToLower().Replace(" ", "").Replace(",", "");
+                    if (keyword == "" ||
+                        actionCheck.Contains(keyword) ||
+                        moduleCheck.Contains(keyword) ||
+                        descriptionCheck.Contains(keyword) ||
+                        dateCheck.Contains(keyword))
+                    {
+                        result.ImportRow(row);
+                    }
+                }
+                dgvActivityLog.DataSource = result;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Something went wrong: " + error.Message);
+            }
+        }
     }
 }
+    
