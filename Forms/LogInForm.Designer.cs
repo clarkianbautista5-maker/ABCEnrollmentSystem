@@ -308,10 +308,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 38, 64);
-            ClientSize = new Size(891, 680);
+            ClientSize = new Size(1143, 827);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "LogInForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ABC Senior High -  Log In";
             Load += LogInForm_Load;
             groupBox1.ResumeLayout(false);

@@ -1272,6 +1272,11 @@ namespace ABCEnrollmentSystem
                 MessageBox.Show("Something went wrong: " + error.Message);
             }
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

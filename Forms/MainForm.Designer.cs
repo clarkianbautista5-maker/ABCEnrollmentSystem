@@ -61,12 +61,6 @@
             lblKpiSections = new Label();
             lblKpiSectionsTitle = new Label();
             dgvRecent = new DataGridView();
-            pnlActivityLog = new Panel();
-            dgvActivityLog = new DataGridView();
-            btnActivityLogShowAll = new Button();
-            btnActivityLogSearch = new Button();
-            txtActivityLogSearch = new TextBox();
-            lblActivityLogSearch = new Label();
             pnlEnroll = new Panel();
             label5 = new Label();
             cboEnrollStudent = new ComboBox();
@@ -78,6 +72,12 @@
             txtEnrollSchoolYear = new TextBox();
             btnEnrollSave = new Button();
             btnEnrollClose = new Button();
+            pnlActivityLog = new Panel();
+            dgvActivityLog = new DataGridView();
+            btnActivityLogShowAll = new Button();
+            btnActivityLogSearch = new Button();
+            txtActivityLogSearch = new TextBox();
+            lblActivityLogSearch = new Label();
             pnlSections = new Panel();
             label4 = new Label();
             txtSectionsSearch = new TextBox();
@@ -169,9 +169,9 @@
             pnlKpiTeachers.SuspendLayout();
             pnlKpiSections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRecent).BeginInit();
+            pnlEnroll.SuspendLayout();
             pnlActivityLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvActivityLog).BeginInit();
-            pnlEnroll.SuspendLayout();
             pnlSections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSections).BeginInit();
             pnlTeachers.SuspendLayout();
@@ -419,110 +419,6 @@
             dgvRecent.Size = new Size(451, 306);
             dgvRecent.TabIndex = 4;
             // 
-            // pnlActivityLog
-            // 
-            pnlActivityLog.Controls.Add(dgvActivityLog);
-            pnlActivityLog.Controls.Add(btnActivityLogShowAll);
-            pnlActivityLog.Controls.Add(btnActivityLogSearch);
-            pnlActivityLog.Controls.Add(txtActivityLogSearch);
-            pnlActivityLog.Controls.Add(lblActivityLogSearch);
-            pnlActivityLog.Dock = DockStyle.Fill;
-            pnlActivityLog.Location = new Point(229, 80);
-            pnlActivityLog.Margin = new Padding(3, 4, 3, 4);
-            pnlActivityLog.Name = "pnlActivityLog";
-            pnlActivityLog.Size = new Size(914, 747);
-            pnlActivityLog.TabIndex = 11;
-            pnlActivityLog.Visible = false;
-            // 
-            // dgvActivityLog
-            // 
-            dgvActivityLog.AllowUserToAddRows = false;
-            dgvActivityLog.AllowUserToDeleteRows = false;
-            dgvActivityLog.AllowUserToResizeRows = false;
-            dgvActivityLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvActivityLog.BackgroundColor = Color.FromArgb(16, 25, 43);
-            dgvActivityLog.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(37, 52, 90);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvActivityLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvActivityLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(26, 38, 64);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(232, 238, 252);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(127, 178, 255);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(16, 25, 43);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvActivityLog.DefaultCellStyle = dataGridViewCellStyle4;
-            dgvActivityLog.EnableHeadersVisualStyles = false;
-            dgvActivityLog.GridColor = Color.FromArgb(46, 63, 102);
-            dgvActivityLog.Location = new Point(23, 100);
-            dgvActivityLog.Margin = new Padding(3, 4, 3, 4);
-            dgvActivityLog.MultiSelect = false;
-            dgvActivityLog.Name = "dgvActivityLog";
-            dgvActivityLog.ReadOnly = true;
-            dgvActivityLog.RowHeadersVisible = false;
-            dgvActivityLog.RowHeadersWidth = 51;
-            dgvActivityLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvActivityLog.Size = new Size(869, 547);
-            dgvActivityLog.TabIndex = 4;
-            // 
-            // btnActivityLogShowAll
-            // 
-            btnActivityLogShowAll.BackColor = Color.FromArgb(26, 38, 64);
-            btnActivityLogShowAll.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
-            btnActivityLogShowAll.FlatStyle = FlatStyle.Flat;
-            btnActivityLogShowAll.ForeColor = Color.FromArgb(232, 238, 252);
-            btnActivityLogShowAll.Location = new Point(640, 17);
-            btnActivityLogShowAll.Margin = new Padding(3, 4, 3, 4);
-            btnActivityLogShowAll.Name = "btnActivityLogShowAll";
-            btnActivityLogShowAll.Size = new Size(86, 36);
-            btnActivityLogShowAll.TabIndex = 2;
-            btnActivityLogShowAll.Text = "Show All";
-            btnActivityLogShowAll.UseVisualStyleBackColor = false;
-            btnActivityLogShowAll.Click += btnActivityLogShowAll_Click;
-            // 
-            // btnActivityLogSearch
-            // 
-            btnActivityLogSearch.BackColor = Color.FromArgb(26, 38, 64);
-            btnActivityLogSearch.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
-            btnActivityLogSearch.FlatStyle = FlatStyle.Flat;
-            btnActivityLogSearch.ForeColor = Color.FromArgb(232, 238, 252);
-            btnActivityLogSearch.Location = new Point(543, 17);
-            btnActivityLogSearch.Margin = new Padding(3, 4, 3, 4);
-            btnActivityLogSearch.Name = "btnActivityLogSearch";
-            btnActivityLogSearch.Size = new Size(86, 36);
-            btnActivityLogSearch.TabIndex = 1;
-            btnActivityLogSearch.Text = "Search";
-            btnActivityLogSearch.UseVisualStyleBackColor = false;
-            btnActivityLogSearch.Click += btnActivityLogSearch_Click;
-            // 
-            // txtActivityLogSearch
-            // 
-            txtActivityLogSearch.BackColor = Color.FromArgb(34, 50, 83);
-            txtActivityLogSearch.BorderStyle = BorderStyle.FixedSingle;
-            txtActivityLogSearch.ForeColor = Color.FromArgb(232, 238, 252);
-            txtActivityLogSearch.Location = new Point(246, 20);
-            txtActivityLogSearch.Margin = new Padding(3, 4, 3, 4);
-            txtActivityLogSearch.Name = "txtActivityLogSearch";
-            txtActivityLogSearch.Size = new Size(285, 27);
-            txtActivityLogSearch.TabIndex = 0;
-            txtActivityLogSearch.TextChanged += txtActivityLogSearch_TextChanged;
-            // 
-            // lblActivityLogSearch
-            // 
-            lblActivityLogSearch.AutoSize = true;
-            lblActivityLogSearch.Location = new Point(23, 25);
-            lblActivityLogSearch.Name = "lblActivityLogSearch";
-            lblActivityLogSearch.Size = new Size(232, 20);
-            lblActivityLogSearch.TabIndex = 0;
-            lblActivityLogSearch.Text = "Search by User, Action or Module:";
-            // 
             // pnlEnroll
             // 
             pnlEnroll.BackColor = Color.FromArgb(16, 25, 43);
@@ -666,6 +562,110 @@
             btnEnrollClose.Text = "Close";
             btnEnrollClose.UseVisualStyleBackColor = false;
             btnEnrollClose.Click += btnEnrollClose_Click;
+            // 
+            // pnlActivityLog
+            // 
+            pnlActivityLog.Controls.Add(dgvActivityLog);
+            pnlActivityLog.Controls.Add(btnActivityLogShowAll);
+            pnlActivityLog.Controls.Add(btnActivityLogSearch);
+            pnlActivityLog.Controls.Add(txtActivityLogSearch);
+            pnlActivityLog.Controls.Add(lblActivityLogSearch);
+            pnlActivityLog.Dock = DockStyle.Fill;
+            pnlActivityLog.Location = new Point(229, 80);
+            pnlActivityLog.Margin = new Padding(3, 4, 3, 4);
+            pnlActivityLog.Name = "pnlActivityLog";
+            pnlActivityLog.Size = new Size(914, 747);
+            pnlActivityLog.TabIndex = 11;
+            pnlActivityLog.Visible = false;
+            // 
+            // dgvActivityLog
+            // 
+            dgvActivityLog.AllowUserToAddRows = false;
+            dgvActivityLog.AllowUserToDeleteRows = false;
+            dgvActivityLog.AllowUserToResizeRows = false;
+            dgvActivityLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvActivityLog.BackgroundColor = Color.FromArgb(16, 25, 43);
+            dgvActivityLog.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(37, 52, 90);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvActivityLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvActivityLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(26, 38, 64);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(232, 238, 252);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(127, 178, 255);
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(16, 25, 43);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvActivityLog.DefaultCellStyle = dataGridViewCellStyle4;
+            dgvActivityLog.EnableHeadersVisualStyles = false;
+            dgvActivityLog.GridColor = Color.FromArgb(46, 63, 102);
+            dgvActivityLog.Location = new Point(23, 100);
+            dgvActivityLog.Margin = new Padding(3, 4, 3, 4);
+            dgvActivityLog.MultiSelect = false;
+            dgvActivityLog.Name = "dgvActivityLog";
+            dgvActivityLog.ReadOnly = true;
+            dgvActivityLog.RowHeadersVisible = false;
+            dgvActivityLog.RowHeadersWidth = 51;
+            dgvActivityLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvActivityLog.Size = new Size(869, 547);
+            dgvActivityLog.TabIndex = 4;
+            // 
+            // btnActivityLogShowAll
+            // 
+            btnActivityLogShowAll.BackColor = Color.FromArgb(26, 38, 64);
+            btnActivityLogShowAll.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnActivityLogShowAll.FlatStyle = FlatStyle.Flat;
+            btnActivityLogShowAll.ForeColor = Color.FromArgb(232, 238, 252);
+            btnActivityLogShowAll.Location = new Point(640, 17);
+            btnActivityLogShowAll.Margin = new Padding(3, 4, 3, 4);
+            btnActivityLogShowAll.Name = "btnActivityLogShowAll";
+            btnActivityLogShowAll.Size = new Size(86, 36);
+            btnActivityLogShowAll.TabIndex = 2;
+            btnActivityLogShowAll.Text = "Show All";
+            btnActivityLogShowAll.UseVisualStyleBackColor = false;
+            btnActivityLogShowAll.Click += btnActivityLogShowAll_Click;
+            // 
+            // btnActivityLogSearch
+            // 
+            btnActivityLogSearch.BackColor = Color.FromArgb(26, 38, 64);
+            btnActivityLogSearch.FlatAppearance.BorderColor = Color.FromArgb(46, 63, 102);
+            btnActivityLogSearch.FlatStyle = FlatStyle.Flat;
+            btnActivityLogSearch.ForeColor = Color.FromArgb(232, 238, 252);
+            btnActivityLogSearch.Location = new Point(543, 17);
+            btnActivityLogSearch.Margin = new Padding(3, 4, 3, 4);
+            btnActivityLogSearch.Name = "btnActivityLogSearch";
+            btnActivityLogSearch.Size = new Size(86, 36);
+            btnActivityLogSearch.TabIndex = 1;
+            btnActivityLogSearch.Text = "Search";
+            btnActivityLogSearch.UseVisualStyleBackColor = false;
+            btnActivityLogSearch.Click += btnActivityLogSearch_Click;
+            // 
+            // txtActivityLogSearch
+            // 
+            txtActivityLogSearch.BackColor = Color.FromArgb(34, 50, 83);
+            txtActivityLogSearch.BorderStyle = BorderStyle.FixedSingle;
+            txtActivityLogSearch.ForeColor = Color.FromArgb(232, 238, 252);
+            txtActivityLogSearch.Location = new Point(246, 20);
+            txtActivityLogSearch.Margin = new Padding(3, 4, 3, 4);
+            txtActivityLogSearch.Name = "txtActivityLogSearch";
+            txtActivityLogSearch.Size = new Size(285, 27);
+            txtActivityLogSearch.TabIndex = 0;
+            txtActivityLogSearch.TextChanged += txtActivityLogSearch_TextChanged;
+            // 
+            // lblActivityLogSearch
+            // 
+            lblActivityLogSearch.AutoSize = true;
+            lblActivityLogSearch.Location = new Point(23, 25);
+            lblActivityLogSearch.Name = "lblActivityLogSearch";
+            lblActivityLogSearch.Size = new Size(232, 20);
+            lblActivityLogSearch.TabIndex = 0;
+            lblActivityLogSearch.Text = "Search by User, Action or Module:";
             // 
             // pnlSections
             // 
@@ -1848,6 +1848,7 @@
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ABC Senior High - Enrollment System";
+            Load += MainForm_Load;
             pnlBody.ResumeLayout(false);
             pnlDashboard.ResumeLayout(false);
             tlpDashboard.ResumeLayout(false);
@@ -1857,11 +1858,11 @@
             pnlKpiTeachers.ResumeLayout(false);
             pnlKpiSections.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvRecent).EndInit();
+            pnlEnroll.ResumeLayout(false);
+            pnlEnroll.PerformLayout();
             pnlActivityLog.ResumeLayout(false);
             pnlActivityLog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvActivityLog).EndInit();
-            pnlEnroll.ResumeLayout(false);
-            pnlEnroll.PerformLayout();
             pnlSections.ResumeLayout(false);
             pnlSections.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSections).EndInit();
