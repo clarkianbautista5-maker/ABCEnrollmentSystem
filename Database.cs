@@ -10,8 +10,10 @@ namespace ABCEnrollmentSystem
     {
         //public const string ConnectionString = "Server=DESKTOP-JG0361V\\SQLEXPRESS;Database=ABCEnrollmentDb;Trusted_Connection=True;TrustServerCertificate=True;"; //Rodd con string
         //public const string ConnectionString = "Server=DESKTOP-7LPU3PN\\SQLEXPRESS;Database=ABCTest;Trusted_Connection=True;TrustServerCertificate=True;"; //Clark con string
-       
-        public const string ConnectionString = "Server=.\\SQLEXPRESS;Database=ABCEnrollmentDb;Trusted_Connection=True;TrustServerCertificate=True;";//sulit connection string
+
+        //public const string ConnectionString = "Server=.\\SQLEXPRESS;Database=ABCEnrollmentDb;Trusted_Connection=True;TrustServerCertificate=True;";//sulit connection string
+
+        public const string ConnectionString = "Server=ANNEX-PC00;Database=ABCEnrollmentDb;User Id=sulit.411504;Password=123456;TrustServerCertificate=True;";//school connection string
         public static DataTable GetTable(string sql, string keyword)
         {
             DataTable table = new DataTable();
