@@ -1,6 +1,8 @@
 ﻿Sa reports Isang name lang ni clark and then buong subject kung anong inenrolan nya sa class per subject.
 
 roles - add atleast one more role like staff/teacher
+- Registrar - Full access to student,enroll , reports, but only view in teachers, subjects, sections
+- Teachers - can only view on what the subjects they are teaching and students enrolled to them
 
 archive - bawal mag delete. pag nag delete sa system its not really deleted it is marked as a hide in database.
 
